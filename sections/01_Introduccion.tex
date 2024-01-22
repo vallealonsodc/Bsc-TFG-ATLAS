@@ -1,39 +1,90 @@
 \chapter{Introducción, Contexto y Motivación}\label{cap:introduccion}
 
-%Este apartado tiene un tono un poco más personal,
-%al fin y al cabo relata mi vivencia y opinión subjetiva sobre el TFG
 
 \section{Introducción}
 
-En palabras de Malcom X, \textit{"la educación es el pasaporte hacia el futuro, ya que el mañana pertenece a aquellos que se preparan para el hoy"}, y tanto es así que han sido cuatro años de preparación y dedicación día a día los que me han ido formando personal y académicamente hasta alcanzar la realización de este Trabajo de Fin de Grado, que abre las puertas de mi futuro profesional.
+%Este Trabajo Fin de Grado está orientado a {}, trabaja con {}, pretende {} .....
 
-%%MODIFICACIÓN--------------------------------------
-En esta primera sección se presenta el contexto y la motivación que trascienden a la realización del Trabajo.
-%%MODIFICACIÓN-------------------------------------------
+En esta primera sección de Introducción se presenta el contexto y la motivación que trascienden a la realización del Trabajo Fin de Grado (TFG).
+%%-------------------------------------------------------
+
+\section{Contexto}
+ 
+El contexto en el que se desarrolla este TFG, que trata el análisis de datos en el ámbito clínico, se encuentra altamente influenciado por el auge actual de la Industria 4.0 y su potente impacto en el sector sanitario.
+
+%%1. INDUSTRIA 4.0
+
+\subsubsection{Contexto general: Industria 4.0}
+
+La Industria 4.0, o cuarta revolución industrial, es un concepto concebido por el gobierno alemán en noviembre de 2011 como una estrategia tecnológica para abordar el crecimiento industrial proyectado para 2020. Su uso internacional se popularizó en abril de 2013 durante la feria industrial de Hannover \textit{Hannover Messe}). Este concepto representa la cuarta fase de la industrialización, sucediendo a la mecanización, electrificación e informatización, y destaca la integración de tecnologías avanzadas \cite{chen2020times}.
+Se centra principalmente en la digitalización y la necesaria convergencia entre los sistemas físicos y cibernéticos, en inglés \textit{Cyber-Physical Systems (CPS)}. Esta integración se busca a través de nuevas tecnologías de la información y teleocomunicación (TICs), como el internet de las cosas (\textit{Internet of Things o IoT}), la generación y análisis de de datos masivos (\textit{Big Data \& Big Data Analytics}), la computación en la nube (\textit{Cloud Computing}) y el auge de la Inteligencia Artificial (IA) \cite{chen2020times}\cite{lasi2014industry}.
 
 
-\section{Contexto // por el que se selecciona este topico //}
+%%2. HEALTHCARE 4.0
+
+\subsubsection{Contexto específico: Sanidad 4.0}
+
+La integración de los principios y tecnologías de la Industria 4.0 en el sector sanitario originó el concepto de Salud o Sanidad 4.0 (del inglés, \textit{Healthcare 4.0})\cite{tortorella2020healthcare}\cite{tortorella2021impacts}.  %
+En este contexto, este nuevo término se presenta como un complejo desafío  destinado a abordar los nuevos escenarios generados por la creciente demanda de dispositivos y sistemas médicos más eficaces y alineados con las nuevas TICs y los avances ininterrumpidos en las ciencias como la biotecnología y la ingeniería genética. \cite{martin2021ehealth}. La Sanidad 4.0 origina un nuevo ecosistema interseccional del que destacan a lo largo del TFG  tres  características principales: (1) la provisión continua de cuidado sanitario, (2) la orientación de la medicina hacia el paciente y (3) la prevención y predicción de enfermedades.
+
+%Provisión continua de cuidado sanitario - Tecnologías de I4.0 + HCE
+
+(1) La provisión continua del cuidado sanitario se basa en el continuo de salud (\textit{continuum of care}). Gracias a las nuevas tecnologías de la Industria 4.0, mayoritariamente a las TICs y al IoT, la sociedad está estrechamente comunicada entre sí de forma prácticamente ininterrumpida. También a raíz de la pandemia del COVID-19 se han acelerado todas estas telecomunicaciones, que en el ámbito sanitario han potenciado el desarrollo de la telemedicina y la salud digital (o \textit{e-Health} \cite{martin2021ehealth}. Con la digitalización y el seguimiento remoto de la salud, los dispositivos médicos que monitorizan a los pacientes en su vida cotidiana generan enormes cantidades de datos médicos de distintas índoles que, además, se recogen con distintos propósitos según cada organización. Los sistemas de salud digital frecuentemente almacenan datos inconsistentes, incoherentes o inaccesibles entre sí, produciéndose registros electrónicos de salud muy extensos y dispares. 
+
+%Patient-centred - Modelos de datos más amplios. Medicina de precisión.
+
+(2) La orientación de la medicina hacia el paciente se refiere a la priorización del paciente como objetivo central de la provisión de salud  \cite{tortorella2020healthcare}. La atención sanitaria cada vez es más específica a cada individuo, gracias al seguimiento remoto de su actividad diaria y al auge de la medicina de precisión, que es una nueva disciplina médica que considera que el estudio clínico de un paciente debe alcanzar niveles tan detallados como el estudio de su genoma, proteoma, condiciones medioambientales, rutina... La posición del foco de la salud en el paciente implica reestructurar el sistema sanitario alrededor del mismo, en términos informáticos esto conlleva reestructurar los sistemas médicos de modo que se recoja para cada individuo su historial clínico electrónico (HCE) con datos médicos, farmaceúticos y otros datos de interés. 
+
+
+%Preventiva y predictiva - Herramientas de big data, IA
+
+(3) La última característica es que sea preventiva y predictiva en vez de reactiva. Esto quiere que decir, que a diferencia de cómo se ha estado realizando tradicionalmente, el enfoque de la medicina debe transicionar, de ser una medicina meramente curativa posterior a la aparición de una enfermedad, a proveer salud previamente a la aparición de una enfermedad de manera que esta enfermedad sea predicha, a través del análisis del HCE del paciente y/o exhaustivos análisis de precisión, y prevenida a través de monitorearización y provisión de tratamientos preventivos \cite{ruiz2023inteligencia}. El análisis del historial clínico de un paciente genera un desafío muy complejo por las características propias de los datos que se han comentado previamente, es decir, por su complejidad, desorden y extensión, de modo que las técnicas de análisis de datos tradicionales generalmente resultan insuficientes. La prevención y la predicción se alcanza gracias al constante desarrollo de técnicas y algoritmos cada vez más sofisticos de inteligencia artificial y aprendizaje automático y herramientas cada vez más poderosas de ciencia y análisis de datos masivos.
+
+
+\subsubsection{Interoperabilidad y estandarización}
+
+Estas tres características de la Sanidad 4.0 se mantienen firmes sobre un principio informático fundamental y que está generando cada vez mayor interés internacional: la interoperabilidad estandarización de los datos.
+
+Por partes, la estandarización de los datos consiste en proveer marcos para estructurar los datos de una única manera, reduciendo el desorden y la disparidad de los HCE. Actualmente existen muchos estándares reconocidos a nivel internacional como FHIR, SNOMED, CDA...
+
+Sin embargo, la estandarización no es nada sin la interoperabilidad. Los datos y las organizaciones que los contienen deben ser interoperables entre sí. ¿Qué quiere decir esto?
+
+    - Def (IEE)\\
+    - European Interoperability Framework\\
+    - Una iniciativa OHDSI (que usa un estandar americano) - EHDEN\\
+
+    - En España, en Andalucía, en Sevilla...
+
+
+Por tanto, esta popularización de OHDSI es la que ha 
+    
+
+    
 
 
 
-%Los tiempos que corren ahora son tiempos cambiantes, Industria 4.0, el auge de las IA, la importancia de la interoprerabilidad y los estándares... 
 
-%- Propuestas a nivel europeo? OHDSI?
+
+
+
+%EIF (European Interoperability Framework),  EHDEN, 
 
 
 %- Hablar de OHDSI EN SEVILLA
 
-%    [Innodata2023]
+%  [Innodata2023]
     
 %- La selección de este tópico se debe al creciente interés por el estándar de OHDSI en Sevilla (Hospital Macarena y/o Hospital V del Rocio) y en España.
 
-%- Comentar Aplicaciones reales y actuales del estandar. Además del interés a nivel mundial (Ohdsi en Europa Y en america del norte). Ohdsi community.
+
     
 
 
 \section{Motivación}
 
 %Mi motivación personal de entrar en el mundo del %análisis de datos clínicos utilizando  esta %herramienta prometedora..
+
+%RECUERDOS PRINCIPIO DE CARRERA BIG DATA, POLITECNICO DI MILANO...
 
 
 
