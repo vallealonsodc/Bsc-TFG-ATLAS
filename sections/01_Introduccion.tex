@@ -14,7 +14,7 @@ El contexto en el que se desarrolla este TFG, que trata el análisis de datos en
 
 %%1. INDUSTRIA 4.0
 
-\subsubsection{Contexto general: Industria 4.0}
+\subsubsection{Contexto general: Industria 4.0, aparición de nuevas tecnologías}
 
 La Industria 4.0, o cuarta revolución industrial, es un concepto concebido por el gobierno alemán en noviembre de 2011 como una estrategia tecnológica para abordar el crecimiento industrial proyectado para 2020. Su uso internacional se popularizó en abril de 2013 durante la feria industrial de Hannover \textit{Hannover Messe}). Este concepto representa la cuarta fase de la industrialización, sucediendo a la mecanización, electrificación e informatización, y destaca la integración de tecnologías avanzadas \cite{lasi2014industry}..
 Se centra principalmente en la digitalización y la necesaria convergencia entre los sistemas físicos y cibernéticos, en inglés \textit{Cyber-Physical Systems (CPS)}. Esta integración se busca a través de nuevas tecnologías de la información y teleocomunicación (TICs), como el internet de las cosas (\textit{Internet of Things o IoT}), la generación y análisis de de datos masivos (\textit{Big Data \& Big Data Analytics}), la computación en la nube (\textit{Cloud Computing}) y el auge de la Inteligencia Artificial (IA) \cite{lasi2014industry}.\cite{chen2020times}\cite{tortorella2020healthcare}
@@ -22,7 +22,7 @@ Se centra principalmente en la digitalización y la necesaria convergencia entre
 
 %%2. HEALTHCARE 4.0
 
-\subsubsection{Contexto aplicado: Sanidad 4.0}
+\subsubsection{Contexto general aplicado: Sanidad 4.0, características}
 
 La integración de los principios y tecnologías de la Industria 4.0 en el sector sanitario originó el concepto de Salud o Sanidad 4.0 (del inglés, \textit{Healthcare 4.0})\cite{tortorella2020healthcare}\cite{tortorella2021impacts}.  %
 En este contexto, este nuevo término se presenta como un complejo desafío  destinado a abordar los nuevos escenarios generados por la creciente demanda de dispositivos y sistemas médicos más eficaces y alineados con las nuevas TICs y los avances ininterrumpidos en las ciencias como la biotecnología y la ingeniería genética. \cite{martin2021ehealth}. La Sanidad 4.0 origina un nuevo ecosistema interseccional del que destacan a lo largo del TFG  tres  características principales: (1) la provisión continua de cuidado sanitario, (2) la orientación de la medicina hacia el paciente y (3) la prevención y predicción de enfermedades.
@@ -33,7 +33,7 @@ En este contexto, este nuevo término se presenta como un complejo desafío  des
 
 %Patient-centred - Modelos de datos más amplios. Medicina de precisión.
 
-(2) La orientación de la medicina hacia el paciente se refiere a la priorización del paciente como objetivo central de la provisión de salud  \cite{tortorella2020healthcare}. La atención sanitaria cada vez es más específica a cada individuo, gracias al seguimiento remoto de su actividad diaria y al auge de la medicina de precisión, que es una nueva disciplina médica que considera que el estudio clínico de un paciente debe alcanzar niveles tan detallados como el estudio de su genoma, proteoma, condiciones medioambientales, rutina... La posición del foco de la salud en el paciente implica reestructurar el sistema sanitario alrededor del mismo, en términos informáticos esto conlleva reestructurar los sistemas médicos de modo que se recoja para cada individuo su historial clínico electrónico (HCE) con datos médicos, farmaceúticos y otros datos de interés. 
+(2) La orientación de la medicina hacia el paciente se refiere a la priorización del paciente como objetivo central de la provisión de salud  \cite{tortorella2020healthcare}. La atención sanitaria cada vez es más específica a cada individuo, gracias al seguimiento remoto de su actividad diaria y al auge de la medicina de precisión, que es una nueva disciplina médica que considera que el estudio clínico de un paciente debe alcanzar niveles tan detallados como el estudio de su genoma, proteoma, condiciones medioambientales, rutina \cite{ruiz2023inteligencia}... La posición del foco de la salud en el paciente, fomentado por la Unión Europea,  implica reestructurar el sistema sanitario alrededor del mismo, pues debe ser el paciente el cliente final, juez y recibidor de todos los servicios y aplicaciones de la salud digital \cite{ntafi2022legal} \cite{katehakis2019framework}. En términos informáticos esto conlleva reestructurar los sistemas médicos de modo que se recoja de manera central para cada individuo su historial clínico electrónico (HCE) completo, que incluya tanto datos médicos, como farmaceúticos y otros datos de interés. 
 
 
 %Preventiva y predictiva - Herramientas de big data, IA
@@ -41,32 +41,19 @@ En este contexto, este nuevo término se presenta como un complejo desafío  des
 (3) La última característica es que sea preventiva y predictiva en vez de reactiva. Esto quiere que decir, que a diferencia de cómo se ha estado realizando tradicionalmente, el enfoque de la medicina debe transicionar, de ser una medicina meramente curativa posterior a la aparición de una enfermedad, a proveer salud previamente a la aparición de una enfermedad de manera que esta enfermedad sea predicha, a través del análisis del HCE del paciente y/o exhaustivos análisis de precisión, y prevenida a través de monitorearización y provisión de tratamientos preventivos \cite{ruiz2023inteligencia}. El análisis del historial clínico de un paciente genera un desafío muy complejo por las características propias de los datos que se han comentado previamente, es decir, por su complejidad, desorden y extensión, de modo que las técnicas de análisis de datos tradicionales generalmente resultan insuficientes. La prevención y la predicción se alcanza gracias al constante desarrollo de técnicas y algoritmos cada vez más sofisticos de inteligencia artificial y aprendizaje automático y herramientas cada vez más poderosas de ciencia y análisis de datos masivos.
 
 
-\subsubsection{Interoperabilidad y estandarización}
+\subsubsection{Pilares fundamentales: Interoperabilidad y estandarización a nivel internacional y europeo}
 
 Estas tres características de la Sanidad 4.0 se mantienen firmes sobre un principio fundamental de creciente interés internacional: (a) la estandarización y (b) interoperabilidad de los sistemas médicos. Ambos conceptos están relacionados entre sí mediante una relación causa-consecuencia, según el Institute of Electrical and Electronics Engineers (IEEE, 2013), "la interoperabilidad se hace posible mediante la implementación de estándares" \cite{berryman2013data}.
 
-(a) La implementación de estándares o estandarización consiste principalmente en establecer acuerdos entre las grandes organizaciones de la salud para definir marcos específicos a través de los que estructurar los registros clínicos electrónicos de manera única, reduciendo el desorden y la disparidad de los datos y permitiendo el intercambio de mensajes entre sistemas pertenecientes a distintas organizaciones. Actualmente existen muchos estándares reconocidos internacionalmente, tales como HL7 (Health Level Seven), DICOM (Digital Imaging and Communications in Medicine), SNOMED CT (Systematized Nomenclature of Medicine - Clinical Terms) o IHE (Integrating the Healthcare Enterprise). Con los estándares nace también un concepto importante: el código abierto o \textit{Open Source}. Sin ir más lejos, HL7, la mayor de las organizaciones anteriores comenzó ofreciendo sus servicios de infraestructura de datos y mensajerías de manera privada hasta 2012 cuando se decidió a promover el código abierto liberando la mayor parte de su propiedad intelectual para que pudiera ser accesible de forma gratuita, lo que potenció la adopción de estándares y la interoperabilidad entre las organizaciones sanitarias \cite{berryman2013data},
+(a) La implementación de estándares o estandarización consiste principalmente en establecer acuerdos entre las grandes organizaciones de la salud para definir marcos específicos a través de los que estructurar los registros clínicos electrónicos de manera única, reduciendo el desorden y la disparidad de los datos y permitiendo el intercambio de mensajes entre sistemas pertenecientes a distintas organizaciones. La estandarización es un requisito fundamental para alcanzar la interoperabilidad \cite{katehakis2019framework}. Actualmente existen muchos estándares reconocidos internacionalmente, tales como HL7 (Health Level Seven), DICOM (Digital Imaging and Communications in Medicine), SNOMED CT (Systematized Nomenclature of Medicine - Clinical Terms) o IHE (Integrating the Healthcare Enterprise). Con los estándares nace también un concepto importante: el código abierto o \textit{Open Source}. Sin ir más lejos, HL7, la mayor de las organizaciones anteriores comenzó ofreciendo sus servicios de infraestructura de datos y mensajerías de manera privada hasta 2012 cuando se decidió a promover el código abierto liberando la mayor parte de su propiedad intelectual para que pudiera ser accesible de forma gratuita, lo que potenció la adopción de estándares y la interoperabilidad entre las organizaciones sanitarias \cite{berryman2013data}.
 
-(b) Gracias a la popularización de los estándares médicos se está desarrollando cada vez más y mejor la interoperabilidad entre los diferentes sistemas, siendo este es el objetivo final. El IEEE lo definió en 2013 como "la habilidad de los sistemas de intercambiar información y utilizar la información intercambiada de forma efectiva" \cite{berryman2013data}. En 2017 la Unión Europea adoptó el Marco de Interoperabilidad Europea (\textit{European Interoperability Framework, EIF}) a través del cual ofrecer recomendaciones, modelos y guianza a fin de mejorar la calidad de los servicios públicos europeos  alegando que "la falta de interoperabilidad es el mayor obstáculo para progresar" \cite{kouroubali2019new}. También actualizaron la definición de interoperabilidad como "la habilidad de las organizaciones de interactuar hacia objetivos mutamente beneficiosos, involucrando el intercambio de información y conocimiento entre dichas organizaciones a través de los procesos empresariales que soportan, es decir, del intercambio de información entre sus sistemas de información TIC".
+(b) Gracias a la popularización de los estándares médicos se está desarrollando cada vez más y mejor la interoperabilidad entre los diferentes sistemas, siendo este es el objetivo final de la revolución industrial, tecnológica y sanitaria actual. A principios de siglo la Comisión Europea identificó la necesidad de interoperabilidad entre las administraciones públicas y se comenzó a desarrollar programas para respaldarla y promoverla \cite{CEU1999ida}. En 2010 se adoptó el primer Marco Europeo de Interoperabilidad (\textit{European Interoperability Framework, EIF}) que junto a los programas Soluciones de interoperabilidad para las administraciones públicas europeas (ISA y ISA\textsuperscript{2}) han asentado las bases para las estrategias actuales. En 2013 El IEEE definió el concepto de interoperabilidad en como "la habilidad de los sistemas de intercambiar información y utilizar dicha información intercambiada de forma efectiva" \cite{berryman2013data} y en 2017 la Unión Europea adoptó el nuevo Marco de Interoperabilidad Europea \textit{(new EIF)}  a través del cual ofrecer recomendaciones, modelos y guianza a fin de mejorar la calidad de los servicios públicos europeos alegando que "la falta de interoperabilidad es el mayor obstáculo para progresar" \cite{kouroubali2019new}. También, en la Comisión Europea del mismo año, se actualizó la definición de interoperabilidad como "la habilidad de las organizaciones de interactuar hacia objetivos mutamente beneficiosos, involucrando el intercambio de información y conocimiento entre dichas organizaciones a través de los procesos empresariales que soportan, es decir, del intercambio de información entre sus sistemas de información TIC" \cite{katehakis2019framework}\cite{CEU2017eif} \cite{casiano2022towards}.
 
+\subsubsection{Iniciativas interoperables a nivel europeo: El camino hacia OHDSI}
 
+En el camino hacia la interoperabilidad en el ámbito sanitario, en noviembre de 2018 se lanzó la Red Europea de Datos y Evidencia en Salud (\textit{European Health Data \& Evidence Network, EHDEN}) con el objetivo de \"abordar los desafíos actuales en la generación de conocimientos y evidencia a partir de datos clínicos del mundo real a escala, para ayudar a los pacientes, médicos, pagadores, reguladores, gobiernos y la industria a comprender el bienestar, las enfermedades, los tratamientos, los resultados y Nuevas terapias y dispositivos". \cite{ehden}. En marzo de 2020 EHDEN comenzó a colaborar con la organización OHDSI (\textit{Observational Health Data Sciences and Informatics}) \cite{ohdsi}, de gran popularidad en el continente americano, para realizar estudios sobre el COVID-19 hasta la actualidad. Apartir de entonces la relación entre ambas entidades se ha estrechado enormente, adquiriendo OHDSI mayor popularidad europea y EHDEN numerosos beneficios por parte de su colaboración, de tal manera que el Catálogo de socios de datos del Portal EHDEN debutó en el Simposio Europeo de OHDSI en junio de 2022. 
 
-  Ç
-    - Una iniciativa OHDSI (que usa un estandar americano) - EHDEN\\
-
-    - En España, en Andalucía, en Sevilla...
-
-
-Por tanto, esta popularización de OHDSI es la que ha 
-    
-
-    
-
-
-
-
-
-
+Actualmente la presencia de OHDSI en europa es de un interés cada vez mayor y, por ende, también está en auge a nivel estatal \cite{ohdsiSpain}. España es uno de los nodos de colaboración con OHDSI más grandes de europa, y muchas organizaciones a lo largo del territorio español ya están colaborando con sus estándares como la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) o Quirónsalud entre otros. En Sevilla, la colaboración con OHDSI la llevan a cabo los hospitales universitarios Virgen Macarena y Virgen del Rocío, siendo este último sede del estudio práctico que ha acompañado a este TFG.
 
 
 %- Hablar de OHDSI EN SEVILLA
@@ -74,9 +61,6 @@ Por tanto, esta popularización de OHDSI es la que ha
 %  [Innodata2023]
     
 %- La selección de este tópico se debe al creciente interés por el estándar de OHDSI en Sevilla (Hospital Macarena y/o Hospital V del Rocio) y en España.
-
-
-    
 
 
 \section{Motivación}
