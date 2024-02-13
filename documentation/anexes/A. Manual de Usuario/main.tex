@@ -1,0 +1,114 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[spanish]{babel}
+\usepackage[numbers]{natbib}
+
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xcolor}
+
+\title{Manual de Usuario de ATLAS}
+\author{Maria del Valle Alonso de Caso Ortiz}
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+%%--------------------------------------------------------
+
+\section{Introducción a ATLAS.}
+
+ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente. 
+\\
+\\
+ATLAS es una plataforma de análisis de ciencia abierta que se puede instalar localmente dentro de su institución para realizar análisis en una o varias bases de datos observacionales que se han estandarizado al Modelo de Datos Común OMOP V5 y puede facilitar el intercambio de diseños de análisis con cualquier otra organización dentro de la comunidad OHDSI que haya adoptado los mismos estándares y herramientas de ciencia abierta \cite{OHDSIAtlasWiki}
+
+
+%%-------------------------------------------------------
+
+\section{Despligue de la herramienta.}
+
+ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no necesitan ninguna instalación local hasta la implementación local más pura y compleja. En este manual de usuario se presentan todas las formas de implementar ATLAS de menor a mayor complejidad.
+
+\subsection{ATLAS demo}
+
+\textcolor{red}{- Versión demo disponible públicamente, online}
+
+
+
+
+
+
+
+
+Frente a este despliegue tan sencillo pero a la vez tan limitado se encuentra la opción de desplegar la herramienta de manera local, aunque desplegar toda la pila de herramientas de OHDSI, incluyendo ATLAS y la Biblioteca de Métodos, en una organización es una tarea desalentadora. 
+\\
+\\
+Hay muchos componentes con dependencias que deben ser considerados y configuraciones que deben ser establecidas. Por esta razón, dos iniciativas han desarrollado estrategias integradas de implementación que permiten instalar toda la pila como un paquete, utilizando algunas formas de virtualización: Broadsea \ref{cap:AtlasBroadsea} y Amazon Web Services (AWS) \ref{cap:AtlasAWS}. \cite{TheBookOfOhdsi}
+
+\subsection{ATLAS docker - Broadsea}\label{cap:AtlasBroadsea}
+
+Broadsea utiliza la tecnología de contenedor Docker. Las herramientas OHDSI se empaquetan junto con las dependencias en un único archivo binario portátil llamado una Imagen Docker. Esta imagen puede luego ser ejecutada en un servicio de motor Docker, creando una máquina virtual con todo el software instalado y listo para ejecutarse. Los motores Docker están disponibles para la mayoría de los sistemas operativos, incluyendo Microsoft Windows, MacOS y Linux.  
+\\
+\\
+La imagen Docker de Broadsea contiene las principales herramientas de OHDSI, incluyendo la Biblioteca de Métodos y ATLAS. \cite{TheBookOfOhdsi}
+\\
+\\
+\textcolor{red}{- Versión privada con bd Eunomia usando docker}
+
+
+\textcolor{red}{http://127.0.0.1/}
+\textcolor{red}{https://github.com/OHDSI/Broadsea-Atlasdb}
+
+\textcolor{red}{https://forums.ohdsi.org/t/question-about-broadsea-default-database/18431}
+
+
+\subsection{ATLAS AWS}\label{cap:AtlasAWS}
+
+\textcolor{red}{https://github.com/OHDSI/OHDSIonAWS?tab=readme-ov-file}
+
+\textcolor{red}{- OHDSI-in-a-box versión AWS}
+
+\textcolor{red}{- OHDSIonAWS}
+
+
+\newpage
+\subsection{ATLAS local }
+
+La instalación local de ATLAS es la más compleja de todas porque requiere instalar todo el entorno de variable y configuraciones del sistema en el ordenador personal de forma manual. No obstante todo este proceso está correctamente documentado en las wikis de github \cite{AtlasSetup} y en el curso de EHDEN Academy \cite{EHDENAcademy} ''Infraestructure''. Para realizar la instalación de ATLAS localmente debemos seguir los siguientes pasos:
+
+\subsubsection{Instalación de la WebAPI}
+
+\subsubsection{Instalación de ACHILLES}
+
+\subsubsection{Instalación de NodeJS}
+
+
+
+
+
+%------------------------------------------------------
+\newpage
+\section{Funcionamiento de la herramienta.}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{sample}
+
+\end{document}
