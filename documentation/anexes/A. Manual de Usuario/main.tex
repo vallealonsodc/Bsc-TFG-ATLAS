@@ -30,9 +30,8 @@
 
 \section{Introducción a ATLAS.}
 
-ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente. 
-\\
-\\
+ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente. \\
+
 ATLAS es una plataforma de análisis de ciencia abierta que se puede instalar localmente dentro de su institución para realizar análisis en una o varias bases de datos observacionales que se han estandarizado al Modelo de Datos Común OMOP V5 y puede facilitar el intercambio de diseños de análisis con cualquier otra organización dentro de la comunidad OHDSI que haya adoptado los mismos estándares y herramientas de ciencia abierta \cite{OHDSIAtlasWiki}
 
 
@@ -53,28 +52,36 @@ ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no
 
 
 
-Frente a este despliegue tan sencillo pero a la vez tan limitado se encuentra la opción de desplegar la herramienta de manera local, aunque desplegar toda la pila de herramientas de OHDSI, incluyendo ATLAS y la Biblioteca de Métodos, en una organización es una tarea desalentadora. 
-\\
-\\
+Frente a este despliegue tan sencillo pero a la vez tan limitado se encuentra la opción de desplegar la herramienta de manera local, aunque desplegar toda la pila de herramientas de OHDSI, incluyendo ATLAS y la Biblioteca de Métodos, en una organización es una tarea desalentadora. \\
+
 Hay muchos componentes con dependencias que deben ser considerados y configuraciones que deben ser establecidas. Por esta razón, dos iniciativas han desarrollado estrategias integradas de implementación que permiten instalar toda la pila como un paquete, utilizando algunas formas de virtualización: Broadsea \ref{cap:AtlasBroadsea} y Amazon Web Services (AWS) \ref{cap:AtlasAWS}. \cite{TheBookOfOhdsi}
 
+\newpage
 \subsection{ATLAS docker - Broadsea}\label{cap:AtlasBroadsea}
 
-Broadsea utiliza la tecnología de contenedor Docker. Las herramientas OHDSI se empaquetan junto con las dependencias en un único archivo binario portátil llamado una Imagen Docker. Esta imagen puede luego ser ejecutada en un servicio de motor Docker, creando una máquina virtual con todo el software instalado y listo para ejecutarse. Los motores Docker están disponibles para la mayoría de los sistemas operativos, incluyendo Microsoft Windows, MacOS y Linux.  
-\\
-\\
-La imagen Docker de Broadsea contiene las principales herramientas de OHDSI, incluyendo la Biblioteca de Métodos y ATLAS. \cite{TheBookOfOhdsi}
-\\
-\\
-\textcolor{red}{- Versión privada con bd Eunomia usando docker}
+Broadsea utiliza la tecnología de contenedor Docker. Las herramientas OHDSI se empaquetan junto con las dependencias en un único archivo binario portátil llamado una Imagen Docker. Esta imagen puede luego ser ejecutada en un servicio de motor Docker, creando una máquina virtual con todo el software instalado y listo para ejecutarse. Los motores Docker están disponibles para la mayoría de los sistemas operativos, incluyendo Microsoft Windows, MacOS y Linux.  La imagen Docker de Broadsea contiene las principales herramientas de OHDSI, incluyendo la Biblioteca de Métodos y ATLAS. \cite{TheBookOfOhdsi} \\
+
+Broadsea es un proyecto basado en Docker que permite desplegar de manera consistente aplicaciones web de OHDSI (por ejemplo, Atlas y RStudio) junto con las dependencias de base de datos y redes necesarias para ejecutar esas herramientas. Broadsea ha permitido a los investigadores experimentar con herramientas de OHDSI sin necesidad de tener una experiencia técnica significativa o incurrir en gastos elevados. Debido al enfoque basado en Docker, la configuración es consistente, independientemente del sistema operativo o hardware.  \cite{Broadsea3.0}
+
+\subsubsection{Despliegue}
+
+El despliegue de ATLAS en Docker está muy bien documentado en el  \href{https://github.com/OHDSI/Broadsea}{repositorio de github} de Broadsea. Igualmente, en este manual detallaremos nuevamente los pasos para la configuración y despliegue de la herramienta.\\
+
+1. En primer lugar, hay que descargar e instalar Docker. Lo más sencillo es seguir las instrucciones de la \href{https://docs.docker.com/engine/install/}{página web oficial} para la descarga y la configuración por defecto para la instalación. \\
+
+2. 
 
 
-\textcolor{red}{http://127.0.0.1/}
-\textcolor{red}{https://github.com/OHDSI/Broadsea-Atlasdb}
-
-\textcolor{red}{https://forums.ohdsi.org/t/question-about-broadsea-default-database/18431}
 
 
+
+
+
+
+
+
+%%---------------------------------------------------
+\newpage
 \subsection{ATLAS AWS}\label{cap:AtlasAWS}
 
 \textcolor{red}{https://github.com/OHDSI/OHDSIonAWS?tab=readme-ov-file}
@@ -84,7 +91,6 @@ La imagen Docker de Broadsea contiene las principales herramientas de OHDSI, inc
 \textcolor{red}{- OHDSIonAWS}
 
 
-\newpage
 \subsection{ATLAS local }
 
 La instalación local de ATLAS es la más compleja de todas porque requiere instalar todo el entorno de variable y configuraciones del sistema en el ordenador personal de forma manual. No obstante todo este proceso está correctamente documentado en las wikis de github \cite{AtlasSetup} y en el curso de EHDEN Academy \cite{EHDENAcademy} ''Infraestructure''. Para realizar la instalación de ATLAS localmente debemos seguir los siguientes pasos:
