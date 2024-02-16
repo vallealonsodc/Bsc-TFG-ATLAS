@@ -24,6 +24,7 @@
 
 \title{Manual de Usuario de ATLAS}
 \author{Maria del Valle Alonso de Caso Ortiz}
+%%Empezado el 12 de febrero de 2024
 
 \begin{document}
 \maketitle
@@ -33,21 +34,29 @@
 %\end{abstract}
 
 %%--------------------------------------------------------
+%% 1. INTRO
+%%--------------------------------------------------------
 
 \section{Introducción a ATLAS.}
 
-ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente. \\
+ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente.
 
 ATLAS es una plataforma de análisis de ciencia abierta que se puede instalar localmente dentro de su institución para realizar análisis en una o varias bases de datos observacionales que se han estandarizado al Modelo de Datos Común OMOP V5 y puede facilitar el intercambio de diseños de análisis con cualquier otra organización dentro de la comunidad OHDSI que haya adoptado los mismos estándares y herramientas de ciencia abierta \cite{OHDSIAtlasWiki}
 
 
-%%-------------------------------------------------------
+%%---------------------------------------------------------------
+%% 2. DESPLIEGUE
+%%-------------------------------------------------------------------
 
 \section{Despligue de la herramienta.}
 
-ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no necesitan ninguna instalación local hasta la implementación local más pura y compleja. En este manual de usuario se presentan todas las formas de implementar ATLAS de menor a mayor complejidad.
+ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no necesitan ninguna instalación local hasta la implementación local más pura y compleja. En este manual de usuario se presentan todas las formas de implementar ATLAS de menor a mayor complejidad: ATLAS demo \ref{cap:ATLASdemo}, ATLAS Broadsea [\ref{cap:AtlasBroadsea}], ATLAS AWS [\ref{cap:AtlasAWS}] y ATLAS local [\ref{cap:ATLASlocal}]
 
-\subsection{ATLAS demo}
+%%--------------------------------------------------------------
+%% 2.1 ATLAS DEMO
+%%--------------------------------------------------------------
+
+\subsection{ATLAS demo} \label{cap:ATLASdemo}
 
 ATLAS demo es una instanciación, disponible públicamente online de forma gratuita, que permite acceder a una versión demo de la herramienta. Es la forma más fácil de tener un primer contacto con la herramienta, pues solo es necesario acceder a través del  \href{https://atlas-demo.ohdsi.org/}{link} que nos facilita la página web oficial de OHDSI, desde la pestaña \href{https://atlas-demo.ohdsi.org/}{software tools}. \\
 
@@ -76,12 +85,16 @@ Frente a este despliegue online, sin necesidad de descargar ni instalar ningún 
 
 Sin embargo, esta instalación puede llegar a ser bastante compleja puesto que hay muchos componentes con dependencias que deben ser considerados y configuraciones que deben ser establecidas. Por esta razón, dos iniciativas han desarrollado estrategias integradas de implementación que permiten instalar toda la pila como un paquete, utilizando algunas formas de virtualización: Broadsea \ref{cap:AtlasBroadsea} y Amazon Web Services (AWS) \ref{cap:AtlasAWS}. \cite{TheBookOfOhdsi}
 
-\newpage
+%%----------------------------------------------------------------
+%% 2.2 ATLAS Docker
+%%--------------------------------------------------------------
+
 \subsection{ATLAS docker - Broadsea}\label{cap:AtlasBroadsea}
 
 Broadsea es un proyecto basado en Docker que permite desplegar de manera consistente aplicaciones web de OHDSI (Atlas, Ares y Hades) junto con las dependencias de base de datos y redes necesarias para ejecutar esas herramientas. Broadsea ha permitido a los investigadores experimentar con herramientas de OHDSI sin necesidad de tener una experiencia técnica significativa o incurrir en gastos elevados. Debido al enfoque basado en Docker, la configuración es consistente, independientemente del sistema operativo o hardware.  \cite{Broadsea3.0}
 
-\subsubsection{Despliegue}
+%-------------------------------------------------------------
+\subsubsection{Despliegue de Docker}
 
 El despliegue de ATLAS en Docker es muy sencillo y está bien documentado en el  \href{https://github.com/OHDSI/Broadsea}{repositorio de github} de Broadsea. De hecho, la propia organización considera Broadsea la manera más sencilla de instalar (y actualizar) Docker. Igualmente, en este manual detallaremos nuevamente los pasos para la configuración y despliegue de la herramienta.\\
 
@@ -112,27 +125,123 @@ El despliegue de ATLAS en Docker es muy sencillo y está bien documentado en el 
     docker compose pull && docker-compose --profile default up -d
 \end{lstlisting}
 
-    \item Para acceder a Broadsea basta con introducir la dirección IP: 127.0.0.1 en nuestro buscador web (Chrome recomendado).
+\end{enumerate}
+
+%---------------------------------------------------------------
+\textbf{Comprobación de despliegue correcto} 
+
+Podemos comprobar que se ha instalado correctamente el contenedor de Broadsea en nuestro ordenador de distintas formas, así como comprobar su correcto despliegue y ejecución e instalación de parámetros de configuración. En esta sección vamos a abordar todos estos puntos.
+
+\begin{enumerate} 
+
+    \item La forma más sencilla de interactuar con el contenedor de Broadsea es a través de Docker Desktop. Ejecutando dicho programa, en la sección \textit{"containers"} se muestran todos los contenedores que están corriendo en el equipo. En este caso, debe aparecer un multi-contenedor llamado "broadsea" que contenga seis contenedores, tal y como se muestra en la Figura \ref{fig:dockerDesktop}.
+    
+    Mediante el panel de control de Docker se puede iniciar, pausar o detener cada contenedor (o todos a la vez) fácilmente y en cualquier momento. Por esto se dice que Broadsea es \textit{a-la-carte}.
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dockerDesktop.png}
+    \caption{Captura de pantalla del contenedor Broadsea en Docker Desktop}
+    \label{fig:dockerDesktop}
+\end{figure}
+
+    \item Otra forma de comprobar que Docker está ejecutando el contenedor correctamente en nuestro dispositivo es mediante la terminal, a través del comando ''docker ps'', que muestra un listado de todos los contenedores que se están ejecutando. De esta forma deberían mostrarse los seis contenedores pertenecientes a broadsea, tal y como se muestra en la Figura \ref{fig:dockerCMD}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dockerCMD.png}
+    \caption{Captura de pantalla del comando ''docker ps'' en la terminal.}
+    \label{fig:dockerCMD}
+\end{figure}
+    
+    \item Por otro lado, podemos comprobar los parámetros y configuraciones relevantes de los contenedores instalados en los archivos "docker-compose" y ".env" que se encuentran en la carpeta local del repositorio clonado de github de Broadsea, como se muestra en la Figura \ref{fig:envFile}
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/envFile.png}
+    \caption{Captura de pantalla del archivo .env del repositorio Broadsea.}
+    \label{fig:envFile}
+\end{figure}
+
+    \item Por último, para acceder a los servicios de Broadsea hay que abrir en nuestro navegador web (Chrome recomendado) el servidor en el que se alojan los servicios. Por defecto, Broadsea viene configurado para alojarse en el localhost (ya sea en el puerto 0.0.0.0 o 127.0.0.1). Podemos comprobar el puerto exacto revisando la configuración según las intrucciones del punto anterior.
+
+    En este caso, el servidor de Broadsea se aloja en la dirección 127.0.0.1, tal y como se muestra en la Figura \ref{fig:broadseaCap}. Es interesante notar que Broadsea permite el acceso interactivo a la herramienta Atlas, que es la que nos interesa en este caso, pero también a Ares y a Hades, otras dos herramientas muy relacionadas.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{images/broadseaCap.png}
+     \caption{Captura de pantalla del servidor Broadsea ejecutado en Chrome}
+    \label{fig:broadseaCap}
+\end{figure}
+
+    La ejecución de ATLAS en Broadsea es similar a ATLAS demo, aunque con algunas diferencias. En primer lugar, Broadsea solo ejecuta, por defecto, una base de datos, que es la base de datos de Eunomia.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/atlasBroadseaDB.png}
+     \caption{Captura de pantalla de base de datos que utiliza ATLAS Broadsea}
+    \label{fig:atlasBroadseaDB}
+\end{figure}
+
+    Por otra parte, y en contrasto con la versión demo, ya no aparecen las entradas y estructuras que generan otros usuarios. La herramienta se presenta vacía, para ser completada solo con la información que nosotros introduzcamos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/atlasBroadseaDB.png}
+     \caption{Captura de pantalla señalando el número de entradas de definición de cohorte que almacena ATLAS Broadsea}
+    \label{fig:atlasBroadseaDB}
+\end{figure}
+    
+\end{enumerate}
+
+%--------------------------------------------------------------
+\subsection{Conexión con la base de datos de Broadsea}
+
+En ocasiones, puede resultarnos interesante acceder directamente a la base de datos de Broadsea desde el administrador local de bases de datos de nuestro equipo, en este caso PostgreSQL.
+
+Docker almacena los datos de los contenedores en \textit{''volúmenes''}. Para revisar los volúmenes que están corriendo en el equipo nuevamente tenemos dos estrategias:
+
+\begin{enumerate}
+
+    \item La forma más sencilla de interactuar con los volúmenes de Broadsea es a través de Docker Desktop. Ejecutando dicho programa, en la sección \textit{''volumes''} se muestran todos los volúmenes que está utilizando el equipo. En este caso, deben aparecer tres volúmenes, entre ellos atlasdb-postgres-data es el que nos interesa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dockerVolumes.png}
+     \caption{Captura de pantalla de panel ''volumes'' de Docker Desktop}
+    \label{fig:dockerVolumes}
+\end{figure}
+
+    \item Otra forma es a través de la terminal del sistema, ejecutando el comando ''docker volumes ls'', que devuelve un listado de los volúmenes que se están ejecutando.
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dockerVolumesCDM.png}
+     \caption{Captura de pantalla del comando ''docker volume ls'' en la terminal}
+    \label{fig:dockerVolumesCDM}
+\end{figure}
+    
+\end{enumerate}
+
+Es importante conocer los volúmenes que ejecuta Docker porque ellos contienen la información a la que queremos acceder. Para encontrar información más específica sobre la configuración del volumen y la base de datos que alberga, podemos acceder al archivo ''docker-compose.yml'' de la carpeta local del repositorio de github de Broadsea. En el archivo, buscando el nombre del volumen nos aparece toda la información relevante, tal como se muestra en la figura \ref{fig:dockerComposeDB} que necesitaremos posteriormente para realizar la conexión con la BD.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dockerComposeDB.png}
+     \caption{Captura de pantalla de la configuración del \textit{docker-compose.yml}}
+    \label{fig:dockerComposeDB}
 \end{figure}
 
 
-    
+\textbf{Deployment}
 
+Para establecer la conexión con la base de datos
 
+1. Comprobar que no haya servidores corriendo en el puerto 5432
 
-\end{enumerate}
+2. Registrar un nuevo servidor
 
-
-
-
-\textcolor{red}{-----> Conectarse a la BD de BROADSEA <-----}
-
-
-
+3. Comprobacion adicional con RStudio
 
 
 
@@ -140,7 +249,21 @@ El despliegue de ATLAS en Docker es muy sencillo y está bien documentado en el 
 
 
 
-%%---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+%%------------------------------------------------------------------
+%% 2.3 ATLAS AWS
+%%-------------------------------------------------------------------
+
 \newpage
 \subsection{ATLAS AWS}\label{cap:AtlasAWS}
 
@@ -150,8 +273,11 @@ El despliegue de ATLAS en Docker es muy sencillo y está bien documentado en el 
 
 \textcolor{red}{- OHDSIonAWS}
 
+%%------------------------------------------------------------------
+%% 2.4 ATLAS local
+%%-------------------------------------------------------------------
 
-\subsection{ATLAS local }
+\subsection{ATLAS local} \label{cap:ATLASlocal}
 
 La instalación local de ATLAS es la más compleja de todas porque requiere instalar todo el entorno de variable y configuraciones del sistema en el ordenador personal de forma manual. No obstante todo este proceso está correctamente documentado en las wikis de github \cite{AtlasSetup} y en el curso de EHDEN Academy \cite{EHDENAcademy} ''Infraestructure''. Para realizar la instalación de ATLAS localmente debemos seguir los siguientes pasos:
 
@@ -162,7 +288,10 @@ La instalación local de ATLAS es la más compleja de todas porque requiere inst
 \end{enumerate}
 
 
-%------------------------------------------------------
+%%------------------------------------------------------
+%% 3. FUNCIONAMIENTO
+%%------------------------------------------------------
+
 \newpage
 \section{Funcionamiento de la herramienta.}
 
