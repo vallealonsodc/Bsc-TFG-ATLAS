@@ -14,7 +14,7 @@ downloadJdbcDrivers("postgresql",
 
 #Conexión con la BD
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = "postgresql", user = "postgres",
-                                                                password = "postgres", server = "127.0.0.1/postgres",
+                                                                password = "mypass", server = "127.0.0.1/postgres",
                                                                 port = 5432,
                                                                 pathToDriver = "C:/Users/valle/Documents/PostgreSQL")
 connection <- DatabaseConnector::connect(connectionDetails = connectionDetails)
