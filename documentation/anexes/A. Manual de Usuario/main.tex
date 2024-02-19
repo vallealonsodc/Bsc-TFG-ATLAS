@@ -20,6 +20,18 @@
 \usepackage{listings}
 \usepackage{float}
 
+\lstnewenvironment{Rcode}[1][]{
+\lstset{
+    language=R,
+    basicstyle=\small\ttfamily,
+    columns=fullflexible,
+    keepspaces=true,
+    xleftmargin=1em,
+    framexleftmargin=1em,
+    #1
+    }
+}{}
+
 
 
 \title{Manual de Usuario de ATLAS}
@@ -39,8 +51,6 @@
 
 \section{Introducción a ATLAS.}
 
-ATLAS es una aplicación de software gratuita, de código abierto y basada en web, desarrollada por la comunidad OHDSI para apoyar el diseño y la ejecución de análisis observacionales con el fin de generar evidencia del mundo real a partir de datos observacionales a nivel de paciente.
-
 ATLAS es una plataforma de análisis de ciencia abierta que se puede instalar localmente dentro de su institución para realizar análisis en una o varias bases de datos observacionales que se han estandarizado al Modelo de Datos Común OMOP V5 y puede facilitar el intercambio de diseños de análisis con cualquier otra organización dentro de la comunidad OHDSI que haya adoptado los mismos estándares y herramientas de ciencia abierta \cite{OHDSIAtlasWiki}
 
 
@@ -50,15 +60,15 @@ ATLAS es una plataforma de análisis de ciencia abierta que se puede instalar lo
 
 \section{Despligue de la herramienta.}
 
-ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no necesitan ninguna instalación local hasta la implementación local más pura y compleja. En este manual de usuario se presentan todas las formas de implementar ATLAS de menor a mayor complejidad: ATLAS demo \ref{cap:ATLASdemo}, ATLAS Broadsea [\ref{cap:AtlasBroadsea}], ATLAS AWS [\ref{cap:AtlasAWS}] y ATLAS local [\ref{cap:ATLASlocal}]
+ATLAS puede desplegarse de múltiples maneras, desde formas muy sencillas que no necesitan ninguna instalación local hasta la implementación local más pura y compleja. En este manual de usuario se presentan todas las formas de implementar ATLAS de menor a mayor complejidad: ATLAS demo [\ref{cap:ATLASdemo}], ATLAS Broadsea [\ref{cap:AtlasBroadsea}], ATLAS AWS [\ref{cap:AtlasAWS}] y ATLAS local [\ref{cap:ATLASlocal}]
 
 %%--------------------------------------------------------------
 %% 2.1 ATLAS DEMO
-%%--------------------------------------------------------------
+%%--------------------------------------------------------------    
 
 \subsection{ATLAS demo} \label{cap:ATLASdemo}
 
-ATLAS demo es una instanciación, disponible públicamente online de forma gratuita, que permite acceder a una versión demo de la herramienta. Es la forma más fácil de tener un primer contacto con la herramienta, pues solo es necesario acceder a través del  \href{https://atlas-demo.ohdsi.org/}{link} que nos facilita la página web oficial de OHDSI, desde la pestaña \href{https://atlas-demo.ohdsi.org/}{software tools}. \\
+ATLAS demo es una instanciación, disponible públicamente de forma gratuita, que permite acceder a una versión online de la herramienta. Es la forma más fácil de tener un primer contacto con la herramienta, pues solo es necesario acceder a través del  \href{https://atlas-demo.ohdsi.org/}{link} que nos facilita la página web oficial de OHDSI, desde la pestaña \href{https://atlas-demo.ohdsi.org/}{software tools}. \\
 
 \begin{figure}[H]
     \centering
@@ -66,7 +76,7 @@ ATLAS demo es una instanciación, disponible públicamente online de forma gratu
     \caption{Captura de pantalla de menú principal de ATLAS demo}
 \end{figure}
 
-A pesar de ser una demo, no debemos subestimar su potencial de operación. Esta versión online de la herramienta, ofrece soporte para cuatro bases de datos (demo) de OHDSI: ATLASPROD, Common Evidence Model, SYNPUF 1K y SYNPUF 5\%. Además, al ser una herramienta disponible online públicamente para cualquier usuario, almacena la información que deposita cada usuario tras su uso, es decir, almacena gran cantidad de ejemplos de estructuras de cohortes, caracterización... aunque hay que tener en cuenta que al ser estructuras definidas por usuarios no administradores, pueden ser incorrectas. No obstante, no deja de ser un gran repositorio público para empezar a trabajar con ATLAS. \\
+A pesar de ser una demo, no debe subestimarse su potencial de operación. Esta versión online de la herramienta, ofrece soporte para cuatro bases de datos (demo) de OHDSI: ATLASPROD, Common Evidence Model, SYNPUF 1K y SYNPUF 5\%. Además, al ser una herramienta disponible online públicamente para cualquier usuario, almacena la información que deposita cada usuario tras su uso, es decir, almacena gran cantidad de ejemplos de estructuras de cohortes, caracterización... aunque hay que tener en cuenta que al ser estructuras definidas por usuarios no administradores, pueden ser incorrectas. No obstante, no deja de ser un gran repositorio público para empezar a trabajar con ATLAS. \\
 
 \begin{figure}[H]
     \centering
@@ -183,7 +193,7 @@ Podemos comprobar que se ha instalado correctamente el contenedor de Broadsea en
     \label{fig:atlasBroadseaDB}
 \end{figure}
 
-    Por otra parte, y en contrasto con la versión demo, ya no aparecen las entradas y estructuras que generan otros usuarios. La herramienta se presenta vacía, para ser completada solo con la información que nosotros introduzcamos.
+    Por otra parte, y en contraste con la versión demo, ya no aparecen las entradas y estructuras que generan otros usuarios. La herramienta se presenta vacía, para ser completada solo con la información que nosotros introduzcamos.
 
 \begin{figure}[H]
     \centering
@@ -197,22 +207,20 @@ Podemos comprobar que se ha instalado correctamente el contenedor de Broadsea en
 %--------------------------------------------------------------
 \subsection{Conexión con la base de datos de Broadsea}
 
-En ocasiones, puede resultarnos interesante acceder directamente a la base de datos de Broadsea desde el administrador local de bases de datos de nuestro equipo, en este caso PostgreSQL.
-
-Docker almacena los datos de los contenedores en \textit{''volúmenes''}. Para revisar los volúmenes que están corriendo en el equipo nuevamente tenemos dos estrategias:
+En ocasiones, puede resultar interesante acceder a la base de datos remota de Broadsea desde un administrador de bases de datos local.  Docker almacena las bases de datos que utilizan los contenedores en lo que se denominan \textit{''volúmenes''}. Para revisar los volúmenes que están ejecutándose en el equipo se presentan dos estrategias:
 
 \begin{enumerate}
 
-    \item La forma más sencilla de interactuar con los volúmenes de Broadsea es a través de Docker Desktop. Ejecutando dicho programa, en la sección \textit{''volumes''} se muestran todos los volúmenes que está utilizando el equipo. En este caso, deben aparecer tres volúmenes, entre ellos atlasdb-postgres-data es el que nos interesa.
+    \item La forma más sencilla de interactuar con los volúmenes es a través de Docker Desktop, en la sección \textit{''volumes''}. En esta sección se muestran todos los volúmenes que está utilizando el equipo. En este caso, deben aparecer tres volúmenes, entre ellos atlasdb-postgres-data es el volumen de interés, en el que se almacena la información de la base de datos de ATLAS.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{images/dockerVolumes.png}
-     \caption{Captura de pantalla de panel ''volumes'' de Docker Desktop}
+     \caption{Captura de pantalla del panel ''volumes'' de Docker Desktop}
     \label{fig:dockerVolumes}
 \end{figure}
 
-    \item Otra forma es a través de la terminal del sistema, ejecutando el comando ''docker volumes ls'', que devuelve un listado de los volúmenes que se están ejecutando.
+    \item Otra forma de comprobar el estado de los volúmenes es a través de la terminal del sistema, ejecutando el comando \textit{''docker volumes ls''}, que devuelve un listado de los volúmenes que se están ejecutando.
     
 \begin{figure}[H]
     \centering
@@ -223,33 +231,90 @@ Docker almacena los datos de los contenedores en \textit{''volúmenes''}. Para r
     
 \end{enumerate}
 
-Es importante conocer los volúmenes que ejecuta Docker porque ellos contienen la información a la que queremos acceder. Para encontrar información más específica sobre la configuración del volumen y la base de datos que alberga, podemos acceder al archivo ''docker-compose.yml'' de la carpeta local del repositorio de github de Broadsea. En el archivo, buscando el nombre del volumen nos aparece toda la información relevante, tal como se muestra en la figura \ref{fig:dockerComposeDB} que necesitaremos posteriormente para realizar la conexión con la BD.
+Puede ser importante conocer la información de los volúmenes que ejecuta Docker para identificar comportamientos inusuales y acceder a configuración e información avanzada sobre el virtualizador. 
+
+Por otro lado, la información específica sobre la configuración de los contenedores que utiliza Docker para conformar Broadsea se encuentra en el archivo \textit{''docker-compose.yml''}, alojado en la carpeta local del repositorio de github de Broadsea. Buscando el nombre del contenedor que alberga la base de datos de ATLAS se puede acceder a toda la información relevante del mismo, tal como se muestra en la Figura \ref{fig:dockerComposeDB}. Esta información será necesaria posteriormente para realizar la conexión con la base de datos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{images/dockerComposeDB.png}
-     \caption{Captura de pantalla de la configuración del \textit{docker-compose.yml}}
+     \caption{Captura de pantalla de la configuración del archivo \textit{docker-compose.yml}}
     \label{fig:dockerComposeDB}
 \end{figure}
+
+\textbf{Requisitos para establecer la conexión}
+
+\begin{enumerate}
+
+    \item Descargar e instalar la base de datos PostgreSQL. Lo más sencillo es seguir las instrucciones de la \href{https://www.postgresql.org/download/}{página web oficial} para la descarga y seguir la configuración por defecto para la instalación.
+
+    \item Descargar e instalar una administrador de base de datos PostgreSQL. Se recomienda utilizar el administrador pgAdmin. Para ello, lo más sencillo es seguir las instrucciones de la \href{https://www.pgadmin.org/download/}{página web oficial} para la descarga y seguir la configuración por defecto para la instalación.
+    
+\end{enumerate}
 
 
 \textbf{Deployment}
 
-Para establecer la conexión con la base de datos
+Para establecer la conexión con la base de datos que utiliza Broadsea, se debe seguir las siguientes instrucciones:
 
-1. Comprobar que no haya servidores corriendo en el puerto 5432
+\begin{enumerate}
 
-2. Registrar un nuevo servidor
+    \item En primer lugar, se debe comprobar los parámetros de configuración de la base de datos. Para ello, se han detallado varias estrategias a lo largo del manual, siendo la más recomendada para esta ocasión revisar el \textit{docker-compose.yml} (Figura \ref{fig:dockerComposeDB}). Este archivo alberga la información técnica de los contendores que ejecuta Docker. En este caso, el contenedor que interesa es \textit{''broadsea-atlasdb''}.
 
-3. Comprobacion adicional con RStudio
+    En el archivo por defecto, se presenta la contraseña para acceder a la base de datos \textit{(password=mypass)} y el puerto que utiliza (\textit{port=5432}).
 
+    \item La configuración por defecto de Broadsea se solapa con la configuración local por defecto de PostgreSQL porque ambos alojan sus bases de datos en el servidor local y en el puerto 5432. Por tanto, para evitar este solapamiento se debe detener el servicio local de PostgreSQL, de forma que el puerto quede libre para albergar la base de datos de Broadsea.
 
+    Para detener el servicio local de PostgreSQL lo más sencillo es abrir la aplicación \textit{servicios} buscar el servidor de postgre y deterlo, tal y como se muestra en la Figura \ref{fig:serviciosConfig}. Así nos aseguramos de liberar el puerto para que pueda ser ocupado por la base de datos de Broadsea.
 
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/serviciosConfig.png}
+     \caption{Captura de pantalla de la aplicación de servicios.}
+    \label{fig:serviciosConfig}
+    \end{figure}
 
+    \item El último paso consiste en registrar el servidor a través del administrador de base de datos instalado en el equipo, en este caso pgAdmin. 
+    
+    Una vez que tengamos libre el puerto 5432, podemos registrar un nuevo servidor en dicho puerto que acceda a la base de datos de Broadsea. Para ello abrimos el administrador de la base de datos PostgreSQL, pgAdmin 4, y registramos un nuevo servidor. Los parámetros de configuración de este nuevo servidor se describen en el \textit{docker-compose.yml} y en la sección 3 del archivo \textit{.env}. Los parámetros fundamentales son:
 
+    \begin{lstlisting}[language=sh]
+        host = 127.0.0.1
+        port = 5432
+        user = postgres
+        password = mypass
+    \end{lstlisting}
+    
+    \item Tras registrar el servidor correctamente, debe aparecer una base de datos con cinco esquemas: ''demo\_cdm'', ''demo\_cdm\_results'', ''public'', ''webapi'', ''webapi\_security''. Para comprobar que se ha establecido una conexión correcta con la base de datos, sin pérdida de información, se puede comprobar el número de filas que recupera pgAdmin de la tabla ''person'' del esquema ''demo\_cdm'', tal y como se muestra en la Figura \ref{fig:pgAdmin}.
 
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/pgAdmin.png}
+     \caption{Captura de pantalla de pgAdmin.}
+    \label{fig:pgAdmin}
+    \end{figure}
 
+    El número de filas que recupere pgAdmin debe ser igual al número de personas que muestra ATLAS en la sección Data Sorce/Dashboard, en este caso son 2694 personas (Figura \ref{fig:DashboardEJ}
 
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/dashboardEJ.png}
+     \caption{Captura de pantalla de ATLAS Data Sources/Dashboard.}
+    \label{fig:dashboardEJ}
+    \end{figure}
+
+    \item Por último, otra forma de comprobar que la conexión es correcta y una forma alternativa de realizarla, con el fin de detectar posibles problemas durante la implementación, es ejecutar el siguiente script de código en R, que realiza la conexión con la base de datos a través de RStudio:
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{images/RStudio.png}
+     \caption{Captura de pantalla de script de RStudio.}
+    \label{fig:RStudio}
+    \end{figure}
+    
+\end{enumerate}
+
+\subsubsection{Subir base de datos local a Broadsea}
 
 
 
@@ -266,6 +331,11 @@ Para establecer la conexión con la base de datos
 
 \newpage
 \subsection{ATLAS AWS}\label{cap:AtlasAWS}
+
+Otra alternativa para la implementación de herramientas OHDSI como ATLAS en una organización es utilizar Amazon Web Services. La naturaleza gratuita y de código abierto de OHDSI significa que estas capacidades están disponibles para organizaciones de cualquier tamaño. La agilidad, escalabilidad y bajo costo de la infraestructura de AWS permiten el uso extenso y consistente de OHDSI sin una inversión de capital significativa o esfuerzos prolongados de TI. La gestión detallada de capacidad de Amazon Redshift Serverless y Amazon Aurora Serverless permite ejecutar cargas de trabajo de investigación variables e impredecibles a bajo costo \cite{OHDSIAWS}. 
+
+Por tanto, aunque el costo es bajo, es importante saber que esta alternativa no es gratuita.
+
 
 \textcolor{red}{https://github.com/OHDSI/OHDSIonAWS?tab=readme-ov-file}
 
