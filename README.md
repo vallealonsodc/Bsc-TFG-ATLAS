@@ -15,7 +15,7 @@ El repositorio se divide en dos carpetas:
 
 ### Proyectos asociados al repositorio
 
-El repositorio se asocia a un proyecto de github para controlar el desarrollo del documento del TFG.
+El repositorio se asocia a un [proyecto de github](https://github.com/users/vallealonsodc/projects/2) para controlar el desarrollo del documento del TFG.
 
 ### Repositorios OHDSI asociados
 
