@@ -1,4 +1,9 @@
 # Trabajo Fin de Grado y Prácticas en Empresa
+
+**Prácticas**: Instalación y despliegue de la herramienta ATLAS 
+
+**Trabajo Fin de Grado**: Uso de la herramienta ATLAS
+
 ## Instalación, despliegue y uso de herramienta ATLAS 
 
 Este repositorio contiene toda la información generada y utilizada para la investigación sobre la herramienta ATLAS de OHDSI, utilizada para el desarrollo del Trabajo Fin de Grado y la prácticas en el Hospital Universitario Virgen del Rocío.
