@@ -1,8 +1,12 @@
 # Trabajo Fin de Grado y Prácticas en Empresa
 
-**Prácticas**: Instalación y despliegue de la herramienta ATLAS 
+**Prácticas**: Instalación y despliegue de la herramienta ATLAS. 
 
-**Trabajo Fin de Grado**: Uso de la herramienta ATLAS
+  - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
+
+**Trabajo Fin de Grado**: Uso de la herramienta ATLAS. 
+
+ - ver doc online: https://es.overleaf.com/read/bnkzgjxjqmqz#ea49d0
 
 Este repositorio contiene toda la información generada y utilizada para la investigación sobre la herramienta ATLAS de OHDSI, utilizada para el desarrollo del Trabajo Fin de Grado y la prácticas en el Hospital Universitario Virgen del Rocío.
 
@@ -11,7 +15,11 @@ Este repositorio contiene toda la información generada y utilizada para la inve
 El repositorio se divide en dos carpetas:
 
 - **/documentation**:
-  Contiene toda la documentación escrita relevante en el desarrollo del TFG (el propio documento de TFG, los anexos...).
+  Contiene toda la documentación escrita relevante en el desarrollo del TFG (el propio documento de TFG, los anexos...). Toda la documentación está redactada en archivos Latex.
+  
+    - /documentation/thesis: Documentación relativa al documento de TFG.
+      
+    - /documentation/anexes:  Documentación relativa a los anexos desarrollados en las prácticas.
   
 - **/environment**:
   Contiene toda la información generada y utilizada para el despliegue y uso de la herramienta (archivos csv, scripts de código...).
