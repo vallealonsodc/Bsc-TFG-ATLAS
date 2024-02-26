@@ -22,7 +22,8 @@ El repositorio se asocia a un proyecto de github para controlar el desarrollo de
 - ATLAS: https://github.com/OHDSI/Atlas
 - ATLAS Broadsea: https://github.com/OHDSI/Broadsea
 - CDM: https://github.com/OHDSI/CommonDataModel
-- 
+- ETL Synthea: https://github.com/OHDSI/ETL-Synthea
+- WebAPI: https://github.com/OHDSI/WebAPI
 
 
 
