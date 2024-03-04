@@ -1,0 +1,223 @@
+2024-03-04 10:33:21 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz
+2024-03-04 10:33:22 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.gz
+2024-03-04 10:33:28 (1/8) Installing postgresql-common (1.1-r3)
+2024-03-04 10:33:28 Executing postgresql-common-1.1-r3.pre-install
+2024-03-04 10:33:28 (2/8) Installing lz4-libs (1.9.4-r1)
+2024-03-04 10:33:29 (3/8) Installing libpq (15.6-r0)
+2024-03-04 10:33:30 (4/8) Installing ncurses-terminfo-base (6.3_p20221119-r1)
+2024-03-04 10:33:30 (5/8) Installing ncurses-libs (6.3_p20221119-r1)
+2024-03-04 10:33:30 (6/8) Installing readline (8.2.0-r0)
+2024-03-04 10:33:31 (7/8) Installing zstd-libs (1.5.5-r0)
+2024-03-04 10:33:31 (8/8) Installing postgresql15-client (15.6-r0)
+2024-03-04 10:33:32 Executing busybox-1.35.0-r29.trigger
+2024-03-04 10:33:33 Executing postgresql-common-1.1-r3.trigger
+2024-03-04 10:33:33 * Setting postgresql15 as the default version
+2024-03-04 10:33:33 OK: 12 MiB in 23 packages
+2024-03-04 10:33:33 CREATE SCHEMA IF NOT EXISTS :vocab_schema;
+2024-03-04 10:33:34 CREATE SCHEMA
+2024-03-04 10:33:34 
+2024-03-04 10:33:34 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:34 DROP TABLE IF EXISTS :vocab_schema.CONCEPT;
+2024-03-04 10:33:34 psql:/tmp/scripts/omop_vocab_ddl.sql:1: NOTICE:  schema "omop_vocab" already exists, skipping
+2024-03-04 10:33:34 DROP TABLE
+2024-03-04 10:33:34 CREATE TABLE :vocab_schema.CONCEPT (
+2024-03-04 10:33:34 concept_id integer NOT NULL,
+2024-03-04 10:33:34 concept_name varchar(255) NOT NULL,
+2024-03-04 10:33:34 domain_id varchar(20) NOT NULL,
+2024-03-04 10:33:34 vocabulary_id varchar(20) NOT NULL,
+2024-03-04 10:33:34 concept_class_id varchar(20) NOT NULL,
+2024-03-04 10:33:34 standard_concept varchar(1) NULL,
+2024-03-04 10:33:34 concept_code varchar(50) NOT NULL,
+2024-03-04 10:33:34 valid_start_date date NOT NULL,
+2024-03-04 10:33:34 valid_end_date date NOT NULL,
+2024-03-04 10:33:34 invalid_reason varchar(1) NULL );
+2024-03-04 10:33:35 CREATE TABLE
+2024-03-04 10:33:35 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:35 DROP TABLE IF EXISTS :vocab_schema.VOCABULARY;
+2024-03-04 10:33:36 DROP TABLE
+2024-03-04 10:33:36 CREATE TABLE :vocab_schema.VOCABULARY (
+2024-03-04 10:33:36 vocabulary_id varchar(20) NOT NULL,
+2024-03-04 10:33:36 vocabulary_name varchar(255) NOT NULL,
+2024-03-04 10:33:36 vocabulary_reference varchar(255) NULL,
+2024-03-04 10:33:36 vocabulary_version varchar(255) NULL,
+2024-03-04 10:33:36 vocabulary_concept_id integer NOT NULL );
+2024-03-04 10:33:36 CREATE TABLE
+2024-03-04 10:33:36 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:36 DROP TABLE IF EXISTS :vocab_schema.DOMAIN;
+2024-03-04 10:33:37 DROP TABLE
+2024-03-04 10:33:37 CREATE TABLE :vocab_schema.DOMAIN (
+2024-03-04 10:33:37 domain_id varchar(20) NOT NULL,
+2024-03-04 10:33:37 domain_name varchar(255) NOT NULL,
+2024-03-04 10:33:37 domain_concept_id integer NOT NULL );
+2024-03-04 10:33:37 CREATE TABLE
+2024-03-04 10:33:37 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:37 DROP TABLE IF EXISTS :vocab_schema.CONCEPT_CLASS;
+2024-03-04 10:33:37 DROP TABLE
+2024-03-04 10:33:37 CREATE TABLE :vocab_schema.CONCEPT_CLASS (
+2024-03-04 10:33:37 concept_class_id varchar(20) NOT NULL,
+2024-03-04 10:33:37 concept_class_name varchar(255) NOT NULL,
+2024-03-04 10:33:37 concept_class_concept_id integer NOT NULL );
+2024-03-04 10:33:37 CREATE TABLE
+2024-03-04 10:33:37 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:37 DROP TABLE IF EXISTS :vocab_schema.CONCEPT_RELATIONSHIP;
+2024-03-04 10:33:37 DROP TABLE
+2024-03-04 10:33:37 CREATE TABLE :vocab_schema.CONCEPT_RELATIONSHIP (
+2024-03-04 10:33:37 concept_id_1 integer NOT NULL,
+2024-03-04 10:33:37 concept_id_2 integer NOT NULL,
+2024-03-04 10:33:37 relationship_id varchar(20) NOT NULL,
+2024-03-04 10:33:37 valid_start_date date NOT NULL,
+2024-03-04 10:33:37 valid_end_date date NOT NULL,
+2024-03-04 10:33:37 invalid_reason varchar(1) NULL );
+2024-03-04 10:33:38 CREATE TABLE
+2024-03-04 10:33:38 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:38 DROP TABLE IF EXISTS :vocab_schema.RELATIONSHIP;
+2024-03-04 10:33:38 DROP TABLE
+2024-03-04 10:33:38 CREATE TABLE :vocab_schema.RELATIONSHIP (
+2024-03-04 10:33:38 relationship_id varchar(20) NOT NULL,
+2024-03-04 10:33:38 relationship_name varchar(255) NOT NULL,
+2024-03-04 10:33:38 is_hierarchical varchar(1) NOT NULL,
+2024-03-04 10:33:38 defines_ancestry varchar(1) NOT NULL,
+2024-03-04 10:33:38 reverse_relationship_id varchar(20) NOT NULL,
+2024-03-04 10:33:38 relationship_concept_id integer NOT NULL );
+2024-03-04 10:33:38 CREATE TABLE
+2024-03-04 10:33:38 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:38 DROP TABLE IF EXISTS :vocab_schema.CONCEPT_SYNONYM;
+2024-03-04 10:33:38 DROP TABLE
+2024-03-04 10:33:38 CREATE TABLE :vocab_schema.CONCEPT_SYNONYM (
+2024-03-04 10:33:38 concept_id integer NOT NULL,
+2024-03-04 10:33:38 concept_synonym_name varchar(1000) NOT NULL,
+2024-03-04 10:33:38 language_concept_id integer NOT NULL );
+2024-03-04 10:33:39 CREATE TABLE
+2024-03-04 10:33:39 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:33:39 DROP TABLE IF EXISTS :vocab_schema.CONCEPT_ANCESTOR;
+2024-03-04 10:35:20 DROP TABLE
+2024-03-04 10:35:20 CREATE TABLE :vocab_schema.CONCEPT_ANCESTOR (
+2024-03-04 10:35:20 ancestor_concept_id integer NOT NULL,
+2024-03-04 10:35:20 descendant_concept_id integer NOT NULL,
+2024-03-04 10:35:20 min_levels_of_separation integer NOT NULL,
+2024-03-04 10:35:20 max_levels_of_separation integer NOT NULL );
+2024-03-04 10:35:20 CREATE TABLE
+2024-03-04 10:35:20 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:35:20 DROP TABLE IF EXISTS :vocab_schema.SOURCE_TO_CONCEPT_MAP;
+2024-03-04 10:35:20 DROP TABLE
+2024-03-04 10:35:20 CREATE TABLE :vocab_schema.SOURCE_TO_CONCEPT_MAP (
+2024-03-04 10:35:20 source_code varchar(50) NOT NULL,
+2024-03-04 10:35:20 source_concept_id integer NOT NULL,
+2024-03-04 10:35:20 source_vocabulary_id varchar(20) NOT NULL,
+2024-03-04 10:35:20 source_code_description varchar(255) NULL,
+2024-03-04 10:35:20 target_concept_id integer NOT NULL,
+2024-03-04 10:35:20 target_vocabulary_id varchar(20) NOT NULL,
+2024-03-04 10:35:20 valid_start_date date NOT NULL,
+2024-03-04 10:35:20 valid_end_date date NOT NULL,
+2024-03-04 10:35:20 invalid_reason varchar(1) NULL );
+2024-03-04 10:35:20 CREATE TABLE
+2024-03-04 10:35:20 --HINT DISTRIBUTE ON RANDOM
+2024-03-04 10:35:20 DROP TABLE IF EXISTS :vocab_schema.DRUG_STRENGTH;
+2024-03-04 10:35:20 DROP TABLE
+2024-03-04 10:35:20 CREATE TABLE :vocab_schema.DRUG_STRENGTH (
+2024-03-04 10:35:20 drug_concept_id integer NOT NULL,
+2024-03-04 10:35:20 ingredient_concept_id integer NOT NULL,
+2024-03-04 10:35:20 amount_value NUMERIC NULL,
+2024-03-04 10:35:20 amount_unit_concept_id integer NULL,
+2024-03-04 10:35:20 numerator_value NUMERIC NULL,
+2024-03-04 10:35:20 numerator_unit_concept_id integer NULL,
+2024-03-04 10:35:20 denominator_value NUMERIC NULL,
+2024-03-04 10:35:20 denominator_unit_concept_id integer NULL,
+2024-03-04 10:35:20 box_size integer NULL,
+2024-03-04 10:35:20 valid_start_date date NOT NULL,
+2024-03-04 10:35:20 valid_end_date date NOT NULL,
+2024-03-04 10:35:20 invalid_reason varchar(1) NULL );
+2024-03-04 10:35:21 CREATE TABLE
+2024-03-04 10:35:21 Now loading:  DRUG_STRENGTH
+2024-03-04 10:36:29 COPY 2980115
+2024-03-04 10:36:29 Finished loading:  DRUG_STRENGTH
+2024-03-04 10:36:29 Now loading:  CONCEPT_SYNONYM
+2024-03-04 10:37:46 COPY 2058223
+2024-03-04 10:37:46 Finished loading:  CONCEPT_SYNONYM
+2024-03-04 10:37:46 Now loading:  CONCEPT_ANCESTOR
+2024-03-04 10:48:29 COPY 72754469
+2024-03-04 10:48:29 Finished loading:  CONCEPT_ANCESTOR
+2024-03-04 10:48:29 Now loading:  CONCEPT_CLASS
+2024-03-04 10:48:29 COPY 417
+2024-03-04 10:48:29 Finished loading:  CONCEPT_CLASS
+2024-03-04 10:48:29 Now loading:  CONCEPT_RELATIONSHIP
+2024-03-04 11:03:59 COPY 47212424
+2024-03-04 11:03:59 Finished loading:  CONCEPT_RELATIONSHIP
+2024-03-04 11:03:59 Now loading:  CONCEPT
+2024-03-04 11:09:51 COPY 5975392
+2024-03-04 11:09:51 Finished loading:  CONCEPT
+2024-03-04 11:09:51 Now loading:  DOMAIN
+2024-03-04 11:09:52 COPY 50
+2024-03-04 11:09:52 Finished loading:  DOMAIN
+2024-03-04 11:09:52 Now loading:  RELATIONSHIP
+2024-03-04 11:09:52 COPY 690
+2024-03-04 11:09:52 Finished loading:  RELATIONSHIP
+2024-03-04 11:09:52 Now loading:  VOCABULARY
+2024-03-04 11:09:52 COPY 59
+2024-03-04 11:09:52 Finished loading:  VOCABULARY
+2024-03-04 11:09:52 /**************************
+2024-03-04 11:09:52 Standardized vocabularies
+2024-03-04 11:09:52 ***************************/
+2024-03-04 11:09:52 CREATE INDEX idx_concept_concept_id  ON :vocab_schema.concept  (concept_id ASC);
+2024-03-04 11:10:28 CREATE INDEX
+2024-03-04 11:10:28 CLUSTER :vocab_schema.concept  USING idx_concept_concept_id ;
+2024-03-04 11:11:49 CLUSTER
+2024-03-04 11:11:49 CREATE INDEX idx_concept_code ON :vocab_schema.concept (concept_code ASC);
+2024-03-04 11:12:10 CREATE INDEX
+2024-03-04 11:12:10 CREATE INDEX idx_concept_vocabluary_id ON :vocab_schema.concept (vocabulary_id ASC);
+2024-03-04 11:12:15 CREATE INDEX
+2024-03-04 11:12:15 CREATE INDEX idx_concept_domain_id ON :vocab_schema.concept (domain_id ASC);
+2024-03-04 11:12:22 CREATE INDEX
+2024-03-04 11:12:22 CREATE INDEX idx_concept_class_id ON :vocab_schema.concept (concept_class_id ASC);
+2024-03-04 11:12:27 CREATE INDEX
+2024-03-04 11:12:27 CREATE INDEX idx_vocabulary_vocabulary_id  ON :vocab_schema.vocabulary  (vocabulary_id ASC);
+2024-03-04 11:12:27 CREATE INDEX
+2024-03-04 11:12:27 CLUSTER :vocab_schema.vocabulary  USING idx_vocabulary_vocabulary_id ;
+2024-03-04 11:12:27 CLUSTER
+2024-03-04 11:12:27 CREATE INDEX idx_domain_domain_id  ON :vocab_schema.domain  (domain_id ASC);
+2024-03-04 11:12:27 CREATE INDEX
+2024-03-04 11:12:27 CLUSTER :vocab_schema.domain  USING idx_domain_domain_id ;
+2024-03-04 11:12:27 CLUSTER
+2024-03-04 11:12:27 CREATE INDEX idx_concept_class_class_id  ON :vocab_schema.concept_class  (concept_class_id ASC);
+2024-03-04 11:12:27 CREATE INDEX
+2024-03-04 11:12:27 CLUSTER :vocab_schema.concept_class  USING idx_concept_class_class_id ;
+2024-03-04 11:12:27 CLUSTER
+2024-03-04 11:12:27 CREATE INDEX idx_concept_relationship_id_1  ON :vocab_schema.concept_relationship  (concept_id_1 ASC);
+2024-03-04 11:14:04 CREATE INDEX
+2024-03-04 11:14:04 CLUSTER :vocab_schema.concept_relationship  USING idx_concept_relationship_id_1 ;
+2024-03-04 11:19:18 CLUSTER
+2024-03-04 11:19:18 CREATE INDEX idx_concept_relationship_id_2 ON :vocab_schema.concept_relationship (concept_id_2 ASC);
+2024-03-04 11:20:47 CREATE INDEX
+2024-03-04 11:20:47 CREATE INDEX idx_concept_relationship_id_3 ON :vocab_schema.concept_relationship (relationship_id ASC);
+2024-03-04 11:22:54 CREATE INDEX
+2024-03-04 11:22:54 CREATE INDEX idx_relationship_rel_id  ON :vocab_schema.relationship  (relationship_id ASC);
+2024-03-04 11:22:54 CREATE INDEX
+2024-03-04 11:22:54 CLUSTER :vocab_schema.relationship  USING idx_relationship_rel_id ;
+2024-03-04 11:22:54 CLUSTER
+2024-03-04 11:22:54 CREATE INDEX idx_concept_synonym_id  ON :vocab_schema.concept_synonym  (concept_id ASC);
+2024-03-04 11:22:58 CREATE INDEX
+2024-03-04 11:22:58 CLUSTER :vocab_schema.concept_synonym  USING idx_concept_synonym_id ;
+2024-03-04 11:23:12 CLUSTER
+2024-03-04 11:23:12 CREATE INDEX idx_concept_ancestor_id_1  ON :vocab_schema.concept_ancestor  (ancestor_concept_id ASC);
+2024-03-04 11:25:25 CREATE INDEX
+2024-03-04 11:25:25 CLUSTER :vocab_schema.concept_ancestor  USING idx_concept_ancestor_id_1 ;
+2024-03-04 11:33:12 CLUSTER
+2024-03-04 11:33:12 CREATE INDEX idx_concept_ancestor_id_2 ON :vocab_schema.concept_ancestor (descendant_concept_id ASC);
+2024-03-04 11:35:29 CREATE INDEX
+2024-03-04 11:35:29 CREATE INDEX idx_source_to_concept_map_3  ON :vocab_schema.source_to_concept_map  (target_concept_id ASC);
+2024-03-04 11:35:29 CREATE INDEX
+2024-03-04 11:35:29 CLUSTER :vocab_schema.source_to_concept_map  USING idx_source_to_concept_map_3 ;
+2024-03-04 11:35:29 CLUSTER
+2024-03-04 11:35:29 CREATE INDEX idx_source_to_concept_map_1 ON :vocab_schema.source_to_concept_map (source_vocabulary_id ASC);
+2024-03-04 11:35:29 CREATE INDEX
+2024-03-04 11:35:29 CREATE INDEX idx_source_to_concept_map_2 ON :vocab_schema.source_to_concept_map (target_vocabulary_id ASC);
+2024-03-04 11:35:29 CREATE INDEX
+2024-03-04 11:35:29 CREATE INDEX idx_source_to_concept_map_c ON :vocab_schema.source_to_concept_map (source_code ASC);
+2024-03-04 11:35:29 CREATE INDEX
+2024-03-04 11:35:29 CREATE INDEX idx_drug_strength_id_1  ON :vocab_schema.drug_strength  (drug_concept_id ASC);
+2024-03-04 11:35:34 CREATE INDEX
+2024-03-04 11:35:34 CLUSTER :vocab_schema.drug_strength  USING idx_drug_strength_id_1 ;
+2024-03-04 11:35:54 CLUSTER
+2024-03-04 11:35:54 CREATE INDEX idx_drug_strength_id_2 ON :vocab_schema.drug_strength (ingredient_concept_id ASC);
+2024-03-04 11:35:56 CREATE INDEX
+2024-03-04 11:35:56 All done, shutting down. Feel free to remove container.
