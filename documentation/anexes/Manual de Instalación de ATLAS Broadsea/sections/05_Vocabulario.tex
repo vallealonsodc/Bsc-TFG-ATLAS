@@ -11,7 +11,7 @@ La configuración manual del vocabulario requiere descargrar el vocabulario dire
 
 \subsection{Requisitos previos}
 
-Para configurar el vocabulario manualmente,  se debe haber descargado el vocabulario y configurado el directorio local de Broadsea. Este procedimiento se ha seguido gracias al forum \href{https://forums.ohdsi.org/t/downloading-omop-cdm-version-5-vocabulary-data/3321/3}{Downloading OMOP cdm version 5 vocabulary data} y \href{https://forums.ohdsi.org/t/march-to-the-broadsea/20576}{March to the Broadsea}.
+Para configurar el vocabulario manualmente,  se debe haber descargado el vocabulario y configurado el directorio local de Broadsea. Este procedimiento se ha seguido gracias a los foros \href{https://forums.ohdsi.org/t/downloading-omop-cdm-version-5-vocabulary-data/3321/3}{Downloading OMOP cdm version 5 vocabulary data} y \href{https://forums.ohdsi.org/t/march-to-the-broadsea/20576}{March to the Broadsea} y el tutorial de yotutube \href{https://www.youtube.com/watch?v=FCHxAQOBptE}{Demo: Getting Vocabularies Into My OMOP CDM}.
 
 \begin{enumerate}
 
@@ -26,7 +26,7 @@ Para configurar el vocabulario manualmente,  se debe haber descargado el vocabul
 
     \item La descarga requiere registrar un usuario con un correo electrónico válido al que se enviará un link personal que permitirá la descarga de un archivo .zip con el vocabulario seleccionado. También desde ATHENA en la pestaña \code{SHOW HISTORY} muestra el estado en el que se encuentra la descarga del vocabulario y, una vez que esté listo, permite la descarga directa del zip.
 
-    \item El archivo zip que se descarga, una vez descomprimido, muestra varios archivos .csv con las tablas que conforman el Vocabulario y otros archivos CPT4 que no serán de interés. 
+    \item El archivo zip que se descarga, una vez descomprimido, muestra varios archivos .csv con las tablas que conforman el Vocabulario y otros archivos \textcolor{red}{CPT4 que no serán de interés}. 
 
       \begin{figure}[H]
         \centering
@@ -41,7 +41,7 @@ Para configurar el vocabulario manualmente,  se debe haber descargado el vocabul
 
 \subsection{Deployment}
 
-Configurar el vocabulario requiere establecer una configuración avanzada del contenedor Docke de Broadsea. Si bien, la primera vez que se inicializó el contenedor se ejecutó el perfil \code{default} ahora se va a ejecutar específicamente el perfil \code{omop-vocab-pg-load}. Esta opción se especifica en la sección \href{https://github.com/OHDSI/Broadsea?tab=readme-ov-file#omop-vocab-loading}{OMOP Vocab Loading} del repositorio de Broadsea. También ha sido de utilidad el mismo forum \href{https://forums.ohdsi.org/t/march-to-the-broadsea/20576}{March to the Broadsea}.
+Configurar el vocabulario requiere establecer una configuración avanzada del contenedor Docker de Broadsea. Si bien, la primera vez que se inicializó el contenedor se ejecutó el perfil \code{default} ahora se va a ejecutar específicamente el perfil \code{omop-vocab-pg-load}. Esta opción se especifica en la sección \href{https://github.com/OHDSI/Broadsea?tab=readme-ov-file#omop-vocab-loading}{OMOP Vocab Loading} del repositorio de Broadsea. También ha sido de utilidad el repositorio \href{https://github.com/OHDSI/WebAPI/wiki/CDM-Configuration}{CDM Configuration} y el mismo forum \href{https://forums.ohdsi.org/t/march-to-the-broadsea/20576}{March to the Broadsea}.
 
 Para acceder a la información y configuración avanzada del perfil se puede acceder al \code{docker-compose.yml} y a la sección 9 del archivo \code{.env}, aunque este caso no será necesario realizar ninguna modificación sobre los mismos.
 
@@ -61,23 +61,35 @@ Para acceder a la información y configuración avanzada del perfil se puede acc
         \label{fig:composeProfVocabLoad}
     \end{figure}
 
-    \item Durante la instalación del contenedor es muy importante tener abierto el \code{logs} de Docker. Se recomienda abrirlo desde Docker en vez de desde el \code{cmd} porque este último imprime el \code{logs} que se ha ejecutado hasta el momento en que se ejecuta el comando, no mantiene abierto el \code{logs} hasta que el contenedor se termine de inicializar. Sin embargo, Docker sí muestra el control en tiempo real del proceso. Proceso que ha durado 2h.
+    \item A partir de este momento comienza la instalación del perfil, por lo que es muy importante tener abierto el \code{logs} de Docker para poder observar que el proceso se realiza correctamente. El proceso puede durar unas horas y una vez que se finaliza, el log muestra un mensaje que advierte que el contenedor puede ser eliminado y el estado del contenedor pasa a ser ''Exited''. El resultado es la creación de un nuevo esquema en la base de datos llamado ''omop\_vocab'' con todos los archivos descargados del vocabulario. 
 
-    \item Una vez que el proceso finaliza correctamente, se imprime un mensaje en el log que advierte que el contenedor puede ser eliminado y el estado del contenedor pasa a ser \code{Exited}. A continuación se presenta una captura de pantalla de las últimas líneas de dicho log.
+    \item El último paso de la configuración es integrar este nuevo esquema a la WebAPI de Broadsea. Este último paso se puede realizar fácilmente de forma manual a través de pgAdmin, abriendo la tabla \code{source\_daimon} del esquema \code{webapi} de la bd de Broadsea.
 
- \begin{figure}[H]
+    La instalación por defecto de Broadsea adjudica la fuente del vocabulario (\code{daimon\_type=1}) al \code{demo\_cdm}, sin embargo, se debe modificar para que apunte al nuevo esquema \code{omop\_vocab} que se ha instalado. Esta modificación se puede realizar directamente sobre la tabla que devuelve la siguiente consulta.
+
+    \begin{lstlisting}[language=sql]
+    SELECT * FROM webapi.source_daimon
+    ORDER BY source_daimon_id ASC \end{lstlisting}
+
+    El resultado debe ser similar a la siguiente figura.
+
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=0.90\textwidth]{figures/vocabLoadLogSuccess.png}
-        \caption{Captura de pantalla de log de instalación exitosa del perfil docker.}
-        \label{fig:vocabLoadLogSuccess}
-\end{figure}
-    
-    
+        \includegraphics[width=0.90\textwidth]{figures/omopVocabResult.png}
+        \caption{Captura de pantalla de la integración final del vocabulario descargado con la webapi}
+        \label{fig:omopVocabResult}
+    \end{figure}
+
 \end{enumerate}
 
-\subsection{Compobación de configuración correcta}
+\subsection{Comprobación de configuración correcta}
 
 Para comprobar que se ha configurado correctamente el vocabulario en la base de datos de Broadsea, se puede (a) consultar el administrador de la base de datos y (b) realizar una búsqueda en ATLAS.
+
+- comprobar que se ha instalado correctamente y no vacío en pgADmin
+
+- comprobar que se ha relacionado con broadsea mediante atlas
+
 
 \begin{enumerate}
 
@@ -106,7 +118,13 @@ Para comprobar que se ha configurado correctamente el vocabulario en la base de 
 
 \section{Configuración mediante Apache Solr}
 
+- Indexador de la BD. No procede pero se presenta.
+
 - Se ha intentado. No se ha podido.. Está bajo desarrollo aún.
 
 - Issue en github y forum.
+
+\section{Configuración de PHOEBE}
+
+- Recomendador de conceptos del vocabulario. No procede pero se presenta.
 
