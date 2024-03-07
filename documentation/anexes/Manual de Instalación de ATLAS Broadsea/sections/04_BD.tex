@@ -8,5 +8,21 @@
 
 \section{Establecer la conexión}
 
-- Mediante SQL queries
-- Activando la seguridad
+- Broadsea viene con su propia BD pero la configuracion de la webApi por defecto permite faciltemente conectar otras BD
+
+- Hay dos formas:
+
+\subsection{A través de pgAdmin}
+
+- Configuración a través del esquema de la webAPi, es bastante intuitivo en verdad
+
+Bibliografia fundamental: https://github.com/OHDSI/WebAPI/wiki/CDM-Configuration
+https://forums.ohdsi.org/t/adding-a-new-ms-sql-cdm-database-to-atlas-using-broadsea/19404/3
+https://forums.ohdsi.org/t/brodsea-3-0-quick-start-how-to-add-my-own-db-in-atlas-omop/20617/21
+
+\subsection{A través del protocolo de seguridad de ATLAS}
+
+- No procede porque da muchos erroes
+- Ni siquiera lo recomiendan aqui: https://forums.ohdsi.org/t/adding-a-new-ms-sql-cdm-database-to-atlas-using-broadsea/19404/2 
+
+- Entiendo que es cuando se va a ejecutar en un entonro empresarial que verdaderamente necesite distinguir usuarios que pueden añadir data sources y usuariosq ue solo pueden manipular la herramienta. En este caso, como es un departamento de investigación todos los investigadores tienen los mismos privilegios, es una tonteria establecer la seguridad. Nada mñas que es una posible fuente de problemas.

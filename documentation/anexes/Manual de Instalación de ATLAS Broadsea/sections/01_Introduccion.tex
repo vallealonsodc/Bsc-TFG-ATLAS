@@ -3,6 +3,7 @@
 %ATLAS es una plataforma de análisis de datos de ciencia abierta perteneciente a la red OHDSI para facilitar el intercambio de estructuras de análisis entre organizaciones pertenecientes a esta misma red. ATLAS se sostiene sobre el modelo de datos común de OMOP (CDM) que es el objeto de unión de todos los estudios OHDSI, la normalización de las bases de datos a este estándar clínico.
 
 %Para facilitar la implementación de ATLAS, OHDSI propone diversas alternativas dependiendo de las necesidades de la organización interesada. En este manual se presenta la implementación, instalación, despliegue y configuración a través de Broadsea.
+\section{Introducción}
 
 Broadsea es un proyecto basado en Docker que permite desplegar un entorno de herramientas, configuraciones y dependencias OHDSI de la manera más sencilla hasta el momento. De hecho, la misma organización la presenta, textualmente, como \textit{''la forma más sencilla de instalar (y actualizar) las herramientas OHDSI"} \cite{Broadsea3PDF}.
 
@@ -25,13 +26,21 @@ Descripción del contenedor
 
 - Contenedores por defecto: ATLAS, ARES, HADES
 
+- Volumenes (BD) (extraer info y eliminar apartado 3.1 Gestión BD docker)
+
 - Perfiles:
         - por defecto
         - otros
 
 - Archivos de configuración del entorno: docker compose, .env file
 
-\section{BD Eunomia}
+\section{PostgreSQL}
+
+https://github.com/OHDSI/WebAPI/wiki/CDM-Configuration
+- Estrctura de la BD:esquemas (cdm, result vocab), webApi, info importante de qué es cada esquema
+
+
+\subsection{BD Eunomia}
 
 - ATLAS viene con una bd por defecto que es Eunomia
 - Descripcion de eunomia (incluso del mismo data source). Numero de datos, etc.
