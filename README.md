@@ -1,6 +1,6 @@
 # Trabajo Fin de Grado y Prácticas en Empresa
 
-**Prácticas**: Instalación y despliegue de la herramienta ATLAS. 
+**Anexo**: Instalación y despliegue de la herramienta ATLAS. 
 
   - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
 
@@ -17,12 +17,17 @@ El repositorio se divide en dos carpetas:
 - **/documentation**:
   Contiene toda la documentación escrita relevante en el desarrollo del TFG (el propio documento de TFG, los anexos...). Toda la documentación está redactada en archivos Latex.
   
+    - /documentation/anexes:  Documentación relativa al anexo - manual de instalación y despliegue de ATLAS.
+ 
     - /documentation/thesis: Documentación relativa al documento de TFG.
-      
-    - /documentation/anexes:  Documentación relativa a los anexos desarrollados en las prácticas.
   
 - **/environment**:
-  Contiene toda la información generada y utilizada para el despliegue y uso de la herramienta (archivos csv, scripts de código...).
+  Contiene todos los archivos generados y utilizados para el despliegue y uso de la herramienta (archivos csv, scripts de código...).
+
+    - /environment/anexes:  Archivos relativos al anexo - manual de instalación y despliegue de ATLAS.
+  
+    - /environment/thesis: Archivos relativos al documento TFG.
+ 
 
 ## Proyectos github asociados al repositorio
 
