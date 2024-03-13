@@ -38,14 +38,15 @@ El repositorio se asocia a un [proyecto de github](https://github.com/users/vall
 - ATLAS: https://github.com/OHDSI/Atlas
 - CDM: https://github.com/OHDSI/CommonDataModel
 - WebAPI: https://github.com/OHDSI/WebAPI
-
-**Información específica de Broadsea:**
 - ATLAS Broadsea: https://github.com/OHDSI/Broadsea
 
 **Información relativa a la configuración de la BD de Broadsea**
 - Configuración del CDM: https://github.com/OHDSI/WebAPI/wiki/CDM-Configuration
 - ETL Synthea: https://github.com/OHDSI/ETL-Synthea
 - Broadsea Solr: https://github.com/OHDSI/Broadsea-Solr
+
+**Otros**
+- WebAPI wiki: https://github.com/OHDSI/WebAPI/wiki
 
 
 ###  Realizado por María del Valle Alonso de Caso Ortiz
