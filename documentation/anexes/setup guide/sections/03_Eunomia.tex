@@ -1,41 +1,6 @@
-\chapter{Conexión local con la BD por defecto}
+\chapter{Conexión local con la BD por defecto} \label{cap:03ConexLocal}
 
 En ocasiones, puede resultar interesante acceder a la base de datos remota de Broadsea desde un administrador de bases de datos local.  Docker almacena las bases de datos que utilizan los contenedores en lo que se denominan \textit{''volúmenes''}. Para revisar los volúmenes que están ejecutándose en el equipo se presentan dos estrategias:
-
-\section{Gestión de BD docker}
-
-\begin{enumerate}
-
-    \item La forma más sencilla de interactuar con los volúmenes es a través de Docker Desktop, en la sección \textit{''volumes''}. En esta sección se muestran todos los volúmenes que está utilizando el equipo. En este caso, deben aparecer tres volúmenes, entre ellos atlasdb-postgres-data es el volumen de interés, en el que se almacena la información de la base de datos de ATLAS.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.90\textwidth]{figures/dockerVolumes.png}
-     \caption{Captura de pantalla del panel ''volumes'' de Docker Desktop}
-    \label{fig:dockerVolumes}
-\end{figure}
-
-    \item Otra forma de comprobar el estado de los volúmenes es a través de la terminal del sistema, ejecutando el comando \textit{''docker volumes ls''}, que devuelve un listado de los volúmenes que se están ejecutando.
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.90\textwidth]{figures/dockerVolumesCDM.png}
-     \caption{Captura de pantalla del comando ''docker volume ls'' en la terminal}
-    \label{fig:dockerVolumesCDM}
-\end{figure}
-    
-\end{enumerate}
-
-Puede ser importante conocer la información de los volúmenes que ejecuta Docker para identificar comportamientos inusuales y acceder a configuración e información avanzada sobre el virtualizador. 
-
-Por otro lado, la información específica sobre la configuración de los contenedores que utiliza Docker para conformar Broadsea se encuentra en el archivo \textit{''docker-compose.yml''}, alojado en la carpeta local del repositorio de github de Broadsea. Buscando el nombre del contenedor que alberga la base de datos de ATLAS se puede acceder a toda la información relevante del mismo, tal como se muestra en la Figura \ref{fig:dockerComposeDB}. Esta información será necesaria posteriormente para realizar la conexión con la base de datos.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.90\textwidth]{figures/dockerComposeDB.png}
-     \caption{Captura de pantalla de la configuración del archivo \textit{docker-compose.yml}}
-    \label{fig:dockerComposeDB}
-\end{figure}
 
 \section{Requisitos para establecer la conexión}
 
@@ -77,10 +42,9 @@ Para establecer la conexión con la base de datos que utiliza Broadsea, se debe 
         host = 127.0.0.1
         port = 5432
         user = postgres
-        password = mypass
-    \end{lstlisting}
+        password = mypass\end{lstlisting}
     
-    \item Tras registrar el servidor correctamente, debe aparecer una base de datos con cinco esquemas: ''demo\_cdm'', ''demo\_cdm\_results'', ''public'', ''webapi'', ''webapi\_security''. Para comprobar que se ha establecido una conexión correcta con la base de datos, sin pérdida de información, se puede comprobar el número de filas que recupera pgAdmin de la tabla ''person'' del esquema ''demo\_cdm'', tal y como se muestra en la Figura \ref{fig:pgAdmin}.
+    \item Tras registrar el servidor correctamente, debe aparecer una base de datos con cinco esquemas: \code{demo\_cdm}, \code{demo\_cdm\_results}, \code{public}, \code{webapi}, \code{webapi\_security}. Para comprobar que se ha establecido una conexión correcta con la base de datos, sin pérdida de información, se puede comprobar el número de filas que recupera pgAdmin de la tabla \code{person} del esquema \code{demo\_cdm}, tal y como se muestra en la Figura \ref{fig:pgAdmin}.
 
     \begin{figure}[H]
     \centering
