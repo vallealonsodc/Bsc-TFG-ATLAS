@@ -33,7 +33,7 @@ En el Symposium de 2022 se presentó el esquema de la Figura \ref{fig:collaborat
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.70\textwidth]{figures/collaboratorsSchema.png}
+    \includegraphics[width=0.80\textwidth]{figures/collaboratorsSchema.png}
     \caption{Esquema de colaboración en OHDSI. Extraído de la web oficial \cite{OHDSIwebsite}}
     \label{fig:collaboratorsSchema}
 \end{figure}
@@ -180,23 +180,29 @@ A partir de este momento se conoce que la implementación del estudio objeto del
 
 %\subsection{Estandarización de los datos} \label{subsec:05estandarDatos}
 
-En la generación de evidencia es crucial para la interoperabilidad de los estudios que los datos presenten una misma estructuración. Para ello OMOP diseñó dos herramientas fundamentales: el Modelo de Datos Común y el Vocabulario.
+OHDSI realiza una labor de estandarización muy importante para paliar las dificultades de la investigación con datos de salud en términos de interoperabilidad y heterogeneidad de los datos. La colaboración en la organización se realiza a través de nodos distribuidos por el mundo, cuyos sistemas de información varian notoriamente entre sí por lo que se necesitan estándares que permitan el intercambio de información sin pérdida entre los mismos.
 
-\subsection{El Modelo de Datos Común}
+La estandarización de la investigación en OHDSI se realiza en dos planos: a nivel de datos y a nivel de investigación. La estandarización a nivel de datos se realiza a través del uso del Modelo de Datos Común \ref{subsec:05cdm} y el Vocabulario \ref{subsec:05vocab} y la estandarización a nivel de investigación mediante la definición de tres \textit{casos de uso} \ref{subsec:05investMetodolog}.
 
-El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo estándar de estructuración de los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
+\subsection{El Modelo de Datos Común} \label{subsec:05cdm}
 
-La estructura del CDM está diseñada de forma óptima para servir a la investigación y presenta características muy importantes en este aspecto. En la sección 4.1 del Libro de OHDSI se presentan todas las características del modelo, aunque ahora se destacan las más relevantes:
+El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
+
+\subsubsection{Características}
+
+La estructura del CDM está diseñada de forma óptima para servir a la investigación y presenta características muy importantes en este aspecto. En la sección 4.1 del Libro de OHDSI se presentan todas las características del modelo, de las que se consideran las siguientes más relevantes para el trabajo:
 
 \begin{enumerate}[label=\alph*.]
-    \item Es un modelo centrado en el paciente (alineado con la característica de la Sanidad 4.0 comentada en \ref{sec:01Contexto}), lo que conlleva que todos los eventos y tablas están relacionados con la tabla central del paciente, denominado ''Person''.
+    \item Es un modelo centrado en el paciente (alineado con la característica de la Sanidad 4.0 comentada en \ref{sec:01Contexto}), lo que conlleva que todos los eventos y tablas están relacionados con la tabla central del paciente, denominado ''Person''. Además, los datos se recogen de esta forma siempre con el fin de facilitar la investigación.
     \item Limita el acceso a la información personal de los pacientes, evitando en la medida de lo posible el acceso a información sensible como nombres o fechas de nacimiento, para fomentar la protección y privacidad de los datos (que es una dificultad que se identifica generalmente en el tratamiento de datos de salud, véase \ref{sec:01Contexto}). Mayor información al respecto se encuentra en el apartado \textit{Privacidad del paciente y OMOP} de la página de github \cite{gitPagesCMD}.
     \item Para fomentar la estandarización e interoperabilidad (véase \ref{sec:01Contexto}) no impone su propia terminología o vocabulario, sino que permite utilizar terminología de vocabularios ya existentes (ej. SNOMED, LOINC...) referenciándolos en su modelo. El conjunto de todos los vocabularioes existentes adheridos al modelo de OMOP conforma el Vocabulario.
     \item El modelo no requiere una tecnología específica sino que puede estructurarse en cualquier base de datos relacional (ej. Oracle, SQL Server...), ajustándose a los requisitos tecnológicos necesarios de cada organización (identificado también como una dificultad en \ref{sec:01Contexto}).
     
 \end{enumerate}
 
-Actualmente el CDM va por la sexta versión, sin emabrgo, esta aún no está soportada por todas las herramientas de la comunidad, por lo que se sigue sugiriendo el uso del CDM v5.4, que es la última versión completamente funcional. A continuación, en la Figura \ref{fig:cdm54} se presenta la estructura lógica de este modelo.
+\subsubsection{Modelo de Datos Lógico}
+
+Actualmente el CDM ha lanzado ya su sexta versión, sin embargo, esta aún no está soportada por todas las herramientas de la comunidad, por lo que se sigue sugiriendo el uso del CDM v5.4, que es la última versión completamente funcional. A continuación, en la Figura \ref{fig:cdm54} se presenta la estructura lógica de este modelo.
 
 \begin{figure}[H]
     \centering
@@ -205,13 +211,13 @@ Actualmente el CDM va por la sexta versión, sin emabrgo, esta aún no está sop
     \label{fig:cdm54}
 \end{figure}
 
-\textcolor{red}{Explicación más detallada de las tablas y las relaciones entre sí cuando empiece a manejar ATLAS}
+%\textcolor{red}{Explicación más detallada de las tablas y las relaciones entre sí cuando empiece a manejar ATLAS}
 
-\subsection{El Vocabulario}
+\subsection{El Vocabulario}\label{subsec:05vocab}
 
-El Vocabulario es uno de los elementos centrales del Modelo de Datos Común de OMOP y una gran herramienta de estandarización e interoperabilidad entre sistemas. Como se comentaba en varias ocasiones, actualmente hay muchos estándares distintos en funcionamiento que establecen las terminologías de los eventos clínicos, como son FHIR, SNOMED CT, RxNorm u otros. El beneficio del Vocabulario de OMOP es que integra todos los vocabularios ya existentes en su estructura a través de referenciación y claves primarias y secundarias.
+El Vocabulario es uno de los elementos centrales del Modelo de Datos Común de OMOP y una gran herramienta de estandarización e interoperabilidad entre sistemas. Como se comentaba en varias ocasiones, actualmente hay muchos estándares distintos en funcionamiento que establecen las terminologías de los eventos clínicos, como son FHIR, SNOMED CT, RxNorm u otros. El beneficio del Vocabulario de OMOP es que integra todos los vocabularios ya existentes en un único Vocabulario estándar, a través de la referenciación entre conceptos estándar (pertenecientes a OMOP) y conceptos no estándar (pertenecientes a vocabularios alternativos).
 
-El Vocabulario de OHDSI, por tanto, es un conjunto de vocabularios y, como todas las herramientas de la comunidad, está disponible online de forma pública. La información sobre el vocabulario se encuentra en el capítulo 5 del Libro de OHDSI \cite{OHDSIbook} y en la página de github del CDM \cite{gitPagesCMD}. TamPor otra parte, existe un buscador online de términos en el Vocabulario denominado ATHENA \cite{ATHENAweb}. 
+El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, respetando las diversas procedencias de cada término pero mapeándolos a un único vocabulario estándar.  Como todas las herramientas de la comunidad, la información acerca de este está disponible online de forma pública en el capítulo 5 del Libro de OHDSI \cite{OHDSIbook} y en la página de github del CDM \cite{gitPagesCMD}. Por otra parte, existe un buscador online de términos en el Vocabulario de OMOP denominado ATHENA \cite{ATHENAweb}. 
 
 \begin{figure}[H]
 \centering
@@ -220,36 +226,155 @@ El Vocabulario de OHDSI, por tanto, es un conjunto de vocabularios y, como todas
     \label{fig:ATHENAcap}
 \end{figure}
 
-Actualmente hay más de nueve millones de términos registrados en el Vocabulario de OMOP, como se muestra en la Figura \ref{fig:ATHENAcap}, y 155 vocabularios distintos coexisten juntos en el estándar.
+Actualmente hay más de nueve millones de términos registrados en el Vocabulario de OMOP, como se muestra en la Figura \ref{fig:ATHENAcap}, y 155 vocabularios distintos coexisten juntos en el estándar de los cuales al menos 30 son vocabularios internos de OMOP.
 
-Cada término regitrado en el vocabulario corresponde a un concepto o \textit{CONCEPT}, según el modelo lógico de la Figura \ref{fig:cdm54}. Los términos se asocian al vocabulario al que corresponden mediante la tabla \textit{VOCABULARY}
+%\textcolor{red}{Cada término registrado en el vocabulario corresponde a un concepto o \textit{CONCEPT}, según el modelo lógico de la Figura \ref{fig:cdm54}. Los términos se asocian al vocabulario al que corresponden mediante la tabla \textit{VOCABULARY}}
 
 \subsection{Investigación metodológica} \label{subsec:05investMetodolog}
 
+Con el fin de estandarizar y proveer un marco metodológico en el camino hacia la generación de evidencia, OHDSI define tres casos de usos que establecen los fines investigacionales sobre los datos del \textit{Common Data Model}: (i) la caracterización, (ii) la estimación a nivel de población (iii) la predicción a nivel de paciente. 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{figures/useCases.png}
+     \caption{Esquema simplificado de los casos de uso para la investigación en OHDSI. Extraído del Symposium 2023, publicado en la web oficial \cite{OHDSIwebsite}}
+    \label{fig:useCases}
+\end{figure}
+
+Estos tres casos de uso se presentan generalmente en los \textit{Symposium} y \textit{Workshops}, para dar a conocer a la comunidad el esquema propio de investigación de OHDSI. Además el Libro de OHDSI \cite{OHDSIbook} los presenta de forma general en el capítulo 7 y de forma específica para cada caso de uso en los capítulos 11, 12 y 13, respectivamente. A continuación se muestra otro esquema más complejo también presentado en el Symposium 2023 en el que se encuadra cada caso de uso en la ventana temporal que encuadra un estudio observacional.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{figures/useCasesJourney.png}
+     \caption{Esquema de los casos de uso encuadrado en la ventana temporal de un estudio observacional. Extraído del Symposium 2023 publicado en la web oficial \cite{OHDSIwebsite}}
+    \label{fig:useCasesJourney}
+\end{figure}
 
 %%ADEMAS DE SER LOS TRES MÉTODOS QUE OFRECE OHDSI PARA REALZIAR INVESTIGACIONNES SON 3 CASOS DE USOS
 
 \subsubsection{Caracterización}
+
+La caracterización busca la caracterización a nivel estadístico de un cohorte o una base de datos. Es una mera descripción estadística de los datos, sin realizar inferencias, predicciones o análisis más complejos, simplemente observando la base de datos.
+
+La caracterización consiste en caracterizar una población a través de métricas estadísticas descriptivas con el objetivo de formular hipótesis sobre los determinantes de la salud y la enfermedad.
+
 \subsubsection{Estimación a nivel de población}
+
+La estimación a nivel de población busca realizar inferencias causales sobre los efectos de las intervenciones sanitarias en la población. Se pretende entender los efectos causales para comprender las consecuencias de las acciones
+
 \subsubsection{Predicción a nivel de paciente}
 
+La predicción a nivel de paciente busca, en base a los datos obtenidos de los conjuntos de pacientes en la base de datos, realizar predicciones concretas para un individuo concreto.
 
 \section{Herramientas} \label{sec:05herramientas}
-\subsection{ATLAS}
 
-- Extensa descripción de ATLAS (versión actual, anteriores, uso, aspecto...)
+OHDSI proporciona un conjunto de herramientas para facilitar la realización de los estudios e investigaciones a raíz de los datos clínicos y fomentar la interoperabilidad entre estos, aportando un estándar de herramientas. 
 
-- Diferentes tipos de ATLAS (demo, Broadsea, AWS..)
+Las herramientas que proporciona la organización están disponibles públicamente online y de forma gratuita y son desarrolladas por los propios miembros de la comunidad. Entre todas las herramientas, para la realización de este Trabajo Fin de Grado se destaca la herramienta de análisis de datos clínicos ATLAS \ref{subsec:05ATLAS}, aunque también existen otras herramientas externas e importantes \ref{subsec:05otrasHerramientas}.
 
-ATLAS ADEMÁS IMPLEMENTA INTRÍNSICAMENTE  DOS HERRAMIENTAS
+\subsection{ATLAS} \label{subsec:05ATLAS}
 
--ATHENA (herramienta de busqueda en el vocabulario del CDM) actualemnte está implementada dentro de ATLAS/Search
+%- Diferentes tipos de ATLAS (demo, Broadsea, AWS..)
 
-- ACHILLES (data quality dashboard) también esta implementada actualmente dentro de ATLAS/Data source
+%ATLAS ADEMÁS IMPLEMENTA INTRÍNSICAMENTE  DOS HERRAMIENTAS
+
+%-ATHENA (herramienta de busqueda en el vocabulario del CDM) actualemnte está implementada dentro de ATLAS/Search
+
+%- ACHILLES (data quality dashboard) también esta implementada actualmente dentro de ATLAS/Data source
+
+%MANUAL DE IMPLEMENTACIÓN
+
+ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza directamente el análisis observacional una vez que la base de datos está convertida al modelo OMOP. La documentación oficial sobre ATLAS se encuentra en el capítulo 8 del Libro de OHDSI y en su repositorio de github \cite{githubATLAS}. Además, aparte de la documentación oficial, hay montones de información esparcidas por la red sobre ATLAS, en publicaciones científicas, foros de OHDSI, videotutoriales en youtube y un largo etcétera.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.25\textwidth]{figures/ATLASlogo.png}
+     \caption{Logo de ATLAS. Extraída del repositorio de github \cite{githubATLAS}}
+    \label{fig:ATLASlogo}
+\end{figure}
+
+Un importante promotor del uso de ATLAS es la red europea de datos EHDEN (European Health Data \& Evidence Network) \cite{ehden} que colabora estrechamente con OHDSI desde 2020 para fomentar el uso del estandar de la organización (véase \ref{sec:01EstadoArte}). En esta línea, también la plataforma EHDEN Academy también ofrece cursos gratuitos sobre el uso de ATLAS y otras herramientas OHDSI.
+
+\subsubsection{Características y beneficios de su uso}
+
+El uso de ATLAS es beneficioso para la comunidad científica debido principalmente a su naturaleza \textit{open-source} y \textit{low-code}. 
+
+\begin{enumerate}[label=\roman*.]
+
+    \item ATLAS se presenta como una herramienta disponible públicamente online sin costo alguno, configurable ''a gusto del consumidor'' gracias a su característica de cógido abierto, que expone toda su información y el propio código que la compone en los repositorios de github de la organización y, por si fuera poco, cuenta con el apoyo de un equipo de desarrolladores pendiente en los foros e \textit{issues} que se reportan vía github para solucionar las dudas que tengan los implementadores. 
+
+    \item Por otro lado, no requiere de conocimientos expertos de programación, puesto que es \textit{low-code}. La herramienta se implementa sobre la Biblioteca de Métodos de OHDSI, con soporte para análisis en R, pero no requiere programación directa sino que ofrece una interfaz gráfica e intuitiva para el analista de datos. Además, el código que subyace al análisis es fácilmente exportable, siempre estructurado según el mismo estándar, favoreciendo la interoperabilidad del mismo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.50\textwidth]{figures/methodsLibrary.png}
+\caption{Biblioteca de Métodos OHDSI que utiliza ATLAS. Extraída del Libro de OHDSI \cite{OHDSIbook}}
+\label{fig:methodsLibrary}
+\end{figure}
+    
+     Todo ello no solo facilita la tarea del analista de datos sino que además favorece la interoperabilidad entre los estudios, puesto que todos los estudios que utilizan ATLAS implementan (en una capa inferior) los mismos métodos, el mismo lenguaje de programación y la misma estructura de análisis (véase \ref{sec:05Evidencia}). 
+
+     \item Por último, otro beneficio es que gracias a estas características ATLAS permite diseñar estructuras para el estudio de los datos que puedan utilizarse en diferentes bases de datos distintas. Volviendo al ejemplo de la plancha en \ref{sec:05Evidencia}, esto quiere decir que una misma plancha (o estudio) puede conectarse a cualquier enchufe de cualquier región (a cualquier base de datos). ATLAS está intrínsicamente configurada para diseñar análisis reproducibles, por lo que los elementos que se configuran durante un análisis de datos (grupos de cohortes, estimadores, predictores, grupos de conceptos...) se pueden exportar fácilmente a modo de estructura general e implementarse sobre otro estudio que, aunque posea datos distintos ejecute ATLAS. Por tanto las estructuras más eficientes que se utilizen en un análisis remoto, pueden compartirse en la red de la comunidad y ser utilizados en cualquier nodo y cualquier estudio, favoreciendo la reciclabilidad, reproducibilidad e interoperabilidad del estudio.
+    
+\end{enumerate}
+
+\subsubsection{Aspectos técnicos}
+
+En cuanto a los aspectos técnicos, ATLAS se despliega como una herramienta basada en web, normalmente alojada en un servidor Apache, combinada con la WebAPI de OHDSI. Generalmente se recomienda su despliegue en Google Chrome. Además la herramienta puede implementarse de forma pública a través de internet o tras el firewall de la red privada de una organización, según las necesidades de la entidad que lo implementa.
+
+Sin embargo, es importante recalcar que tanto ATLAS (como algunas otras herramientas de OHDSI) no consiste en un archivo ejecutable aislado sino de una aplicación contenida y dependiente de un ecosistema completo basado en la web. La dependencia principal y red que sostiene a ATLAS es la WebAPI.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.50\textwidth]{figures/webAPIwiki.png}
+     \caption{Estructura de la WebAPI. Extraída de la wiki de github \cite{githubWebAPIwiki}}.
+    \label{fig:webAPIwiki}
+\end{figure}
+
+Tal y como se muestra en la Figura \ref{fig:webAPIwiki} y se define en la wiki del repositorio de github \cite{githubWebAPIwiki}, la Web API es la aplicación que proporciona los servicios RESTful para que la herramienta pueda interactuar con las bases de datos. Por tanto su relación con ATLAS es estrictamente necesaria. ATLAS no es una herramienta aislada sino un eslabón del ecosistema OHDSI.
+
+Por otra parte, la herramienta en sí se muestra a través de una interfaz gráfica, que proporciona un estrecho menú lateral con 15 herramientas para el análisis de datos. La interfaz de la herramienta seleccionada se muestra en el lado derecho, como se muestra en la Figura \ref{fig:ATLASdemoHome}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{figures/ATLASdemoHome.png}
+     \caption{Captura de pantalla del menú principal de ATLAS demo}
+    \label{fig:ATLASdemoHome}
+\end{figure}
+
+Recientemente, en diciembre de 2023, ATLAS lanzó su versión 2.14.1 que está en correcto funcionamiento y es la que se utiliza en el desarrollo del Trabajo Fin de Grado. Más información sobre los aspectos técnicos de la herramienta se encuentran en el repositorio de github \cite{githubATLAS}.
+
+\subsubsection{Estrategias de Implementación}
+
+La implementación de ATLAS en una organización puede ser una tarea complicada por su dependencia con la WebAPI, la Biblioteca de Métodos y otras dependencias al ecosistema OHDSI. 
+
+No obstante, la organización ha desarrollado varias iniciativas que facilitan su implementación y accesibilidad, para no crear obstáculos en la promoción del uso de la herramienta. Estas iniciativas se describen a continuación.
+
+\begin{enumerate}[label=\alph*.]
+
+    \item En primer lugar, ATLAS Demo es una iniciativa muy fácilmente accesible que proporciona la comunidad científica para tomar un primer contacto con la herramienta. En este caso, la herramienta es accesible a través del navegador web, publicamente a través de Internet. Cualquier usuario de internet tiene acceso a la herramienta demo. Se le denomina demo porque se sobreentiende que su uso es principalmente educativo o formativo, aunque verdaderamente ofrece todas las capacidades de la herramienta y los análisis que con ella se realizan, podrían reutilizarse en estudios más complejos o de organizaciones privadas.
+
+    \item Por otro lado, también muy fácilmente implementable se presenta \textbf{Broadsea} \cite{githubBroadsea}, que consiste en la virtualización del ecosistema OHDSI en un multicontenedor Docker. Gracias a la facilidad del uso de las tecnologías Docker, esta forma de implementar el ecosistema es bastante sencilla, permitiendo además añadir nuevas configuraciones más complejas (si fuese necesario) añadiendo o eliminando contenedores. Para realizar la parte práctica de este trabajo se emplea la tecnología Docker de Broadsea para implementar ATLAS. A la herramienta ATLAS desplegada con Broadsea, frecuentemente se le denominará a lo largo del documento \textit{ATLAS Broadsea}. El TFG presenta un documento anexo bastante complejo enteramente dedicado a la instalación, despliegue y configuración del entorno Broadsea (véase anexo A). Además, la arquitectura de Broadsea también se presenta en \ref{cap:07diseño}.
+
+    \item Otra alternativa que propone la organziación, en colaboración con Amazon, es la virtualización del ecosistema en el entorno de computación en la nube de AWS. Para ello se ofrecen los entornos \textit{OHDSI-in-a-Box} \cite{githubOHDSIBox}y \textit{OHDSIonAWS} \cite{githubOHDSIAWS}. OHDSI-in-a-Box se crea específicamente como un entorno de aprendizaje y se utiliza en la mayoría de los tutoriales proporcionados por la comunidad OHDSI mientras que OHDSIonAWS es una arquitectura de referencia para entornos OHDSI de clase empresarial, multiusuario, escalables. Por las restricciones intrínsecas al uso de AWS, estas alternativas han sido rechazadas para ser empleadas en el TFG.
+    
+    \item Por último
+    
+\end{enumerate}
+
+\subsubsection{Herramientas embebidas}
+
+\begin{enumerate}[label=\alph*.]
+
+    \item ACHILLES
+    \item ATHENA
+    
+\end{enumerate}
 
 
-\subsection{Otras herramientas}
+
+
+\subsection{Otras herramientas} \label{subsec:05otrasHerramientas}
 
 breve descripción de cada una:
 
