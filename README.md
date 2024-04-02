@@ -1,5 +1,7 @@
 # Trabajo Fin de Grado y Prácticas en Empresa
 
+Este repositorio contiene toda la información generada y utilizada para la investigación sobre la herramienta ATLAS de OHDSI, utilizada para el desarrollo del Trabajo Fin de Grado por la Universidad de Sevilla y prácticas en el Hospital Universitario Virgen del Rocío.
+
 **Trabajo Fin de Grado**: Estudio de datos clínicos utilizando la herramienta ATLAS Broadsea a partir de datos estandarizados según el Modelo Común de Datos (CDM) de OMOP.
 
  - ver doc online: https://es.overleaf.com/read/bnkzgjxjqmqz#ea49d0
@@ -7,8 +9,6 @@
 **Anexo**: Manual de instalación, despliegue y configuración de ATLAS Broadsea. 
 
   - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
-
-Este repositorio contiene toda la información generada y utilizada para la investigación sobre la herramienta ATLAS de OHDSI, utilizada para el desarrollo del Trabajo Fin de Grado y la prácticas en el Hospital Universitario Virgen del Rocío.
 
 ## Estructura de carpetas del repositorio
 
