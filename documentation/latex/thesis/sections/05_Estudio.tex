@@ -144,7 +144,7 @@ Además, una característica fundamental de las investigaciones que se llevan ac
 
 La historia del paciente,  como se muestra en la Figura \ref{fig:patientJourney}, es por tanto, una ventana temporal que recoge un evento clínico que le sucede a un paciente en un período de tiempo concreto. El evento se describe mediante tres períodos de tiempo: la enfermedad (rojo), el tratamiento (naranja) y el efecto (verde); y a partir de cuatro características esenciales: síntomas (\textit{conditions}), medicamentos (\textit{drugs}), procedimientos (\textit{procedures}) y pruebas (\textit{measurements}).
 
-Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). Por tanto, el componente central para generar evidencia en OHDSI será el cohorte.
+Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). Por tanto, el componente central para generar evidencia en OHDSI será la cohorte.
 
 %\begin{figure}[H]
 %\centering
@@ -153,27 +153,6 @@ Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten hist
 %    \label{fig:studyIO}
 %\end{figure}
 
-
-\subsubsection{Building blocks}
-%si hubiera que quitar contenido se quita este
-
-Para comprender de manera general otros aspectos fundamentales de cualquier estudio observacional implementado según las recomendaciones de OHDSI, es interesante comprender los siguientes \textit{building blocks} o ''bloques de construcción'' que utilizados conjunta y correctamente facilitan la generación de evidencia. La representación de estos \textit{building blocks} como bloques de LEGO es una representación muy utilizada en OHDSI.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.80\textwidth]{figures/buildingBlocks.png}
-     \caption{Imagen de los \textit{building blocks}. Extraída de la web oficial \cite{OHDSIwebsite}}
-    \label{fig:buildingBlocks}
-\end{figure}
-
-El primer bloque \textit{databases} corresponde a las bases de datos. El camino hacia la evidencia comienza accediendo a una (o varias) bases de datos estandarizadas al Modelo de Datos Común de OMOP. De este modo se reduce la heterogeneidad en las diferentes fuentes de datos, aumentando la interoperabilidad entre los estudios. 
-
-El segundo bloque \textit{phenotypes} corresponde a los fenotipos. Como se ha explicado anteriormente, los estudios que promueve la organización son estudios observacionales sobre características fenotípicas de los individuos. Por tanto, a la hora de realizar un estudio es importante conocer cuál es el fenotipo que se quiere estudiar y los efectos o \textit{outcomes} que se quieren evaluar. Este bloque presenta como actividad central la \textbf{definición de una cohorte}. La cohorte encapsula al conjunto de personas que presentan el/los fenotipo/s que se quiere estudiar. %Este término será explicado con mayor detenimiento más adelante. También en el capítulo 10 del Libro de OHDSI \cite{OHDSIbook} se presentan instrucciones e información sobre la definición de cohortes.
-
-Los dos siguientes bloques \textit{study design} y \textit{methods} corresponden al diseño del estudio y la metodología. Los diferentes estudios se realizan a través de las especificaciones de los cohortes, como el período de observación sobre el que se va a realizar el estudio o la designación del comparador del \textit{outcome} (que podrá ser otro cohorte, él mismo o ninguno). El diseño del estudio y la metodología se corresponderá con alguno de los tres casos de uso estándar.
-
-Por último, el bloque \textit{standardized tools} corresponde a las herramientas que ofrece la organización. Como también se ha mencionado anteriormente, OHDSI provee un robusto conjunto de herramientas para cubrir todos los pasos necesarios en el camino hacia la evidencia. El hecho de que todas las organizaciones utilicen las mismas herramientas para la realización de estudios e investigaciones también contribuye notoriamente a la interoperabilidad. 
-
 \subsubsection{Implementación del análisis}
 
 Para realizar el análisis \textit{per se} OHDSI distingue tres vías alternativas para generar la evidencia a partir de la base de datos estandarizada al OMOP CDM. Estas tres alternativas se muestran a continuación en la Figura \ref{fig:analysisImplementations}, extraída del capítulo 8 del Libro de OHDSI.
@@ -181,7 +160,7 @@ Para realizar el análisis \textit{per se} OHDSI distingue tres vías alternativ
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth]{figures/analysisImplementations.png}
-     \caption{Alternativas para la implementación de un análisis observacional. Extraído del Libro de OHDSI \cite{OHDSIbook}}
+     \caption{Vías para la implementación de un análisis observacional. Extraído del Libro de OHDSI \cite{OHDSIbook}}
     \label{fig:analysisImplementations }
 \end{figure}
 
@@ -230,7 +209,7 @@ Actualmente el CDM ha lanzado ya su sexta versión, sin embargo, esta aún no es
     \label{fig:cdm54}
 \end{figure}
 
-%\textcolor{red}{Explicación más detallada de las tablas y las relaciones entre sí cuando empiece a manejar ATLAS}
+\textcolor{red}{Quizás añadir explicación más detallada de tablas y/o relaciones más relevantes cuando empiece a manejar ATLAS}
 
 \subsection{El Vocabulario}\label{subsec:05vocab}
 
@@ -246,6 +225,8 @@ El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, re
 \end{figure}
 
 Actualmente hay más de nueve millones de términos registrados en el Vocabulario de OMOP, como se muestra en la Figura \ref{fig:ATHENAcap}, y 155 vocabularios distintos coexisten juntos en el estándar de los cuales al menos 30 son vocabularios internos de OMOP.
+
+\textcolor{red}{Quizás añadir explicación más detallada de conceptos más relevantes cuando empiece a manejar ATLAS}
 
 %\textcolor{red}{Cada término registrado en el vocabulario corresponde a un concepto o \textit{CONCEPT}, según el modelo lógico de la Figura \ref{fig:cdm54}. Los términos se asocian al vocabulario al que corresponden mediante la tabla \textit{VOCABULARY}}
 
@@ -272,6 +253,8 @@ Estos tres casos de uso se presentan generalmente en los \textit{Symposium} y \t
 
 \subsubsection{Cohortes}
 
+\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.70\textwidth]{figures/bblocksPatientJourney.png}
@@ -282,15 +265,21 @@ Estos tres casos de uso se presentan generalmente en los \textit{Symposium} y \t
 
 \subsubsection{Caracterización}
 
+\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
+
 La caracterización busca la caracterización a nivel estadístico de un cohorte o una base de datos. Es una mera descripción estadística de los datos, sin realizar inferencias, predicciones o análisis más complejos, simplemente observando la base de datos.
 
 La caracterización consiste en caracterizar una población a través de métricas estadísticas descriptivas con el objetivo de formular hipótesis sobre los determinantes de la salud y la enfermedad.
 
 \subsubsection{Estimación a nivel de población}
 
+\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
+
 La estimación a nivel de población busca realizar inferencias causales sobre los efectos de las intervenciones sanitarias en la población. Se pretende entender los efectos causales para comprender las consecuencias de las acciones
 
 \subsubsection{Predicción a nivel de paciente}
+
+\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
 
 La predicción a nivel de paciente busca, en base a los datos obtenidos de los conjuntos de pacientes en la base de datos, realizar predicciones concretas para un individuo concreto.
 
@@ -340,7 +329,7 @@ El uso de ATLAS es beneficioso para la comunidad científica debido principalmen
 
 En cuanto a los aspectos técnicos, ATLAS se despliega como una herramienta basada en web, normalmente alojada en un servidor Apache, combinada con la WebAPI de OHDSI. Generalmente se recomienda su despliegue en Google Chrome. Además la herramienta puede implementarse de forma pública a través de internet o tras el firewall de la red privada de una organización, según las necesidades de la entidad que lo implementa.
 
-Sin embargo, es importante recalcar que tanto ATLAS (como algunas otras herramientas de OHDSI) no consiste en un archivo ejecutable aislado sino de una aplicación contenida y dependiente de un ecosistema completo basado en la web. La dependencia principal y red que sostiene a ATLAS es la WebAPI.
+Sin embargo, es importante recalcar que tanto ATLAS (como algunas otras herramientas de OHDSI) no consiste en un archivo ejecutable aislado sino de una aplicación contenida y dependiente de un ecosistema completo basado en la web. La dependencia principal y red que sostiene a ATLAS es la \textbf{WebAPI}.
 
 \begin{figure}[H]
     \centering
@@ -372,7 +361,7 @@ No obstante, la organización ha desarrollado varias iniciativas que facilitan s
 
     \item \textbf{ATLAS demo} \cite{ATLASdemo}. En primer lugar, esta es una herramienta muy fácilmente accesible que proporciona la comunidad científica para tomar un primer contacto con la herramienta. En este caso, la herramienta es accesible a través del navegador web, publicamente a través de Internet. Cualquier usuario de internet tiene acceso a la herramienta demo. Se le denomina demo porque se sobreentiende que su uso es principalmente educativo o formativo, aunque verdaderamente ofrece todas las capacidades de la herramienta y los análisis que con ella se realizan, podrían reutilizarse en estudios más complejos o de organizaciones privadas.
 
-    \item \textbf{ATLAS Docker}. Por otro lado, también muy fácilmente implementable se presenta \textbf{Broadsea} \cite{githubBroadsea}, que consiste en la virtualización del ecosistema OHDSI en un multicontenedor Docker. Gracias a la facilidad del uso de las tecnologías Docker, esta forma de implementar el ecosistema es bastante sencilla, permitiendo además añadir nuevas configuraciones más complejas (si fuese necesario) añadiendo o eliminando contenedores. Para realizar la parte práctica de este trabajo se emplea la tecnología Docker de Broadsea para implementar ATLAS. A la herramienta ATLAS desplegada con Broadsea, frecuentemente se le denominará a lo largo del documento \textit{ATLAS Broadsea}. El TFG presenta un documento anexo bastante complejo enteramente dedicado a la instalación, despliegue y configuración del entorno Broadsea (véase anexo A). Además, la arquitectura de Broadsea también se presenta en \ref{cap:07diseño}.
+    \item \textbf{ATLAS Docker}. Por otro lado, también muy fácilmente implementable se presenta \textbf{Broadsea} \cite{githubBroadsea}, que consiste en la virtualización del ecosistema OHDSI en un multicontenedor Docker. Gracias a la facilidad del uso de las tecnologías Docker, esta forma de implementar el ecosistema es bastante sencilla, permitiendo además añadir nuevas configuraciones más complejas (si fuese necesario) añadiendo o eliminando contenedores. Para realizar la parte práctica de este trabajo se emplea la tecnología Docker de Broadsea para implementar ATLAS. A la herramienta ATLAS desplegada con Broadsea, frecuentemente se le denominará a lo largo del documento \textit{ATLAS Broadsea}. El TFG presenta un documento anexo bastante complejo enteramente dedicado a la instalación, despliegue y configuración del entorno Broadsea (véase anexo \ref{anexo:manual}). Además, la arquitectura de Broadsea también se presenta en \ref{cap:07diseño}.
 
     \item \textbf{ATLAS Amazon Web Services}. Otra alternativa que propone la organziación, en colaboración con Amazon, es la virtualización del ecosistema en el entorno de computación en la nube de Amazon Web Services (AWS). Para ello se ofrecen los entornos \textit{OHDSI-in-a-Box} \cite{githubOHDSIBox} y \textit{OHDSIonAWS} \cite{githubOHDSIAWS}. OHDSI-in-a-Box se crea específicamente como un entorno de aprendizaje y se utiliza en la mayoría de los tutoriales proporcionados por la comunidad OHDSI mientras que OHDSIonAWS es una arquitectura de referencia para entornos OHDSI de clase empresarial, multiusuario, escalables. Por las restricciones intrínsecas al uso de AWS, estas alternativas han sido rechazadas para ser empleadas en el TFG.
     
