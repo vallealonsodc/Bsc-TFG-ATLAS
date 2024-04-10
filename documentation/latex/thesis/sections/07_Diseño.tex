@@ -28,7 +28,9 @@ A continuación se presenta la arquitectura teórica de Broadsea y el entorno de
 
 \section{Arquitectura tecnológica}
 
-\subsection{Arquitectura del sistema}
+La arquitectura, en términos tecnológicos, del sistema puede llegar a resultar algo compleja, por ello se describe en dos subsecciones: \ref{subsec:07sistema) Arquitectura teórica-generalizada del sistema \ref{subsec:07Broadsea} Arquitectura específica de Broadsea.
+
+\subsection{Arquitectura del sistema}\label{subsec:07sistems}
 
 El sistema se implementa mediante virtualización con Docker y una arquitectura en tres niveles o \textit{three-tier}, donde se diferencian al cliente, frontend y backend. Esta arquitectura se describirá de forma general utilizando el esquema de la Figura \ref{fig:threetierDocker}, extraído de internet.
 
@@ -68,13 +70,11 @@ Por tanto, a nivel de aquitectura del sistema en sí, se encuentra la capa clien
     
 \end{enumerate}
 
-\subsection{Arquitectura de Broadsea} \label{sec:07Broadsea}
+\subsection{Arquitectura de Broadsea} \label{subsec:07Broadsea}
 
 %Presentación del sistema Broadsea. Imagen de Broadsea
 
-
-
-Por tanto, la arquitectura de Broadsea 3.0 es muy compleja y define un completo ecosistema de herramientas interconectado entre sí y accesible virtualmente a través del despliegue de contenedores Docker.
+A continuación se presenta la aquitectura específica de Broadsea. Broadsea v3.0 es un sistema muy complejo, contenido en un multicontenedor Docker que alberga el ecosistema completo de herramientas OHDSI y sus interconexiones en distintos contenedores. Además, se definen distintos perfiles (\textit{profiles}) para facilitar la instalación de los distintos contenedores. Por ello se le denomina \textit{a-la-carte}. La figura \ref{fig:OHDSIBroadsea3.0} muestra todos los contenedores de Broadsea.
 
 \begin{figure}[H]
     \centering
@@ -83,19 +83,24 @@ Por tanto, la arquitectura de Broadsea 3.0 es muy compleja y define un completo 
     \label{fig:OHDSIBroadsea3.0}
 \end{figure}
 
-De todos los componentes que se muestran en la Figura \ref{fig:OHDSIBroadsea3.0}, en la configuración por defecto de Broadsea tan solo se despliegan ATLAS y la WebAPI junto a una pequeña base de datos demo (ATLAS/WebAPI, ATLAS-DB Demo DB) y las herramientas ARES y HADES. El resto de herramientas se despliegan \textit{a-la-carte} a través de la inicialización de perfiles y contenedores específicos.
+El despliegue por defecto de Broadsea genera en el frontend una interfaz de usuario con acceso a tres aplicaciones: ATLAS, HADES y ARES. Para acceder a esta interfaz de usuario basta con buscar en el navegador el servidor y puerto donde se aloja broadsea, que tipicamente será la maquina local y el puerto 5354, correspondienre a Postgre.
+Por otro lado,en el backend se crea la WebAPI y se inicializa la base de datos de Eunomia.
 
 \begin{enumerate}
-    \item \textbf{ATLAS}
+
+    \item \textbf{ATLAS}. ATLAS Broadsea despliega todas las funcionalidades de la herramienta de forma local. ATLAS se sostiene sobre la WebAPI y cuenta con la bd de Eunomia.
+    
     \begin{enumerate}
-        \item WebAPI
-        \item BD
+        \item WebAPI. La WebAPI se despliega como un contenedor docker y como un volumen de datos. Además, también se construirá un esquema la base de datos del servidor Postgre que aloja al contenedor, denominado \code{webapi}. A través de la modificación de este esquema se podrán agregar o eliminar las diferentes fuentes de datos a la herramienta.
+        \item BD. Para facilitar el correcto funcionamiento de ATLAS se implementa una base de datos demo que es Eunomia. Esta base de datos cuenta con un pequeño registro de datos normalizados a OMOP y también crea varios esquemas en la base de datos del servidor Postgre que permiten su configuración, o la realización de consultas directamente desde el administrador de la base de datos.
     \end{enumerate}
-    \item \textbf{HADES}
-    \item \textbf{ARES}
+
+    \item \textbf{HADES}. HADES Broadsea despliega todas las funcionalidades de la herramienta de forma local. Se sostiene sobre una virtualización del IDE de RStudio que tiene preinstalada y preconfiguradas todas las librerías de la Librería de Métodos. Su uso no es relevante en el TFG.
+   
+    \item \textbf{ARES}. ARES Broadasa despliega todas las funcionalidades de la herramienta de forma local. Su uso tampoco es relevante en el TFG.
+
 \end{enumerate}
 
-Es muy importante notar la estrecha relación entre ATLAS y la WebAPI, como se describía en \ref{subsec:05ATLAS}, que forman un contenedor conjunto que sostenido sobre la base de datos demo, que es la de \textit{Eunomia} \cite{githubPagesEunomia}. Esta interacción entre las herramientas y las bases de datos se realiza a través de protocolos de bases de datos PostgreSQL.
 
 
 \section{Entorno tecnológico} \label{sec:07entorno}
@@ -105,7 +110,9 @@ El entorno tecnológico que envuelve al sistema está compuesto por cuatro herra
 
 \subsection{Google Chrome}
 
-Google Chrome es el navegador web de Google \cite{GoogleChrome}. 
+Google Chrome es el navegador web de Google que permite el acceso a internet y la búsqueda en la web a través de una interfaz amigable e intuitiva \cite{GoogleChrome}. 
+
+El uso de Chrome para el acceso a Broadsea es muy recomendado por los propios desarrolladores, por lo que es una herramienta de especial relevancia.
 
 \subsection{Docker}
 
@@ -132,5 +139,3 @@ El uso de Github es muy recomendado debido a que la mayor parte de la informaci�
 Además, siguiendo esta iniciativa de OHSI, para desarrollar este Trabajo Fin de Grado se ha creado un repositorio de Github específico \cite{vallealonsodc} que contiene toda la documentación relevante a su desarrollo (archivos latex, pdf...) y archivos de variables de entorno o scripts utilizados durante la configuración del entorno del sistema o la realización del análisis de datos.   
 
 \section{Conclusiones}
-
-En este capítulo se concluye la utilidad de la alternativa Broadsea para implementar el entorno de herramientas de OHDSI y más concretamente, ATLAS, \ref{sec:07Broadsea} y las tecnologías necesarias para ello \ref{sec:07entorno}.
