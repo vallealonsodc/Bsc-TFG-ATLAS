@@ -5,7 +5,7 @@ Este capítulo presenta el marco teórico sobre OHDSI:  \ref{sec:05intro} Introd
 \section{Introducción} \label{sec:05intro}
 %El objetivo es dar a concoer todos los conceptos teóricos de OHDSI y ATLAS. Quién quiera utilizar ATLAS debe conocer OHDSI, debe conocer el CDM, el Vocab, otras herramientas... Son conceptos fundamentales.
 
-La organización Observational Health Data Science and Informatics (OHDSI) es de muy importante para el TFG por ser la proveedora de la herramienta de análisis ATLAS, núcleo central del trabajo, y por la relevancia que ha adquirido a nivel europeo en los últimos años (véase \ref{sec:01EstadoArte}).
+La organización Observational Health Data Science and Informatics (OHDSI) es muy importante para el TFG por ser la proveedora de la herramienta de análisis ATLAS, núcleo central del trabajo, y por la relevancia que ha adquirido a nivel europeo en los últimos años (véase \ref{sec:01EstadoArte}).
 
 Por tanto, en este capítulo se pretende dar a conocer al lector el ecosistema completo de la organización que provee la herramienta, en cuanto a los aspectos más generales como los más específicos. No se puede entender ATLAS sin entender OHDSI porque las herramientas no están aisladas sino que forman parte de un ecosistema dependiente entre sí. Todas estas dependencias y conceptos necesarios (como el Camino Hacia la Evidencia, el Modelo de Datos Común de OMOP o el Vocabulario) se exponen en este capítulo para generar un conocimiento previo a la lectura del proceso de análisis de datos y para poder volver a estos conceptos básicos cuando fuere necesario.
 
@@ -329,7 +329,7 @@ El uso de ATLAS es beneficioso para la comunidad científica debido principalmen
 
 En cuanto a los aspectos técnicos, ATLAS se despliega como una herramienta basada en web, normalmente alojada en un servidor Apache, combinada con la WebAPI de OHDSI. Generalmente se recomienda su despliegue en Google Chrome. Además la herramienta puede implementarse de forma pública a través de internet o tras el firewall de la red privada de una organización, según las necesidades de la entidad que lo implementa.
 
-Sin embargo, es importante recalcar que tanto ATLAS (como algunas otras herramientas de OHDSI) no consiste en un archivo ejecutable aislado sino de una aplicación contenida y dependiente de un ecosistema completo basado en la web. La dependencia principal y red que sostiene a ATLAS es la \textbf{WebAPI}.
+Sin embargo, es importante recalcar que tanto ATLAS como la mayoría de las herramientas de OHDSI no consiste en un archivo ejecutable aislado sino en una aplicación contenida y dependiente de un ecosistema completo basado en web. La dependencia principal y red que sostiene a ATLAS es la \textbf{WebAPI}.
 
 \begin{figure}[H]
     \centering
@@ -338,7 +338,7 @@ Sin embargo, es importante recalcar que tanto ATLAS (como algunas otras herramie
     \label{fig:webAPIwiki}
 \end{figure}
 
-Tal y como se muestra en la Figura \ref{fig:webAPIwiki} y se define en la wiki del repositorio de github \cite{githubWebAPIwiki}, la Web API es la aplicación que proporciona los servicios RESTful para que la herramienta pueda interactuar con las bases de datos. Por tanto su relación con ATLAS es estrictamente necesaria. ATLAS no es una herramienta aislada sino un eslabón del ecosistema OHDSI.
+Tal y como se muestra en la Figura \ref{fig:webAPIwiki}, la Web API es la aplicación que proporciona los servicios RESTful para que la herramienta pueda interactuar con las bases de datos \cite{githubWebAPIwiki}. Por tanto su relación con ATLAS es estrictamente necesaria. ATLAS no es una herramienta aislada sino un eslabón del ecosistema OHDSI.
 
 Por otra parte, la herramienta en sí se muestra a través de una interfaz gráfica, que proporciona un estrecho menú lateral con 15 herramientas para el análisis de datos. La interfaz de la herramienta seleccionada se muestra en el lado derecho, como se muestra en la Figura \ref{fig:ATLASdemoHome}.
 
