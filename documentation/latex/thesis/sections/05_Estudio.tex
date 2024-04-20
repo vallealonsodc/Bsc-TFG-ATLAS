@@ -7,7 +7,7 @@ Este capítulo presenta el marco teórico sobre OHDSI:  \ref{sec:05intro} Introd
 
 La organización Observational Health Data Science and Informatics (OHDSI) es muy importante para el TFG por ser la proveedora de la herramienta de análisis ATLAS, núcleo central del trabajo, y por la relevancia que ha adquirido a nivel europeo en los últimos años.
 
-Por tanto, en este capítulo se pretende dar a conocer al lector el ecosistema completo de la organización que provee la herramienta, en cuanto a los aspectos más generales como los más específicos. No se puede entender ATLAS sin entender OHDSI porque las herramientas no están aisladas sino que forman parte de un ecosistema dependiente entre sí. Todas estas dependencias y conceptos necesarios se exponen en este capítulo para generar un conocimiento previo al caso práctico (véase \ref{cap:08pruebas}) y para poder volver a estos conceptos básicos cuando fuere necesario.
+Por tanto, en este capítulo se pretende dar a conocer al lector el ecosistema completo de la organización que provee la herramienta, en cuanto a los aspectos más generales como los más específicos. No se puede entender ATLAS sin entender OHDSI porque las herramientas no están aisladas sino que forman parte de un ecosistema dependiente entre sí. Todas estas dependencias y conceptos necesarios se exponen en este capítulo para generar un conocimiento profundo subyacente al caso práctico (véase \ref{cap:08pruebas}) y para poder volver a estos conceptos básicos cuando fuere necesario.
 
 \section{¿Qué es OHDSI?} \label{sec:05OHDSI}
 
@@ -15,7 +15,7 @@ OHDSI, pronunciado en inglés ''Odyseey'', son las siglas de \textit{Observation
 
 La comunidad se asigna por tanto la misión de ''mejorar la salud empoderando a una comunidad para generar de manera colaborativa evidencia que promueva mejores decisiones de salud y una mejor atención'', y comparte la visión de ''un mundo en el que la investigación observacional produzca una comprensión integral de la salud y la enfermedad'' \cite{OHDSIwebsite}\cite{OHDSIbook}. 
 
-Por otra parte, en \textit{El Libro de OHDSI} la organización se define así misma como ''una comunidad de ciencia abierta que tiene como objetivo mejorar la salud empoderando a la comunidad para generar de manera colaborativa evidencia que promueva mejores decisiones de salud y mejor atención'' \cite{OHDSIbook}. La web oficial presenta otra definición algo diferente, se presenta como ''una colaboración de ciencia abierta, interdisciplinaria y de múltiples partes interesadas para resaltar el valor de los datos de salud a través de análisis a gran escala'' \cite{OHDSIwebsite}.
+Por otra parte, en El Libro de OHDSI la organización se define así misma como ''una comunidad de ciencia abierta que tiene como objetivo mejorar la salud empoderando a la comunidad para generar de manera colaborativa evidencia que promueva mejores decisiones de salud y mejor atención'' \cite{OHDSIbook}. La web oficial presenta otra definición algo diferente, se presenta como ''una colaboración de ciencia abierta, interdisciplinaria y de múltiples partes interesadas para resaltar el valor de los datos de salud a través de análisis a gran escala'' \cite{OHDSIwebsite}.
 
 \begin{figure}[H]
     \centering
@@ -80,7 +80,7 @@ Por tanto, a la pregunta sobre \textit{qué es OHDSI} se puede responder apoyán
 
 \subsection{Historia}
 
-Es común encontrar en internet los términos OHDSI y OMOP (\textit{Observational Medical Outcomes Partnership}), utilizados de forma casi indistintiva. Si bien es verdad que OMOP se suele asociar mayoritariamente al CDM (\textit{Common Data Model}) también OHDSI mantiene gran relación con este modelo común de datos. Entonces, ¿cuál es la relación entre estas dos entidades? Pues bien, la iniciativa de OHDSI se originó en 2014, posterior al proyecto OMOP, que finalizó en 2013, pues la relación que guardan estas dos entidades es parental, OHDSI es la sucesora de OMOP. 
+Es común encontrar en internet los términos OHDSI y OMOP (\textit{Observational Medical Outcomes Partnership}), utilizados de forma casi indistintiva. Si bien es verdad que OMOP se suele asociar mayoritariamente al CDM (\textit{Common Data Model}) también OHDSI mantiene gran relación con este modelo común de datos. Entonces, ¿cuál es la relación entre estas dos entidades? Pues bien, la iniciativa de OHDSI se originó en 2014, posterior al proyecto OMOP, que finalizó en 2013, pues la relación que guardan estas dos entidades es filial, OHDSI es la sucesora de OMOP. 
 
 OMOP nació en 2008 como una asociación público-privada presidida por la Administración de Alimentos y Medicamentos de EE. UU. con el objetivo de establecer buenas prácticas en estudios observacionales retrospectivos. El proyecto además fue administrado por la Fundación de los Institutos Nacionales de Salud y financiado por un consorcio de compañías farmacéuticas en colaboración con otros investigadores académicos y socios de datos de salud \cite{stang2010advancing}. El propósito inicial de OMOP era impulsar la ciencia de la vigilancia activa de la seguridad de los productos médicos mediante el análisis de datos observacionales de atención médica \cite{stang2010advancing}. Sin embargo, durante su desarrollo, se enfrentó a los desafíos técnicos de llevar a cabo investigaciones en bases de datos observacionales muy heterogéneas entre sí.
 
@@ -127,13 +127,13 @@ No es casualidad que la invitación que hace OHDSI a sus colaboradores lleve el 
     \label{fig:journeyDataToEvidence}
 \end{figure}
 
-La anterior Figura complementa a la Figura \ref{fig:drawinJourney} con mayor información sobre los diferentes tipos de datos que se almacenan y los diferentes tipos de evidencia que se quiere generar. Frente a la disparidad de los datos y la finalidad con la que son recodigos, OHDSI presentará el Modelo de Datos Común (véase \ref{subsec:05cdm}) y para la extracción de evidencia, la investigación metodológica mediante tres casos de uso fundamentales: la caracterización clínica de una cohorte, la estimación a nivel d epoblación y la predicción a nivel de paciente (véase \ref{subsec:05investMetodolog}).
+La anterior Figura complementa a la Figura \ref{fig:drawinJourney} con mayor información sobre los diferentes tipos de datos que se almacenan y los diferentes tipos de evidencia que se quiere generar. Frente a la disparidad de los datos y la finalidad con la que son recodigos, OHDSI presentará el Modelo de Datos Común (véase \ref{subsec:05cdm}) y para la extracción de evidencia, la investigación metodológica mediante tres casos de uso fundamentales: la caracterización clínica de una cohorte, la estimación a nivel de población y la predicción a nivel de paciente (véase \ref{subsec:05investMetodolog}).
 
-Los estudios que se llevan a cabo son estudios observacionales o fenotípicos, es decir, que simulan lo que sería un estudio clínico experimental pero sobre datos ya almacenados de pacientes, en vez de realizar un seguimiento en vivo. De esta forma se logra obtener evidencia basada en datos (\textit{data-based evidence}).
+Los estudios que se llevan a cabo son estudios observacionales o fenotípicos, es decir, que simulan lo que sería un estudio clínico experimental sin intervención pero sobre datos ya almacenados de pacientes, en vez de realizar un seguimiento en vivo. De esta forma se logra obtener evidencia basada en datos. Cuando la evidencia se extrae sobre datos del mundo real (RWD), se denomina evidencia del mundo real (\textit{Real World Evidence, RWE}).
 
 %De esta forma, OHDSI promueve una vía para generar evidencia interoperable entre las distintas organizaciones que interactúan a través de su red mundial, dicho de otra forma, pretende dar soporte para que miles de estudios diferentes sigan una misma metodología que facilite su comprensión de forma global.
 
-Además, una característica fundamental de las investigaciones que se llevan acabo en OHDSI es que giran entorno al paciente, que es además el núcleo central del Modelo de Datos Común de OMOP. Por lo que un componente fundamental de cualquier investigación metodológica son las historias de los pacientes. Para cada evento clínico que sucede se recoge una historia del paciente o \textit{Patient Journey}, no confundir con la Historia Clínica Electrónica de un paciente (HCE) que recoge una ficha con todos los eventos que han le sucedido a lo largo de su vida. Las investigaciones observacionales se diseñan para extraer información sobre la recopilación de todos los \textit{patient journeys}.
+Además, una característica fundamental de las investigaciones que se llevan acabo en OHDSI es que giran entorno al paciente, que es además el núcleo central del Modelo de Datos Común de OMOP. Por lo que un componente fundamental de cualquier investigación metodológica son las historias de los pacientes. \textbf{Para cada evento clínico que sucede se recoge una historia del paciente o \textit{Patient Journey}}. Es importante no confundir este concepto con la Historia Clínica Electrónica de un paciente (HCE) que recoge una ficha con todos los eventos que han le sucedido a lo largo de su vida. Las investigaciones observacionales se diseñan para extraer información sobre la recopilación de todos los \textit{patient journeys}.
 
 \begin{figure}[H]
     \centering
@@ -144,7 +144,7 @@ Además, una característica fundamental de las investigaciones que se llevan ac
 
 La historia del paciente,  como se muestra en la Figura \ref{fig:patientJourney}, es por tanto, una ventana temporal que recoge un evento clínico que le sucede a un paciente en un período de tiempo concreto. El evento se describe mediante tres períodos de tiempo: la enfermedad (rojo), el tratamiento (naranja) y el efecto (verde); y a partir de cuatro características esenciales: síntomas (\textit{conditions}), medicamentos (\textit{drugs}), procedimientos (\textit{procedures}) y pruebas (\textit{measurements}).
 
-Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). Por tanto, el componente central para generar evidencia en OHDSI será la cohorte.
+Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). \textbf{Por tanto, el componente central para generar evidencia en OHDSI será la cohorte.}
 
 %\begin{figure}[H]
 %\centering
@@ -155,20 +155,20 @@ Los datos de pacientes se pueden agrupar en \textbf{cohortes} que comparten hist
 
 \subsubsection{Implementación del análisis}
 
-Para realizar el análisis \textit{per se} OHDSI distingue tres vías alternativas para generar la evidencia a partir de la base de datos estandarizada al OMOP CDM. Estas tres alternativas se muestran a continuación en la Figura \ref{fig:analysisImplementations}, extraída del capítulo 8 del Libro de OHDSI.
+Para realizar un análisis, OHDSI distingue tres vías alternativas para generar la evidencia a partir de la base de datos estandarizada al OMOP CDM. Estas tres alternativas se muestran a continuación en la Figura \ref{fig:analysisImplementations}, extraída del capítulo 8 del Libro de OHDSI.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth]{figures/analysisImplementations.png}
-     \caption{Vías para la implementación de un análisis observacional. Extraído del Libro de OHDSI \cite{OHDSIbook}}
-    \label{fig:analysisImplementations }
+     \caption{Tres vías para la implementación de un análisis observacional. Extraído del Libro de OHDSI \cite{OHDSIbook}}
+    \label{fig:analysisImplementations}
 \end{figure}
 
-Cada vía se evalúa en cuanto a lo personalizada (\textit{custom}) o estandarizada (\textit{standard}) que es. A estas alturas se sabe que la vía más recomendada para implementar el análisis será la más estandarizada, es decir, la tercera vía.
+Cada vía se evalúa en cuanto a lo personalizada (\textit{custom}) o estandarizada (\textit{standard}) que es. A estas alturas se debe conocer que la vía más recomendada para implementar el análisis será la más estandarizada, es decir, la tercera vía.
 
-Esto se debe a que la primera vía consiste en programas mediante código las consultas directamente sobre la base de datos, con lo que ello conlleva (no hay ningún tipo de estandarización, los analistas escriben código de su propia cosecha utilizando el programa y/o lenguages de programación que consideren conveniente). Por otro lado, la segunda vía hace un balance entre lo customizado y lo estandarizado a través de la aplicación de las librerias estándares que OHDSI ofrece para análisis de datos en R (\textit{OHDSI Methods Library}) sin embargo, aunque se use el mismo lenguage de programación, los scripts pueden ser tan distintos o ilegibles que aún dificulten la interoperabilidad.
+La problemática que presentan la primera y la segunda vía consiste en ser en mayor o menor medida vías customizada, lo que genera problemas de interoperabilidad y reproducibilidad de los estudios. Si bien la primera vía consiste en la programación directa de código para realizar las consultas  (no hay ningún tipo de estandarización, distintos lenguajes de programación, funciones personalizadas) al menos la segunda vía hace uso de librerías estándares en R que OHDSI ofrece (\textit{OHDSI Methods Library}) pero, aunque se use el mismo lenguage de programación y funciones, los scripts pueden ser tan distintos que aún dificulten la interoperabilidad.
 
-De esta forma se presenta la tercera vía que consiste en usar la herramienta interactiva \textit{low-code} de análisis de datos que ofrece OHDSI, denominada \textbf{ATLAS}. Esta tercera vía es la más óptima por ser la mas estandarizada y por ello es la que utilizará el TFG en el estudio práctico.
+Por tanto, la tercera vía se presenta como la alternativa óptima por ser la más estandarizada y es la que empleará el TFG en el estudio práctico. Esto es, usar la herramienta interactiva \textit{low-code} de análisis de datos que ofrece OHDSI, denominada \textbf{ATLAS}, sin necesidad de programar directamente código.
 
 %A partir de este momento se conoce que la implementación del estudio objeto del TFG se realizará a través de la herramienta de anális ATLAS, luego toda información a continuación está estrechamente ligada con su utilidad y uso en los análisis de ATLAS. Esta herramienta, junto a otras que también contribuyen a la estandarización del análisis se presentan en mayor detalle en \ref{sec:05herramientas}.
 
@@ -176,13 +176,13 @@ De esta forma se presenta la tercera vía que consiste en usar la herramienta in
 
 %\subsection{Estandarización de los datos} \label{subsec:05estandarDatos}
 
-OHDSI realiza una labor de estandarización muy importante para paliar las dificultades de la investigación con datos de salud en términos de interoperabilidad y heterogeneidad de los datos. La colaboración en la organización se realiza a través de nodos distribuidos por el mundo, cuyos sistemas de información varian notoriamente entre sí por lo que se necesitan estándares que permitan el intercambio de información sin pérdida entre los mismos.
+En términos de estandarización, OHDSI realiza una labor muy importante para paliar las dificultades de la investigación con datos de salud a causa de la heterogeneidad de los datos y estudios. Debido a la amplia colaboración internacional de la organización se recocone la necesidad de estándares que permitan el intercambio de información sin pérdida entre los distintos sistemas de información de los miembros.
 
-La estandarización de la investigación en OHDSI se realiza en dos planos: a nivel de datos y a nivel de investigación. La estandarización a nivel de datos se realiza a través del uso del Modelo de Datos Común \ref{subsec:05cdm} y el Vocabulario \ref{subsec:05vocab} y la estandarización a nivel de investigación mediante la definición de tres \textit{casos de uso} \ref{subsec:05investMetodolog}.
+La estandarización de la investigación en OHDSI se realiza en dos planos: a nivel de datos y a nivel de investigación. La estandarización a nivel de datos se realiza a través del uso del Modelo de Datos Común \ref{subsec:05cdm} y el Vocabulario \ref{subsec:05vocab} y la estandarización a nivel de investigación mediante la investigación metodológica \ref{subsec:05investMetodolog}.
 
 \subsection{El Modelo de Datos Común} \label{subsec:05cdm}
 
-El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
+El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo semántico estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
 
 \subsubsection{Características}
 
@@ -287,11 +287,11 @@ La predicción a nivel de paciente busca, en base a los datos obtenidos de los c
 
 OHDSI proporciona un conjunto de herramientas para facilitar la realización de los estudios e investigaciones a raíz de los datos clínicos y fomentar la interoperabilidad entre estos, aportando un estándar de herramientas. 
 
-Las herramientas que proporciona la organización están disponibles públicamente online y de forma gratuita y son desarrolladas por los propios miembros de la comunidad. Entre todas las herramientas, para la realización de este Trabajo Fin de Grado se destaca la herramienta de análisis de datos clínicos ATLAS \ref{subsec:05ATLAS}, aunque también existen otras herramientas externas e importantes \ref{subsec:05otrasHerramientas}.
+Las herramientas que proporciona la organización están disponibles públicamente online y de forma gratuita y son desarrolladas por los propios miembros de la comunidad. Entre todas las herramientas, para la realización de este Trabajo Fin de Grado se destaca la herramienta de análisis de datos clínicos ATLAS \ref{subsec:05ATLAS}, aunque también existen otras herramientas importantes de forma indirecta \ref{subsec:05otrasHerramientas}.
 
 \subsection{ATLAS} \label{subsec:05ATLAS}
 
-ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza directamente el análisis observacional una vez que la base de datos está convertida al modelo OMOP. La documentación oficial sobre ATLAS se encuentra en el capítulo 8 del Libro de OHDSI y en su repositorio de github \cite{githubATLAS}. Además, aparte de la documentación oficial, hay montones de información esparcidas por la red sobre ATLAS, en publicaciones científicas, foros de OHDSI, videotutoriales en youtube y un largo etcétera.
+ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza el análisis observacional una vez que la base de datos está convertida al modelo OMOP. La documentación oficial sobre ATLAS se encuentra en el capítulo 8 del Libro de OHDSI y en su repositorio de github \cite{githubATLAS}. Además, aparte de la documentación oficial, hay montones de información esparcidas por la red sobre ATLAS, en publicaciones científicas, foros de OHDSI, videotutoriales en youtube y un largo etcétera.
 
 \begin{figure}[H]
 \centering
@@ -300,11 +300,11 @@ ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza dir
     \label{fig:ATLASlogo}
 \end{figure}
 
-Un importante promotor del uso de ATLAS es la red europea de datos EHDEN (European Health Data \& Evidence Network) \cite{ehden} que colabora estrechamente con OHDSI desde 2020 para fomentar el uso del estandar de la organización (véase \ref{sec:01EstadoArte}). En esta línea, también la plataforma EHDEN Academy también ofrece cursos gratuitos sobre el uso de ATLAS y otras herramientas OHDSI.
+Un importante promotor del uso de ATLAS es la red europea de datos EHDEN \cite{ehden} (véase \ref{sec:01EstadoArte}). En esta línea, también la plataforma EHDEN Academy también ofrece cursos gratuitos sobre el uso de ATLAS y otras herramientas OHDSI.
 
 \subsubsection{Características y beneficios de su uso}
 
-El uso de ATLAS es beneficioso para la comunidad científica debido principalmente a su naturaleza \textit{open-source} y \textit{low-code}. 
+El uso de ATLAS es beneficioso para la comunidad científica debido principalmente a su naturaleza \textit{open-source}, \textit{low-code} y la reproducibilidad que ofrece para los estudios:
 
 \begin{enumerate}[label=\roman*.]
 

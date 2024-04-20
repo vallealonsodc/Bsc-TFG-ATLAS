@@ -1,7 +1,24 @@
-\chapter{Manual de usuario}\label{anexo:manual}
+\chapter{Manual de ATLAS Broadsea}\label{anexo:manual}
 
-El anexo es un documento aparte
+El nombre completo de este anexo corresponde a \textbf{Manual de instalación, despliegue y configuración de ATLAS Broadsea}, aunque por motivos de extensión se ha reducido en el índice de la memoria a \textit{Manual de ATLAS Broadsea}.
 
-La estructura es...
+El manual se presenta a la convocatoria como un documento aparte debido a su larga extensión, de casi 40 páginas. No obstante, se utiliza este apartado de la memoria para presentar resumidamente sus contenidos básicos y cómo acceder a él. Su gran extensión se debe a a que recopila en un único lugar una grandísima variedad de información que hasta ahora se encontraba esparcida de forma más o menos ordenada en la red, sobretodo en diferentes repositorios de github. 
 
-El repositorio github..
+El anexo se adjunta a la documentación entregable de la convocatoria con el nombre ''Anexo A - Manual de ATLAS Broadsea.pdf''. Adicionalmente, también es accesible a través del repositorio de github del Trabajo Fin de Grado \cite{vallealonsodc}, concretamente en la ruta \code{Thesis-ATLAS-OHDSI/documentation/pdf}.
+
+%El manual es un documento de gran valor debido a que recopila en un único lugar una grandísima variedad de información que hasta ahora se encontraba esparcida de forma más o menos ordenada en la red, pero nunca recopilada en un único documento. Su redacción como un documento aparte nace de la propia dificultad a la que se enfrenta la alumna a la hora de instalar, desplegar y configurar la herramienta para la reproducción del estudio práctico con el fin de facilitar a futuros usuarios y a sus propios compañeros del departamento de Innovación Tecnológica del Hospital Universitario Virgen del Rocío una guía detallada con todos los contenidos necesarios para replicar esta tarea cuando fuere necesario.
+
+El manual trata cinco aspectos importantes de ATLAS Broadsea: 
+
+\begin{enumerate}
+    \item \textbf{Introducción y descripción de Broadsea.} Este capítulo explica contenidos sobre el entorno tecnológico necesario para seguir correctamente los procedimientos del manual.
+    \item \textbf{Despliegue por defecto.} Este capítulo presenta el despliegue más sencillo del entorno Broadsea, sin ningún tipo de configuración adicional.
+    \item \textbf{Conexión con la BD por defecto.} Este capítulo explica la conexión con el servidor Postgre del contenedor docker de Broadsea.
+    \item \textbf{Conexión con BD externa.} Este capítulo explica cómo añadir una conexión de una base de datos externa al servidor docker de Broadsea.
+    \item \textbf{Configuración del Vocabulario.} Eeste capítulo explica cómo configurar el Vocabulario desde ATHENA y se presentan otras configuraciones avanzadas.
+\end{enumerate}
+
+Todo ello complementa la información del TFG de forma subyacente, es decir, durante la reproducción del estudio práctico (véase \ref{cap:08pruebas}) se da por supuesto todo el proceso de instalación de la herramienta así como la configuración del servidor, base de datos, étc. En términos de roles del proyecto (véase \ref{cap:03gestión}) se podría decir que mientras que el analista se encarga de reproducir el estudio haciendo uso de la interfaz de usuario de ATLAS, el developer habría sido el encargado de realizar toda el anexo, con toda la instalación, despliegue y configuración para que la herramienta funcione. No obstante, en este caso ambos roles son ejecutados por la misma persona que es la alumna. Además satisface explícitamente el \textbf{Obj-002} del Trabajo Fin de Grado (véase \ref{cap:02objetivos}).
+
+
+
