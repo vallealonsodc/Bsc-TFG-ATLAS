@@ -1,10 +1,10 @@
 \chapter{Entorno de Trabajo}\label{cap:07diseño}
 
-Este capítulo presenta el entorno de trabajo: \ref{sec:07Broadsea} Arquitectura de Broadsea y \ref{sec:07entorno} Entorno tecnológico.
+Este capítulo presenta el entorno de trabajo: \ref{sec:07arqTecno} la arquitectura tecnológica y \ref{sec:07entorno} el entorno tecnológico.
 
 \section{Introducción}
 
-La implementación del ecosistema de herramientas OHDSI y ATLAS puede ser una ardúa tarea. En el contexto de desarrollo del Trabajo Fin de Grado junto a las prácticas en empresa en el Hospital Virgen del Rocío, la dificultad de la tarea podía verse exponencialmente aumentada debido a los grandes protocolos de seguridad y privacidad de la administración pública. Por ello, se ha seleccionado el despliegue de las herramientas OHDSI a través del subsistema Docker de Broadsea. 
+La implementación del ecosistema de herramientas OHDSI y ATLAS puede ser una ardúa tarea. En el contexto de desarrollo del Trabajo Fin de Grado junto a las prácticas en empresa en el Hospital Virgen del Rocío, la dificultad de la tarea se ve exponencialmente aumentada debido a los grandes protocolos de seguridad y privacidad de la administración pública. Por ello, se ha seleccionado el despliegue de las herramientas OHDSI a través del subsistema Docker de Broadsea, que presenta una vía sencilla para realizar esta labor. 
 
 Broadsea es un proyecto basado en Docker que permite desplegar todo el entorno de herramientas, configuraciones y dependencias OHDSI de la manera más sencilla hasta el momento. De hecho, la misma organización la presenta, textualmente, como \textit{''la forma más sencilla de instalar (y actualizar) las herramientas OHDSI"} \cite{Broadsea3PDF}. 
 
@@ -15,22 +15,24 @@ Broadsea es un proyecto basado en Docker que permite desplegar todo el entorno d
     \label{fig:broadseaEq}
 \end{figure}
 
-Lo que comenzó, en su primera versión, como un simple contenedor que albergase imágenes de la WebAPI de ATLAS y RStudio \cite{Broadsea3PPTX} ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo.
+Aunque comenzó en su primera versión, como un simple contenedor que albergase imágenes de la WebAPI de ATLAS y RStudio \cite{Broadsea3PPTX} ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.80\textwidth]{figures/versionesBroadsea.png}
+    \includegraphics[width=0.90\textwidth]{figures/versionesBroadsea.png}
     \caption{Historial de versiones de Broadsea. Extraída de \cite{Broadsea3PPTX}.}
     \label{fig:versionesBroadsea}
 \end{figure}
 
+La tercera versión de Broadsea incluye perfiles docker que facilitan la configuración del servicio, redes internas de conexión, despliegue de variables internas, más aplicaciones OHDSI y la construcción de contenedores desde Git, entre otros. 
+
 A continuación se presenta la arquitectura teórica de Broadsea y el entorno de herramientas tecnológicas necesarias para su correcta implementación.
 
-\section{Arquitectura tecnológica}
+\section{Arquitectura tecnológica} \label{sec:07arqTecno}
 
-La arquitectura, en términos tecnológicos, del sistema puede llegar a resultar algo compleja, por ello se describe en dos subsecciones: \ref{subsec:07sistema) Arquitectura teórica-generalizada del sistema \ref{subsec:07Broadsea} Arquitectura específica de Broadsea.
+La arquitectura en términos tecnológicos del sistema es compleja, por ello se describe en dos subsecciones: \ref{subsec:07sistema} Arquitectura teórica-generalizada del sistema y \ref{subsec:07Broadsea} Arquitectura específica de Broadsea.
 
-\subsection{Arquitectura del sistema}\label{subsec:07sistems}
+\subsection{Arquitectura del sistema}\label{subsec:07sistema}
 
 El sistema se implementa mediante virtualización con Docker y una arquitectura en tres niveles o \textit{three-tier}, donde se diferencian al cliente, frontend y backend. Esta arquitectura se describirá de forma general utilizando el esquema de la Figura \ref{fig:threetierDocker}, extraído de internet.
 
@@ -55,17 +57,17 @@ Por tanto, a nivel de aquitectura del sistema en sí, se encuentra la capa clien
 
 \begin{enumerate}
 
-    \item \textbf{El cliente.} El cliente está alojado en la máquina anfitriona y proporciona el acceso a los servicios virtualizados del sistema, a través de la conexión internet con el servidor docker.
+    \item \textbf{El cliente.} El cliente está alojado en la máquina anfitriona y proporciona el acceso a los servicios virtualizados del sistema a través de la conexión internet con el servidor docker.
 
-     En el caso de Broadsea el navegador deberá ser Google Chrome y la dirección será http://127.0.0.1:5432.
+     En el caso de Broadsea el navegador deberá ser Google Chrome y la dirección por defecto será http://127.0.0.1:5432.
 
-    \item \textbf{El frontend.} El frontend está alojado en la máquina virtual, es el servicio que guarda la lógica de la aplicación que se muestra al usuario. Se compone de la \textit{webapp}, que contiene la aplicación como tal, y la \textit{api} es la red que permite establecer interconexiones entre la aplicación lógica y la base de datos; entre el frontend y el backend.
+    \item \textbf{El frontend.} El frontend está alojado en la máquina virtual, es el servicio que guarda la lógica de la aplicación que se muestra al usuario. Se compone de la \textit{webapp}, que contiene la aplicación como tal, y la \textit{api}. que es la red que permite establecer interconexiones entre la aplicación lógica y la base de datos; entre el frontend y el backend.
 
     En el caso de Broadsea la webapp y la api se combinan en el componente de la WebAPI, que permite el acceso a la aplicación de ATLAS y maneja las conexión con las bases de datos del backend.
 
     \item \textbf{El backend.} El backend está alojado en la máquina virtual, es el servicio que aloja la base de datos sobre la que se sostiene la aplicación. Se compone de la \textit{api} y la \textit{db}. De igual forma que en el frontend, la api es la red que permite la interconexión entre los componentes del sistema, en este caso con la base de datos, que puede ser una o varias.
 
-    En el caso de Broadsea, las bases de datos deberán estar estandarizadas a OMOP y podrán encontrarse en el propio servidor Docker, como es el caso de Eunomia, la base de datos que implementa Broadsea por defecto o en servidores externos. No obstante, la relación entre cualquier base de datos y ATLAS se realiza a través de la WebAPI.
+    En el caso de Broadsea, las bases de datos deberán estar estandarizadas a OMOP y podrán encontrarse en el propio servidor Docker, como es el caso de Eunomia, o en servidores externos. No obstante, la relación entre cualquier base de datos y ATLAS se realiza a través de la WebAPI.
 
     
 \end{enumerate}
@@ -83,16 +85,15 @@ A continuación se presenta la aquitectura específica de Broadsea. Broadsea v3.
     \label{fig:OHDSIBroadsea3.0}
 \end{figure}
 
-El despliegue por defecto de Broadsea genera en el frontend una interfaz de usuario con acceso a tres aplicaciones: ATLAS, HADES y ARES. Para acceder a esta interfaz de usuario basta con buscar en el navegador el servidor y puerto donde se aloja broadsea, que tipicamente será la maquina local y el puerto 5354, correspondienre a Postgre.
-Por otro lado,en el backend se crea la WebAPI y se inicializa la base de datos de Eunomia.
+El despliegue por defecto de Broadsea genera en el frontend una interfaz de usuario con acceso a tres aplicaciones: ATLAS, HADES y ARES. Para acceder a esta interfaz de usuario basta con buscar en el navegador el servidor y puerto donde se aloja broadsea, que tipicamente será la maquina local y el puerto 5354, correspondiente a Postgre.
 
 \begin{enumerate}
 
-    \item \textbf{ATLAS}. ATLAS Broadsea despliega todas las funcionalidades de la herramienta de forma local. ATLAS se sostiene sobre la WebAPI y cuenta con la bd de Eunomia.
+    \item \textbf{ATLAS}. ATLAS Broadsea despliega todas las funcionalidades de la herramienta de forma local. ATLAS se sostiene sobre la WebAPI y cuenta con la base de datos de Eunomia.
     
     \begin{enumerate}
-        \item WebAPI. La WebAPI se despliega como un contenedor docker y como un volumen de datos. Además, también se construirá un esquema la base de datos del servidor Postgre que aloja al contenedor, denominado \code{webapi}. A través de la modificación de este esquema se podrán agregar o eliminar las diferentes fuentes de datos a la herramienta.
-        \item BD. Para facilitar el correcto funcionamiento de ATLAS se implementa una base de datos demo que es Eunomia. Esta base de datos cuenta con un pequeño registro de datos normalizados a OMOP y también crea varios esquemas en la base de datos del servidor Postgre que permiten su configuración, o la realización de consultas directamente desde el administrador de la base de datos.
+        \item \textbf{WebAPI}. La WebAPI se despliega como un contenedor docker y como un volumen de datos. Además, también se construirá un esquema en la base de datos del servidor Postgre que aloja al contenedor, denominado \code{webapi}. A través de la modificación de este esquema se podrán agregar o eliminar las diferentes fuentes de datos a la herramienta.
+        \item \textbf{BD}. Para facilitar el correcto funcionamiento de ATLAS se implementa una base de datos demo que es Eunomia. Esta base de datos cuenta con un pequeño registro de datos normalizados a OMOP y también crea varios esquemas en la base de datos del servidor Postgre que permiten su configuración, o la realización de consultas directamente desde el administrador de la base de datos.
     \end{enumerate}
 
     \item \textbf{HADES}. HADES Broadsea despliega todas las funcionalidades de la herramienta de forma local. Se sostiene sobre una virtualización del IDE de RStudio que tiene preinstalada y preconfiguradas todas las librerías de la Librería de Métodos. Su uso no es relevante en el TFG.
@@ -139,3 +140,5 @@ El uso de Github es muy recomendado debido a que la mayor parte de la informaci�
 Además, siguiendo esta iniciativa de OHSI, para desarrollar este Trabajo Fin de Grado se ha creado un repositorio de Github específico \cite{vallealonsodc} que contiene toda la documentación relevante a su desarrollo (archivos latex, pdf...) y archivos de variables de entorno o scripts utilizados durante la configuración del entorno del sistema o la realización del análisis de datos.   
 
 \section{Conclusiones}
+
+En este capítulo se concluye que la arquitectura tecnológica del sistema es bastante compleja (véase \ref{sec:07arqTecno}), puesto que involucra una virtualización del ecosistema OHDSI a través de Docker, denominado Broadsea. No obstante, la implementación del sistema en Docker facilita bastante la tarea de configurar el ecosistema completo, gracias al empaquetamiento de las funcionalidades en contenedores accesibles \textit{a-la-carte}. Por último, es importante conocer el entorno tecnológico fundamental para desplegar correctamente el sistema, compuesto por Chrome, Docker, PostgreSQL y Github (véase \ref{sec:07entorno}).

@@ -1,14 +1,16 @@
 \chapter{Gestión del Proyecto}\label{cap:03gestión}
 
 %\section{Introducción}
-En este capítulo se presenta toda la información relacionada con la gestión del proyecto de la elaboración del TFG. El capítulo se divide en seis secciones: \ref{sec:03Participantes} Participantes del Proyecto, %\ref{sec:03EDT} Estructura de Desglose de Trabajo, 
-\ref{sec:03Recursos} Estimación de recursos, \ref{sec:03Temporal} Planificación temporal, \ref{sec:03Costes} Evaluación de costes y \ref{sec:03Riesgos} Identificación de riesgos y planes de contingencia.
+En este capítulo se presenta toda la información relacionada con la gestión del proyecto de la elaboración del TFG. El capítulo se divide en cuatro secciones: \ref{sec:03Participantes} Participantes del Proyecto,
+%\ref{sec:03EDT} Estructura de Desglose de Trabajo, 
+%\ref{sec:03Recursos} Estimación de recursos, 
+\ref{sec:03Temporal} Planificación temporal, \ref{sec:03Costes} Evaluación de costes y \ref{sec:03Riesgos} Identificación de riesgos y planes de contingencia.
 
 \section{Participantes del Proyecto} \label{sec:03Participantes}
 
-Los participantes del proyecto TFG se presentan a continuación mediante una tabla que recoge su nombre, institución a la que pertenece, rol asignado durante la elaboración del proyecto, tareas asignadas durante la elaboración del proyecto e información de contacto. 
+Los participantes del proyecto TFG se presentan a continuación mediante una tabla que recoge su nombre, institución a la que pertenece, rol asignado durante la elaboración del proyecto e información de contacto. 
 
-Es importante destacar que los tres primeros participantes corresponden a la propia alumna y tutores de la Escuela Técnica Superior de Ingeniería Informática de la Universidad de Sevilla y los dos últimos participantes, a los tutores de las prácticas realizadas en el Departamento de Innovación Tecnológica del Hospital Universitario Virgen del Rocío.
+Es importante destacar que los tres primeros participantes corresponden a alumna y tutores de la Escuela Técnica Superior de Ingeniería Informática de la Universidad de Sevilla y los dos últimos participantes, a los tutores de las prácticas realizadas en el Departamento de Innovación Tecnológica del Hospital Universitario Virgen del Rocío.
 
 \input{tables/primerParticipante}
 
@@ -22,17 +24,117 @@ Es importante destacar que los tres primeros participantes corresponden a la pro
 
 %\section{Estructura de desglose de trabajo} \label{sec:03EDT}
 
-\section{Estimación de recursos} \label{sec:03Recursos}
-
-- PC, licencias windows, office; recursos open-source de OHDSI a través de youtube, github, docker...
-
 \section{Planificación temporal} \label{sec:03Temporal}
 
 - Scrum, planificación por sprints, estimación del tiempo, desviación...
 
-\section{Evaluación de costes} \label{sec:03Costes}
+\section{Planificación financiera} \label{sec:03Costes}
 
-- PC, licencias windows, office, teams, ATLAS, OHDSI; gastos indirectos (luz)...
+La planificación financiera se realiza de forma similar a la elaboración de un presupuesto sobre el proyecto. Para ello se realizará el cáluclo de dos tipos de coste: personal y material. Por último se esitmará el coste total y el beneficio.
+
+\subsubsection{Coste de personal}
+
+Para el coste de personal se tendrán en cuenta los roles definidos previamente (véase \ref{sec:03Participantes}). Concretamente, intervendrán los roles ejercidos por la alumna y se omitirán los roles de tutorización y supervisaje para el cómputo del presupuesto del proyecto.
+
+Por tanto, el proyecto requiere del ejercicio fundamental de tres roles: jefe de proyecto, developer y analista. El jefe de proyecto asume las tareas de comunicarse con la empresa externa, tomar decisiones y acordar objetivos y elaboración del trabajo. El developer asume las tareas de instalar, desplegar y configurar el sistema así como gestionar y administrar las bases de datos y asegurar el correcto funcionamiento de la herramienta. Por último, el analista realiza las tareas meramente análiticas, se encarga de la reproducción del estudio clínico \textit{per se} haciendo uso de la herramienta una vez instalada.
+
+Los costos de cada rol se calculan por hora, utilizando como referencia el precio medio publicado en la consulta preliminar para perfiles profesionales del ámbito informático \cite{informeJuntaAndalucia}, considerando la categoría junior para cada uno. 
+
+A continuación se presenta en negrita el rol definido en el proyecto seguido de la categoría a la que se ha asociado el rol según el informe de la Junta y el coste total asociado a las horas invertidas.
+
+\begin{itemize}
+    \item \textbf{Jefe de proyecto.} Jefe de proyecto y coordinador junior: 39.16€/h.
+
+\begin{equation}
+   39.16 \, \text{€/h} \times 700 \, \text{h} = 27412 \, \text{€}
+\end{equation}
+
+    \item \textbf{Developer.} Administrador de la base de datos junior: 35.18€/h.
+
+\begin{equation}
+    35.18 \, \text{€/h} \times 700 \, \text{h} = 27412 \, \text{€}
+\end{equation}
+
+    \item \textbf{Analista.} Analista funcional de aplicaciones junior: 33.12€/h
+
+\begin{equation}
+    33.12 \, \text{€/h} \times 700 \, \text{h} = 27412 \, \text{€}
+\end{equation}
+
+\end{itemize}
+
+Por tanto, el\textbf{ coste total destinado al personal del proyecto es XXXX €}.
+
+%\input{tables/costePersonal}
+
+
+\subsubsection{Coste material}
+
+En cuanto a los costes materiales, se distinguen otras tres categorías: costes de amortizaciones, de licencias y de servicios. 
+
+\textcolor{red}{cambiar datos}
+%En este apartado hay varios importes que se establecen de forma mensual, y para ello se determinará que el proyecto tendrá una duración de cuatro meses.
+
+En primer lugar, el coste de amortizaciones tendrá en cuenta únicamente el equipo portátil utilizado para el desarrollo del proyecto. Se realizará una amortización lineal en 5 años, con un coste inicial de 1000 € y un valor residual del 20 de este coste inicial que da lugar a un coste de 13.33€/mes.
+
+\begin{itemize}
+    \item \textbf{Equipo portátil.} Ordenador con procesador 7th generation y 8 gb de RAM.
+\end{itemize}
+
+\begin{equation}
+    \text{valor residual} = 1000 \text{€} \times 0.20 = 200 \text{€}
+\end{equation}
+
+\begin{equation}
+    \text{valor total} = \frac{1000 - 200 \text{€}}{60 \text{ meses}} = 13.33 \text{€/mes}
+\end{equation}
+
+En segundo lugar, el coste de licencias tendrá en cuenta el uso de software de pago. La mayoría de las herramientas utilizadas durante el proyecto poseen un plan gratuito o son gratuitas en sí mismas, a excepción de las siguientes:
+
+\begin{itemize}
+    \item \textbf{Licencia de Windows 11 Pro} \cite{licenciaWindows}: 259€
+    \item \textbf{Licencia profesional de Enterprise Architect} \cite{licenciaEA}: 229€
+    \item \textbf{Licencia de Microsoft Office 365} \cite{licenciaOffice}: 69€
+\end{itemize}
+
+Tenemos por tanto un coste total de licencias de 557€.
+
+En tercer lugar, los costes de servicios incluyen los gastos por suministro eléctrico, el cual tiene un coste promedio de 0,182 € / KWh (OCU, 2022) . Se estima un consumo medio de 0,3 KWh de los dispositivos electrónicos usados durante el desarrollo.
+
+\begin{itemize}
+    \item \textbf{Suministro eléctrico.}
+\end{itemize}
+
+\begin{equation}
+0.182 \, \text{€/kWh} \times 0.3 \, \text{kWh} \times 300 \, \text{h} = 16.38 \, \text{€}.
+\end{equation}
+
+También es necesario tener en cuenta el servicio de internet, para el que se tiene contratado un servicio de fibra óptica simétrica de 100 megabytes con un coste mensual de 25,70 €:
+
+\begin{itemize}
+    \item \textbf{Suministro de internet.}
+\end{itemize}
+
+\begin{equation}
+25.70 \, \text{€/mes} \times 4 \, \text{meses} = 102.8 \, \text{€}.
+\end{equation}
+
+Con esto obtenemos un \textbf{coste material total de 727,38€}.
+
+\subsubsection{Coste total y beneficio}
+
+\textcolor{red}{cambiar datos}
+
+Sumando los costes de personal y materiales, se tiene que el coste total estimado del proyecto asciende a la cifra de 8.959,42 €.
+
+En cuanto al beneficio que tiene este proyecto, ha sido estimado como el coste total más un 15\% de beneficio íntegro para la empresa. Esto hace un total de 10.303,33 € de beneficio total del proyecto.
+
+Por último, se añadirá un fondo de contingencia frente a riesgos del proyecto que quedará excluido de este coste total. Su finalidad será evitar que alguna desviación o problema pueda provocar una finalización temprana del proyecto. Corresponderá al 10\% del coste total estimado, por lo que se contará con un fondo de contingencia de 895,94 €.
+
+\subsection{Desviaciones}
+
+\textcolor{red}{cambiar datos}
+
 
 \section{Identificación de riesgos y planes de contingencia} \label{sec:03Riesgos}
 

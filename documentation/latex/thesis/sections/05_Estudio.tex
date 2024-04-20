@@ -5,9 +5,9 @@ Este capítulo presenta el marco teórico sobre OHDSI:  \ref{sec:05intro} Introd
 \section{Introducción} \label{sec:05intro}
 %El objetivo es dar a concoer todos los conceptos teóricos de OHDSI y ATLAS. Quién quiera utilizar ATLAS debe conocer OHDSI, debe conocer el CDM, el Vocab, otras herramientas... Son conceptos fundamentales.
 
-La organización Observational Health Data Science and Informatics (OHDSI) es muy importante para el TFG por ser la proveedora de la herramienta de análisis ATLAS, núcleo central del trabajo, y por la relevancia que ha adquirido a nivel europeo en los últimos años (véase \ref{sec:01EstadoArte}).
+La organización Observational Health Data Science and Informatics (OHDSI) es muy importante para el TFG por ser la proveedora de la herramienta de análisis ATLAS, núcleo central del trabajo, y por la relevancia que ha adquirido a nivel europeo en los últimos años.
 
-Por tanto, en este capítulo se pretende dar a conocer al lector el ecosistema completo de la organización que provee la herramienta, en cuanto a los aspectos más generales como los más específicos. No se puede entender ATLAS sin entender OHDSI porque las herramientas no están aisladas sino que forman parte de un ecosistema dependiente entre sí. Todas estas dependencias y conceptos necesarios (como el Camino Hacia la Evidencia, el Modelo de Datos Común de OMOP o el Vocabulario) se exponen en este capítulo para generar un conocimiento previo a la lectura del proceso de análisis de datos y para poder volver a estos conceptos básicos cuando fuere necesario.
+Por tanto, en este capítulo se pretende dar a conocer al lector el ecosistema completo de la organización que provee la herramienta, en cuanto a los aspectos más generales como los más específicos. No se puede entender ATLAS sin entender OHDSI porque las herramientas no están aisladas sino que forman parte de un ecosistema dependiente entre sí. Todas estas dependencias y conceptos necesarios se exponen en este capítulo para generar un conocimiento previo al caso práctico (véase \ref{cap:08pruebas}) y para poder volver a estos conceptos básicos cuando fuere necesario.
 
 \section{¿Qué es OHDSI?} \label{sec:05OHDSI}
 
@@ -24,7 +24,7 @@ Por otra parte, en \textit{El Libro de OHDSI} la organización se define así mi
     \label{fig:OHDSIbanner}
 \end{figure}
 
-Por tanto, a la pregunta sobre \textit{qué es OHDSI} se puede responder apoyándose en tres características fundamentales: (i)  una comunidad o red colaborativa, (ii) de ciencia abierta, (iii) estandarizada y (iv) con la finalidad de promover la extracción de evidencia a partir de datos clínicos.
+Por tanto, a la pregunta sobre \textit{qué es OHDSI} se puede responder apoyándose en cuatro características fundamentales: (i)  una comunidad o red colaborativa, (ii) de ciencia abierta, (iii) estandarizada y (iv) con la finalidad de promover la extracción de evidencia a partir de datos clínicos.
 
 \begin{enumerate}[label=\roman*.]
     \item \textbf{Una comunidad o red colaborativa}. La organización es una comunidad, es decir, se presenta abierta a la incorporación de todo aquel que esté comprometido con su misión. Además se muestra siempre abierta e interesada en la incorporación de nuevos colaboradores, lo que muestran constantemente con el eslogan \textit{''Join the Journey''}, en español, ''únete a la aventura'' (véase Figura \ref{fig:joinTheJourney}). Además la organización distribuye a sus colaboradores en nodos por países y en grupos de trabajo según los diferentes componentes de OHDSI. 
@@ -188,7 +188,7 @@ El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar
 
 El modelo de datos de OMOP presenta características importantísimas para hacer frente a las necesidades del panorama socio-sanitario actual presentado en \ref{sec:01Contexto}. A continuación se presentan las características más relevantes del modelo (extraídas de la sección  4.1 del Libro de OHDSI \cite{OHDSIbook}), según las necesidades identificadas previamente.
 
-\begin{enumerate}[label=\alph*.]
+\begin{itemize}
     \item \textbf{Estructura diseñada para la investigación}. 
     El modelo presenta una estructura única y óptima para un propósito concreto: el de facilitar la realización de estudios observacionales. Por tanto reduce notoriamente los desafíos relativos a las diferentes estructuras y propósitos con los que se recogen los datos clínicos.
     \item \textbf{Modelo centrado en el paciente}. Es un modelo centrado en el paciente (alineado con la msima característica de la Sanidad 4.0). Estructuralmente esto significa que todos los eventos y tablas están relacionados con la tabla central del paciente, denominada \textit{Person}. 
@@ -196,7 +196,7 @@ El modelo de datos de OMOP presenta características importantísimas para hacer
     \item \textbf{Reutilización de estándares}. Un aspecto importantísimo es que el modelo propone su propio estándar pero sin olvidar los estándares globalmente utilizados, de manera que integra y reutiliza los conceptos provenientes de estándares ya existentes (ej. SNOMED, LOINC...) referenciándolos en su propio Modelo de Datos Común. El conjunto de todos los estádnares existentes adheridos al modelo de OMOP conforma el Vocabulario.
     \item \textbf{Neutralidad tecnológica}. El modelo no requiere una tecnología específica sino que puede estructurarse en cualquier base de datos relacional (ej. Oracle, SQL Server...), ajustándose a los requisitos tecnológicos necesarios de cada organización (identificado también como una dificultad en \ref{sec:01Contexto}).
     
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Modelo de Datos Lógico}
 
@@ -258,7 +258,7 @@ Estos tres casos de uso se presentan generalmente en los \textit{Symposium} y \t
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.70\textwidth]{figures/bblocksPatientJourney.png}
-     \caption{Building blocks para la definición de una cohorte. Extraído del Tutorial2022 publicado en la web oficial \cite{OHDSIwebsite}}
+     \caption{Building blocks para la definición de una cohorte. Extraído del Tutorial 2022 publicado en la web oficial \cite{OHDSIwebsite}}
     \label{fig:bblocksPatientJourney}
 \end{figure}
 
@@ -373,25 +373,25 @@ No obstante, la organización ha desarrollado varias iniciativas que facilitan s
 
 Si bien las herramientas del ecosistema de OHDSI no son totalmente aisladas, ATLAS presenta en su propia interfaz acceso a dos de estas herramientas de forma íntegra, para facilitar la eficiencia y rapidez en el análisis. Estas herramientas son las siguientes:
 
-\begin{enumerate}[label=\alph*.]
+\begin{itemize}
 
     \item \textbf{ACHILLES} \cite{githubACHILLES}. Esta herramienta, de las siglas \textit{Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems}, en español Caracterización automatizada de la información sanitaria en sistemas de evidencia longitudinal a gran escala, sirve para caracterizar y/o obtener un reporte estadístico de la base de datos estandarizada que se va a utilizar para el estudio. Intrínsicamente es una librería de R que se implementa como una opción del menú lateral \textit{Data Sources} de ATLAS.
     \item \textbf{ATHENA} \cite{githubATHENA}. Esta herramienta sirve para realizar búsquedas dinámicas en el Vocabulario de OMOP (véase \ref{subsec:05vocab}). Está implementada en ATLAS en la opción \textit{Search} del menú lateral. Además, se puede acceder a ella online de forma externa a través de su propia página web \cite{ATHENAweb}.
     
-\end{enumerate}
+\end{itemize}
 
 
 \subsection{Otras herramientas} \label{subsec:05otrasHerramientas}
 
 El ecosistema de OHDSI presenta gran cantidad de herramientas adicionales. A continuación se presentan otras herramientas que aunque no se utilizan directamente, son importantes para realizar un análisis de datos completo. 
 
-\begin{enumerate}[label=\alph*.]
+\begin{itemize}
     
     \item \textbf{HADES} \cite{githubHADES}. HADES, del inglés\textit{ Health Analytics Data-To-Evidence Suite} y en español Suite de análisis sanitario de datos a evidencia, es el nombre con el que se denomina a la herramienta que implementa el paquete R con la Biblioteca de Métodos de OHDSI (ver Figura \ref{fig:methodsLibrary}). Se puede instalar como un entorno independiente mediante Java y Rtools para implementar análisis mediante código estandarizado (véase Figura \ref{fig:analysisImplementations}). No se utiliza en el TFG más alla de la implementación subyacente de las bibliotecas en ATLAS.
     \item \textbf{Rabbit tools y Usagi} \cite{OHDSIsoftTools}. Estas herramientas en conjunto llevan a cabo el proceso de ETL, para omopizar las bases de datos al Modelo de Datos Común de OMOP. Las herramientas son tres: White-Rabbit, Rabbit-In-Hat y Usagi. No se utiliza directamente en el TFG porque el dataset utilizado para el análisis ya estaba previamente omopizado.
     \item \textbf{Data Quality Dashboard} \cite{githubDQD}. Esta herramienta, en español Panel de control de calidad de los datos, pertenece a un paquete de HADES aunque implementado como una interfaz gráfica aparte para facilitar su acceso online. Tal y como su nombre indica sirve para automatizar la tarea de comprobación de la calidad de los datos, un paso previo fundamental antes de realizar un análisis de datos. Tampoco se utiliza directamente para el TFG porque este estudio se llevó a cabo durante la omopización del dataset.
         
-\end{enumerate}
+\end{itemize}
 
 \section{Conclusiones} \label{sec:05conclusion}
 

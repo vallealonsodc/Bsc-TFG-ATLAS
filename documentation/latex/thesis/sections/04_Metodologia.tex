@@ -1,13 +1,48 @@
 \chapter{Metolodología}\label{cap:04metodologia}
 
+A continuación se presentan las metodologías empleadas para desarrollar el proyecto. Para la redacción de la documentación y catálogo de requisitos se ha utilizado el software \ref{sec:04sofia} SofIA y para la planficación temporal se ha utilizado la metodología de gestión de proyectos \ref{sec:04crum} Scrum
+
 %Metodología para desarrollar el proyecto
 %descripción téorica de los métodos
 
+\section{SofIA} \label{sec:04sofia} %para requisitos
 
-\section{SofIA} %para requisitos
+SofIA \cite{escalona2023} es una metodología web dirigida por modelos, cuyo propósito inicial consistió en brindar respaldo a los requisitos del desarrollo web. Fue implementada por primera vez como NDT aunque actualmente ha evolucionado para ofrecer soporte a todo el ciclo de desarrollo, abarcando fases como estudio de viabilidad, requisitos, análisis, diseño, implementación, pruebas y mantenimiento.
 
+Este proyecto se ha beneficiado enormente del uso de SofIA especialmente en la fase de requisitos, que es el núcleo de esta metodología y la razón principal para seguir sus técnicas. Estas facilitarán la captura, definición y validación de una amplia variedad de requisitos.
 
-\section{Scrum} %para planificación
+SofIA no solo ofrece técnicas tradicionales como trazabilidad o prototipos, sino que también aborda otros aspectos como la navegación entre componentes. Esto garantiza una conexión entre todos los elementos y evita inconsistencias en el catálogo de requisitos después de una modificación.
 
+Es importante destacar que SofIA cuenta con un alto grado de automatización y se basa en la herramienta profesional Enterprise Architect \cite{licenciaEA}. En los últimos años, la metodología NDT ha sido ampliamente utilizada como enfoque principal en numerosos proyectos reales de importantes compañías. Entre ellas se destacan entidades públicas como la Consejería de Salud de Andalucía o la Consejería de Cultura de la Junta de Andalucía, así como empresas privadas como Airbus o Everis. 
 
+Esta amplia adopción refleja un alto grado de confianza en la metodología, y se garantiza que su aplicación conducirá al proyecto a desarrollarse en un entorno comparable al de cualquier otro proyecto real, como es el caso de este proyecto.
+
+\section{Scrum} \label{sec:04crum} %para planificación
+
+Scrum \cite{scrumWebsite} consiste en una metodología ágil para la gestión y planificación de proyectos informáticos. En el campo de la informática las metodologías ágiles están en auge, cada vez se opta menos por metodologías tradicionales y se apuesta por estas nuevas metodologías disruptivas. Los motivos y beneficios de ello son muy numerosos, las metodologías ágiles abogan por el cambio continuo y la adaptabilidad frente a la rigurosidad tradicional. 
+
+A continuación se presenta una tabla esquemática de beneficios en el uso de metodologías ágiles.
+
+\input{tables/metodologiasAgilesTradi}
+
+Entre las diversas metodologías ágiles, concretamente se ha seleccionado Scrum, que es una solución que se basa en numerosos ciclos iterativos, denominados \textit{sprints}, para el desarrollo incremental del producto final.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{figures/scrumFramework.png}
+     \caption{Scrum. Extraída de \cite{scrumWebsite}}
+    \label{fig:scrumFramework}
+\end{figure}
+
+En la Figura \ref{fig:scrumFramework} se presentan algunos elementos importantes intrínsecos de la metodología de Scrum que han intervenido en la gestión del proyecto, como son:
+
+\begin{itemize}
+    \item \textbf{Daily Standup}: Reuniones diarias para el seguimiento del proyecto, donde se exponen los avances y problemas o dificultades que se han tenido en el transcurso del ciclo diario del proyecto. En el proyecto, esta práctica se llevó a cabo a través de la monitorización continua realizada por los tutores del HUVR.
+    \item \textbf{Product Owner}: Rol responsable de las características del producto y de asegurar que el equipo aporte valor a la empresa. En el proyecto, este rol es desempeñado por el tutor del HUVR, Carlos Parra (véase \ref{sec:03Participantes}).
+    \item \textbf{Product Backlog}: Lista priorizada de características que debe tener el producto a desarrollar. En el proyecto, este elemento corresponde al catálogo de requisitos definido conjuntamente con los tutores de la universidad, Julián García y Maria José Escalona (véase \ref{sec:03Participantes}).
+    \item \textbf{Sprint Backlog}: Conjunto de características escogidas del Product Backlog para implementar en el sprint. En el proyecto, en cada sprint se realizó una división de tareas a realizar, y dentro de cada una se incluyeron un conjunto de subtareas. En esta selección de tareas interviene mayoritariamente la alumna, que es Jefe del Proyecto.
+    \item \textbf{Sprint Review}: Reunión en la que se presenta y se evalúa el trabajo realizado durante el sprint, con el objetivo de conseguir la aprobación por parte del cliente. En el proyecto, se considera el cliente a los tutores de la universidad, que son los evaluadores del proyecto.
+\end{itemize}
+
+El resto de los elementos que aparecen en la Figura \ref{fig:scrumFramework} y no se han definido anteriomente, se debe a que no han tenido una aplicación práctica real en el transcurso del proyecto.
 

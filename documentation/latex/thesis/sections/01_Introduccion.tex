@@ -1,11 +1,22 @@
-\chapter{Introducción, motivación y estructura de la memoria}\label{cap:introduccion}
+\chapter{Descripción del Proyecto}\label{cap:01introduccion}
 
-Este primer capítulo del Trabajo Fin de Grado (TFG) se divide en cuatro secciones: \ref{sec:01Contexto} descripción del contexto teórico del problema, en \ref{sec:01EstadoArte} estado del arte y soluciones actuales, \ref{sec:01Motivacion} la motivación que subyace a la realización del trabajo y \ref{sec:01Intro} la descripción de la estructura y contenidos de la memoria,
+Este primer capítulo del Trabajo Fin de Grado (TFG) se divide en cinco secciones: \ref{sec:01intro} Introducción, \ref{sec:01Contexto} Marco contextual, \ref{sec:01EstadoArte} Estado del Arte, \ref{sec:01Motivacion} Motivación y \ref{sec:01estructura} Estructura de la memoria.
 
-\section{Contexto} \label{sec:01Contexto} 
+\section{Introducción} \label{sec:01intro}
+
+Este proyecto se desarrolla en el marco contextual del auge de la Sanidad 4.0, consecuencia de la aplicación de las nuevas tecnologías de la Industria 4.0 en el sector sanitario. Es importantísimo conocer las características de este marco contextual porque son las que definen las nuevas necesidades en el tratamiento de la información sanitaria y dan sentido a la solución que ofrece el TFG.
+
+En las siguientes secciones se presenta el contexto téorico del problema y la solución que aporta la organización Observational Health Data Science and Informatics, que es la que se emplea en este trabajo para satisfacer las necesidades descritas. Además, en el estado del arte se presentan soluciones alternativas que se están llevando a cabo de forma global y europea.
+
+Posteriormente, se presenta la motivación personal de la alumna para realizar el trabajo y la colaboración con el Hospital Universitario Virgen del Rocío en esta labor y finalmente, la estructura y los contenidos que se tratan en esta memoria del proyecto y anexos.
+
+
+\section{Marco contextual} \label{sec:01Contexto} 
 %Intención: dar a conocer al lector los aspectos y características fundamentales del panorama sanitario y tecnológico actual, necesario para comprender en profundidad el trabajo.
 
-El contexto en el que se desarrolla el TFG se encuentra notablemente influido por el surgimiento de la Industria 4.0 y las nuevas tecnologías que la acompañan, así como por su impacto significativo y transformador en el sector sanitario que ha generado nuevas necesidades a nivel mundial y europeo, más concretamente en el tratamiento de los datos de salud. 
+El marco contextual en el que se desarrolla el proyecto se encuentra influenciado por el surgimiento de la Industria 4.0 y las nuevas tecnologías que la acompañan, así como por su impacto significativo y transformador en el sector sanitario que ha generado nuevas necesidades a nivel mundial y europeo, más concretamente en el tratamiento de la información sanitaria. 
+
+A continuación se presentan las características fundamentales del paradigma tecnológico y sanitario actual, que asientan las bases sobre las que se desarrolla la propuesta de solución del Trabajo Fin de Grado
 %Estos desafíos han desembocado en Sevilla para formar parte del tópico trascendental de este trabajo.
 
 
@@ -85,7 +96,7 @@ Se presentan a continuación algunos de los desafíos en el tratamiento de los d
 
 \subsubsection{Propuesta de solución}
 
-Ante las necesidades y desafíos del complejo panorama sanitario actual, este Trabajo de Fin de Grado propone a la organización \textbf{\textit{Observational Health Data Science \& Informatics (OHDSI)}} como la solución óptima a la interoperabilidad en estudios observacionales con datos de salud, través del Modelo de Datos Común de OMOP y la herramienta de análisis de datos ''ATLAS''. 
+Ante las necesidades y desafíos del complejo panorama sanitario actual, este Trabajo de Fin de Grado propone a la organización \textbf{\textit{Observational Health Data Science \& Informatics (OHDSI)}} como la solución óptima a la interoperabilidad en estudios observacionales con datos de salud, través del Modelo de Datos Común de OMOP y la herramienta de análisis de datos \textbf{ATLAS}. 
 
 De esta forma este trabajo consiste en demostrar la utilidad y los beneficios de extraer evidencia utilizando las herrameintas estandarizadas de OHDSI a través de la reproducción de un estudio clínico sobre los efectos adversos de la radioterapia en pacientes oncológicos, llevado a cabo por el Hospital Universitario Virgen del Rocío, pero utilizando ATLAS en vez de la metodología tradicional.
 
@@ -127,20 +138,24 @@ La principal motivación para realizar este Trabajo Fin de Grado ha sido mi curi
 
 Este año de estudio en Milán confirmó que, lo que había nacido como una mera curiosidad, se había convertido en una pasión, por lo que a mi regreso del Erasmus me decidí a orientar mi carrera profesional y mi TFG hacia el mundo del análisis de datos clínicos, hasta el día de hoy en que este Trabajo Fin de Grado es escrito.
 
-El trabajo ha sido realizado por mi, María del Valle Alonso de Caso Ortiz, alumna del grado de Ingeniería de la Salud por la Universidad de Sevilla (US), de la promoción 2020-2024 y bajo la tutela de D. Julián A. García García y Da. Maria J. Escalona Cuaresma, ambos pertenecientes al departamento de Lenguajes y Sistemas Informáticos de la Escuela Técnica Superior de Ingeniería Informática (ETSII) de la misma universidad. Además se realiza en conjunto con el Departamento de Innovación Tecnológica del Hospital Universitario Virgen del Rocío, mediante un convenio de prácticas curriculares de 337 horas, donde han ejercido la tutela D. Silvia Rodríguez Mejías y D. Carlos Luis Parra Calderón. 
+El trabajo ha sido realizado por mi, María del Valle Alonso de Caso Ortiz, alumna del grado de Ingeniería de la Salud por la Universidad de Sevilla (US), de la promoción 2020-2024 y bajo la tutela de D. Julián A. García García y Da. Maria J. Escalona Cuaresma, ambos pertenecientes al departamento de Lenguajes y Sistemas Informáticos de la Escuela Técnica Superior de Ingeniería Informática (ETSII) de la misma universidad. 
+
+Además se ha realizado en conjunto con el Departamento de Innovación Tecnológica del Hospital Universitario Virgen del Rocío, mediante un convenio de prácticas curriculares de 337 horas, donde han ejercido la tutela D. Silvia Rodríguez Mejías y D. Carlos Luis Parra Calderón. 
 
 De esta forma, también ha sido de gran importancia la motivación de mis profesores y tutores de la ETSII y compañeros del grupo científico del Departamento de Innovación Tecnológica del hospital, quienes confiando en mi me han apoyado, motivado y guiado durante mi formación sobre ATLAS y OHDSI y la informática clínica en general.
 
-\section{Estructura de la memoria} \label{sec:01Intro}
+\section{Estructura de la memoria} \label{sec:01estructura}
 
-La memoria se estructura en diez capítulos y dos anexos que contienen toda la información relevante. La información acerca del TFG y la gestión del proyecto se encuentra en los capítulos: \ref{cap:02objetivos} Objetivos, \ref{cap:03gestión} Gestión  y \ref{cap:04metodologia} Metodología.
+La memoria se estructura en diez capítulos y dos anexos que contienen toda la información relevante.
 
-Por una parte, el trabajo abarca una perspectiva teórica muy amplia, de la que se presenta en primer lugar en la secciones \ref{sec:01Contexto} y \ref{sec:01EstadoArte} el paradigma tecnológico y sanitario actual, con sus características, desafíos principales e iniciativas reales que se están llevando a cabo actualmente. Posteriormente, en el capítulo \ref{cap:05EstudioPrevio} se realiza una exposición teórica profunda y extensa sobre las herramientas y estándares de la organización Observational Health Data Sciences and Informatics (OHDSI), que es el foco central del trabajo, por lo que se pretende que el lector conozca en profundidad los aspectos importantes de la misma.
+La información propiamente sobre el proyecto se encuentra en los capítulos: \ref{cap:01introduccion} Descripción del Proyecto \ref{cap:02objetivos} Objetivos del Proyecto, \ref{cap:03gestión} Gestión del Proyecto y \ref{cap:04metodologia} Metodología.
 
-Una vez se presentan los conocimientos teóricos generales sobre la organización OHDSI y las herramientas más relevantes que ofrece, el trabajo se especializa en el uso de la herramienta ATLAS en un caso práctico. Concretamente, la herramienta se despliega e implementa a través de la iniciativa \textit{Broadsea}, que origina la denominación \textit{ATLAS Broadsea} de la herramienta a lo largo del TFG. La información teórica sobre la herramienta y el sistema se presenta en \ref{cap:05EstudioPrevio}, \ref{cap:06requisitos} y \ref{cap:07diseño}.
+A continuación, en \ref{cap:05EstudioPrevio} Marco Teórico, se recopila información relevante sobre la organización Observational Health Data Science and Informatics (OHDSI) y sus herramientas, prestando especial atención a ATLAS. Este capítulo en conjunto con \ref{cap:06requisitos} Documento de Requisitos y \ref{cap:07diseño} Entorno de Trabajo proveen un conocimiento teórico completo de las herramientas y análisis a tratar durante el proyecto. 
 
-En tercer lugar, debido a la naturaleza práctica del TFG, por haber sido desarrollado en colaboración con el HUVR, se realiza la reproducción de un estudio sobre los efectos adversos del tratamiento radiológico en pacientes oncológicos (capítulo \ref{cap:08pruebas}). Además, se desarrolla el Anexo \ref{anexo:manual} como un documento de gran extensión y relevancia que describe en profundidad el proceso de instalación, despliegue y configuración de ATLAS Broadsea. Este Anexo es de gran interés porque no existe en internet ninguna guía completa de estas características sobre la herramienta, aportando un contenido de gran valor a la comunidad científica y a mis compañeros del departamento de Innovación Tecnológica del hospital.
+Por otra parte, en \ref{cap:08pruebas} Caso práctico se presenta un capítulo dedicado a la reproducción de un caso práctico de estudio utilizando ATLAS. 
 
-Por último, los últimos dos capítulos \ref{cap:09resultados} y \ref{cap:10conclusiones} presentan una recopilación de resultados y conclusiones, respectivamente, obtenidos al término del desarrollo del TFG. También se adjunta el Anexo B, que consiste en un Glosario de Términos técnicos relevantes para la comprensión del trabajo. 
+Por último, los siguientes dos capítulos \ref{cap:09resultados} Resultados y \ref{cap:10conclusiones} Conclusiones, presentan una recopilación de resultados y conclusiones, respectivamente obtenidos al término del desarrollo del TFG. 
 
-Adicionalmente, por su naturaleza informática, este TFG se ha desarrollado paralelamente a un repositorio de github del proyecto \cite{vallealonsodc}, que ha servido como controlador de versiones y como administrador de archivos en la nube, permitiendo almacenar y compartir con el lector archivos relevantes del TFG, ya sean archivos necesarios para el despliegue de la herramienta, archivos producidos durante el análisis o los propios documentos en sí mismos.
+Adicionalmente, se adjuntan dos anexos. El anexo \ref{anexo:manual} consiste en una guía completa de Instalación, despliegue y configuración de Broadsea y el Anexo \ref{anexo:glosario}, se trata Glosario de Términos técnicos relevantes para la comprensión del trabajo. 
+
+Por su naturaleza informática, este TFG se ha desarrollado paralelamente a un repositorio de github del proyecto \cite{vallealonsodc}, que ha servido como controlador de versiones y como administrador de archivos en la nube, permitiendo almacenar y compartir con el lector archivos relevantes del TFG, ya sean archivos necesarios para el despliegue de la herramienta, archivos producidos durante el análisis o los propios documentos en sí mismos.
