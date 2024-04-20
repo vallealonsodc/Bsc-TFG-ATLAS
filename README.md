@@ -6,7 +6,7 @@ Este repositorio contiene toda la información generada y utilizada para la inve
 
  - ver doc online: https://es.overleaf.com/read/bnkzgjxjqmqz#ea49d0
 
-**Anexo**: Manual de instalación, despliegue y configuración de ATLAS Broadsea. 
+**Anexo A**: Manual de instalación, despliegue y configuración de ATLAS Broadsea. 
 
   - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
 
