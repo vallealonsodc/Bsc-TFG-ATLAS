@@ -182,7 +182,7 @@ La estandarización de la investigación en OHDSI se realiza en dos planos: a ni
 
 \subsection{El Modelo de Datos Común} \label{subsec:05cdm}
 
-El Modelo de Datos Común o \textit{Common Data Model} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo semántico estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
+El Modelo de Datos Común o \textit{Common Data Model (CDM)} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo semántico estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
 
 \subsubsection{Características}
 
@@ -200,22 +200,46 @@ El modelo de datos de OMOP presenta características importantísimas para hacer
 
 \subsubsection{Modelo de Datos Lógico}
 
-Actualmente el CDM ha lanzado ya su sexta versión, sin embargo, esta aún no está soportada por todas las herramientas de la comunidad, por lo que se sigue sugiriendo el uso del CDM v5.4, que es la última versión completamente funcional. A continuación, en la Figura \ref{fig:cdm54} se presenta la estructura lógica de este modelo.
+Actualmente el CDM ha lanzado ya su sexta versión, sin embargo, esta aún no está soportada por todas las herramientas de la comunidad, por lo que se sigue sugiriendo el uso del CDM v5.4, que es la última versión completamente funcional. 
+
+A la hora de realizar un estudio en ATLAS o cualquier otra herramienta del ecosistema OHDSI la base de datos estará necesariamente estandarizada a este modelo por lo que es importante conocer su estructura fundamental. A continuación, en la Figura \ref{fig:cdm54} se presenta la estructura lógica de este modelo y en la Figura \ref{fig:cdm_ER} como modelo Entidad-Relación. Adicionalmente existe una página web que proporciona un modelo interactivo para facilitar su estudio \cite{CDMinteractive}.
+
+Aunque el modelo de datos común de OMOP es muy complejo, incluso existen grupos de trabajo de la comunidad (\textit{workshops}) especializados sólo en este ámbito, en esta subsección tan solo se van a presentar los conceptos más estrictamente necesarios para la comprensión subyacente del contenido del TFG.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{figures/cdm54.png}
-     \caption{Estructura del CDM v5.4. Extraída de la página de github \cite{gitPagesCMD}}
+     \caption{Estructura del CDM v5.4. Extraída de la página de github del CDM \cite{gitPagesCMD}}
     \label{fig:cdm54}
 \end{figure}
 
-\textcolor{red}{Quizás añadir explicación más detallada de tablas y/o relaciones más relevantes cuando empiece a manejar ATLAS}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/cdm_ER.jpg}
+     \caption{Modelo Entidad-Relación del CDM v5.4. Extraída de la página de github del CDM \cite{gitPagesCMD}}
+    \label{fig:cdm_ER}
+\end{figure}
+
+El modelo se comprende de 39 tablas agrupadas en seis grupos, de los cuales se destaca la importancia de tres: Datos clínicos estandarizados (\textit{Standardized clinical data}, en azul), Vocabularios estandarizado (\textit{Standardized vocabularies}, en naranja), Elementos derivados estandarizados (\textit{Standardized derived elements}, en morado). El grupo más importante es el de datos clínicos, que contiene la tabla Persona (\textit{Person}), su relevancia se debe a la característica centrada en el paciente del modelo.
+
+Cada evento clínico se registra en el modelo como un \textbf{Concepto} (\textit{Concept}), perteneciente al grupo del vocabulario estandarizado. Además, cada concepto está ligado a un \textbf{Dominio} que especifica a qué tipo de información clínica corresponde dicho concepto. A continuación se muestra una tabla con los 30 dominios existentes y la cantidad de conceptos que tiene asociado cada uno.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth]{figures/cdm_domains.png}
+     \captionof{table}{Dominios del CDM v5.4. Extraída del Libro de OHDSI \cite{OHDSIbook}}
+    \label{fig:cdm_domains}
+\end{figure}
+
+La información que contiene cada dominio se puede inferir fácilmente de la traducción al español del nombre por lo que no se va a hacer hincapié en ello. No obstante, se puede encontrar más información en \cite{OHDSIbook}, \cite{gitPagesCMD} o \cite{CDMinteractive}.
 
 \subsection{El Vocabulario}\label{subsec:05vocab}
 
-El Vocabulario es uno de los elementos centrales del Modelo de Datos Común de OMOP y una gran herramienta de estandarización e interoperabilidad entre sistemas. Como se comentaba en varias ocasiones, actualmente hay muchos estándares distintos en funcionamiento que establecen las terminologías de los eventos clínicos, como son FHIR, SNOMED CT, RxNorm u otros. El beneficio del Vocabulario de OMOP es que integra todos los vocabularios ya existentes en un único Vocabulario estándar, a través de la referenciación entre conceptos estándar (pertenecientes a OMOP) y conceptos no estándar (pertenecientes a vocabularios alternativos).
+El Vocabulario es otro de los elementos centrales del Modelo de Datos Común de OMOP y una gran herramienta de estandarización e interoperabilidad entre sistemas. Como se ha comentado en varias ocasiones, actualmente hay muchos estándares distintos en funcionamiento que establecen las terminologías de los eventos clínicos (por ejemplo LOINC, SNOMED CT, RxNorm...). El beneficio del Vocabulario de OMOP es que integra todos los vocabularios ya existentes en un único \textbf{Vocabulario estándar}, a través de la referenciación entre \textbf{conceptos estándar} (pertenecientes a OMOP) y conceptos no estándar (pertenecientes a vocabularios alternativos).
 
-El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, respetando las diversas procedencias de cada término pero mapeándolos a un único vocabulario estándar.  Como todas las herramientas de la comunidad, la información acerca de este está disponible online de forma pública en el capítulo 5 del Libro de OHDSI \cite{OHDSIbook} y en la página de github del CDM \cite{gitPagesCMD}. Por otra parte, existe un buscador online de términos en el Vocabulario de OMOP denominado ATHENA \cite{ATHENAweb}. 
+El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, respetando las diversas procedencias de cada término pero mapeándolos a un único vocabulario estándar. \textbf{Cada concepto no estándar está asociado a un concepto estándar} y esta es la clave del Vocabulario. 
+
+Como todas las herramientas de la comunidad, la información acerca de este está disponible online de forma pública en el capítulo 5 del Libro de OHDSI \cite{OHDSIbook} y en la página de github del CDM \cite{gitPagesCMD}. Por otra parte, existe un buscador online de términos en el Vocabulario de OMOP denominado ATHENA \cite{ATHENAweb}. 
 
 \begin{figure}[H]
 \centering
@@ -224,11 +248,10 @@ El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, re
     \label{fig:ATHENAcap}
 \end{figure}
 
-Actualmente hay más de nueve millones de términos registrados en el Vocabulario de OMOP, como se muestra en la Figura \ref{fig:ATHENAcap}, y 155 vocabularios distintos coexisten juntos en el estándar de los cuales al menos 30 son vocabularios internos de OMOP.
+Actualmente hay más de nueve millones de términos registrados en el Vocabulario de OMOP, como se muestra en la Figura \ref{fig:ATHENAcap}, y 155 vocabularios distintos coexisten juntos en el estándar, de los cuales al menos 30 son vocabularios internos de OMOP.
 
-\textcolor{red}{Quizás añadir explicación más detallada de conceptos más relevantes cuando empiece a manejar ATLAS}
+%\textcolor{red}{- lA RELACIÓN QUE GUARDAN LOS CONCEPTOS ENTRE SÍ ES JERARQUICA}
 
-%\textcolor{red}{Cada término registrado en el vocabulario corresponde a un concepto o \textit{CONCEPT}, según el modelo lógico de la Figura \ref{fig:cdm54}. Los términos se asocian al vocabulario al que corresponden mediante la tabla \textit{VOCABULARY}}
 
 \subsection{Investigación metodológica} \label{subsec:05investMetodolog}
 
