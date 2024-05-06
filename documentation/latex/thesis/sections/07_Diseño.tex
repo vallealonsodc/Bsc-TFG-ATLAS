@@ -15,7 +15,7 @@ Broadsea es un proyecto basado en Docker que permite desplegar todo el entorno d
     \label{fig:broadseaEq}
 \end{figure}
 
-Aunque comenzó en su primera versión, como un simple contenedor que albergaba imágenes de la WebAPI de ATLAS y RStudio \cite{Broadsea3PPTX} ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo (véase Figura \ref{fig:OHDSIBroadsea3.0}). 
+Aunque comenzó en su primera versión, como un simple contenedor que albergaba imágenes de la WebAPI de ATLAS y RStudio \cite{Broadsea3PPTX} ''Vista general de todos los componentes de Broadsea'' ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo (véase Figura \ref{fig:OHDSIBroadsea3.0} ''{Vista general de todos los componentes de Broadsea''). 
 
 \begin{figure}[H]
     \centering
@@ -24,7 +24,7 @@ Aunque comenzó en su primera versión, como un simple contenedor que albergaba 
     \label{fig:versionesBroadsea}
 \end{figure}
 
-Como se muestra en la Figura \ref{fig:versionesBroadsea}, la tercera versión de Broadsea incluye perfiles docker que facilitan la configuración del servicio, redes internas de conexión, despliegue de variables internas, más aplicaciones OHDSI y la construcción de contenedores desde Git, entre otros. 
+Como se muestra en la Figura \ref{fig:versionesBroadsea} ''Historial de versiones de Broadsea'', la tercera versión de Broadsea incluye perfiles docker que facilitan la configuración del servicio, redes internas de conexión, despliegue de variables internas, más aplicaciones OHDSI y la construcción de contenedores desde Git, entre otros. 
 
 A continuación se presenta la arquitectura teórica de Broadsea y el entorno de herramientas tecnológicas necesarias para su correcta implementación.
 
@@ -34,13 +34,13 @@ La arquitectura en términos tecnológicos del sistema es compleja, por ello se 
 
 \subsection{Arquitectura del sistema}\label{subsec:07sistema}
 
-El sistema se implementa mediante virtualización con Docker y una arquitectura en tres niveles o \textit{three-tier}, donde se diferencian al cliente, frontend y backend. Esta arquitectura se describirá de forma general utilizando el esquema de la Figura \ref{fig:threetierDocker}, extraído de internet.
+El sistema se implementa mediante virtualización con Docker y una arquitectura en tres niveles o \textit{three-tier}, donde se diferencian al cliente, frontend y backend. Esta arquitectura se describirá de forma general utilizando el esquema de la Figura \ref{fig:threeTierValle}, extraído de internet.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.80\textwidth]{figures/threetierDocker.png}
-    \caption{Esquema de arquitectura \textit{three-tier} en Docker. Extraída de \cite{threetierDocker}.}
-    \label{fig:threetierDocker}
+    \includegraphics[width=0.80\textwidth]{figures/threeTierValle.png}
+    \caption{Esquema de arquitectura \textit{three-tier} en Docker.}
+    \label{fig:threeTierValle}
 \end{figure}
 
 En primer lugar, la virtualización obliga a diferenciar entre una maquina local o anfitriona (\textit{host machine}, en rosa) y una maquina virtual que provee el servicio docker (\textit{docker service}, en azul). 
@@ -76,7 +76,7 @@ Por tanto, a nivel de aquitectura del sistema en sí, se encuentra la capa clien
 
 %Presentación del sistema Broadsea. Imagen de Broadsea
 
-A continuación se presenta la aquitectura específica de Broadsea. Broadsea v3.0 es un sistema muy complejo, contenido en un multicontenedor Docker que alberga el ecosistema completo de herramientas OHDSI y sus interconexiones en distintos contenedores. Además, se definen distintos perfiles (\textit{profiles}) para facilitar la instalación de los distintos contenedores. Por ello se le denomina \textit{a-la-carte}. La figura \ref{fig:OHDSIBroadsea3.0} muestra todos los contenedores de Broadsea.
+A continuación se presenta la aquitectura específica de Broadsea. Broadsea v3.0 es un sistema muy complejo, contenido en un multicontenedor Docker que alberga el ecosistema completo de herramientas OHDSI y sus interconexiones en distintos contenedores. Además, se definen distintos perfiles (\textit{profiles}) para facilitar la instalación de los distintos contenedores. Por ello se le denomina \textit{a-la-carte}. La Figura \ref{fig:OHDSIBroadsea3.0} ''Vista general de todos los componentes de Broadsea'' muestra todos los contenedores de Broadsea.
 
 \begin{figure}[H]
     \centering
@@ -101,7 +101,6 @@ El despliegue por defecto de Broadsea genera en el frontend una interfaz de usua
     \item \textbf{ARES}. ARES Broadsea despliega todas las funcionalidades de la herramienta de forma local. Su uso tampoco es relevante en el TFG.
 
 \end{enumerate}
-
 
 
 \section{Entorno tecnológico} \label{sec:07entorno}
@@ -129,18 +128,16 @@ PostgreSQL es un potente sistema de base de datos relacional de objetos de códi
 
 El uso de postgre es fundamental para la implementación correcta de Broadsea, puesto que la WebAPI se implementa sobre un sistema PostgreSQL. Las bases de datos externas que se interactúan con la WebAPI pueden estar en otros lenguajes relacionales, pero el sistema de Broadsea intrínsicamente solo se sostiene sobre Postgre.
 
-El proceso concreto de instalación, despliegue y configuración de la base de datos Postgre se realiza a través de la interfaz visual de pgAdmin 4.0 \cite{pgAdminWebsite}
-
-así como la explicación detallada de su estructura y archivos más importantes se presenta en el anexo \ref{anexo:manual}.
+El proceso concreto de instalación, despliegue y configuración de la base de datos Postgre se realiza a través de la interfaz visual de pgAdmin 4.0 \cite{pgAdminWebsite} y la explicación detallada de su estructura y archivos más importantes se presenta en el anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''.
 
 \subsection{Github}
 
 GitHub es una plataforma para desarrolladores que les permite crear, almacenar, gestionar y compartir su código. Utiliza el software Git, proporcionando control de versiones distribuido, además de control de acceso, seguimiento de errores, solicitudes de funciones de software, gestión de tareas, integración continua y wikis para cada proyecto \cite{GithubWikipedia}.
 
-El uso de Github es muy recomendado debido a que la mayor parte de la información sobre OHDSI y sus herramientas se encuentran en internet disponibles en repositorios de Github (véase \ref{sec:05OHDSI}). 
+El uso de Github es muy recomendado debido a que la mayor parte de la información sobre OHDSI y sus herramientas se encuentran en internet disponibles en repositorios de Github (véase \ref{sec:05OHDSI} ''¿Qué es OHDSI?''). 
 
 Además, siguiendo esta iniciativa de OHSI, para desarrollar este Trabajo Fin de Grado se ha creado un repositorio de Github específico \cite{vallealonsodc} que contiene toda la documentación relevante a su desarrollo (archivos latex, pdf...) y archivos de variables de entorno o scripts utilizados durante la configuración del entorno del sistema o la realización del análisis de datos.   
 
 \section{Conclusiones}
 
-En este capítulo se concluye que la arquitectura tecnológica del sistema es bastante compleja (véase \ref{sec:07arqTecno}), puesto que involucra una virtualización del ecosistema OHDSI a través de Docker, denominado Broadsea. No obstante, la implementación del sistema en Docker facilita bastante la tarea de configurar el ecosistema completo, gracias al empaquetamiento de las funcionalidades en contenedores accesibles \textit{a-la-carte}. Por último, es importante conocer el entorno tecnológico fundamental para desplegar correctamente el sistema, compuesto por Chrome, Docker, PostgreSQL y Github (véase \ref{sec:07entorno}).
+En este capítulo se concluye que la arquitectura tecnológica del sistema es bastante compleja (véase \ref{sec:07arqTecno} ''Arquitectura tecnológica''), puesto que involucra una virtualización del ecosistema OHDSI a través de Docker, denominado Broadsea. No obstante, la implementación del sistema en Docker facilita bastante la tarea de configurar el ecosistema completo, gracias al empaquetamiento de las funcionalidades en contenedores accesibles \textit{a-la-carte}. Por último, es importante conocer el entorno tecnológico fundamental para desplegar correctamente el sistema, compuesto por Chrome, Docker, PostgreSQL y Github (véase \ref{sec:07entorno} ''Entorno tecnológico'') .

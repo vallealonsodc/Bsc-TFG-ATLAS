@@ -1,0 +1,20 @@
+-- Ver todas las entradas de la tabla
+SELECT * FROM public.base_s3132
+
+-- Contador del número total de entradas de la tabla
+SELECT COUNT(*) FROM public.base_s3132;
+
+-- Contador del número total de columnas de la tabla
+SELECT COUNT(*)
+FROM information_schema.columns
+WHERE table_schema = 'public'
+  AND table_name = 'base_s3132';
+
+-- Contador por sexo
+SELECT
+    "Sex",
+    COUNT(*) AS count
+FROM
+    public.base_s3132
+GROUP BY
+    "Sex";

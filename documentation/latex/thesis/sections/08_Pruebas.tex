@@ -1,17 +1,17 @@
 \chapter{Caso práctico}\label{cap:08pruebas}
-En este capítulo se presenta: \ref{sec:08intro} Introducción al caso práctico, \ref{sec:08huvr} El estudio realizado por el Hospital Universitario Virgen del Rocio, \ref{sec:08atlas} El estudio realizado utilizando ATLAS, \ref{sec:08resultados} Comparación de resultados y \ref{sec:08conclusiones} Conclusiones.
+En este capítulo se presenta: \ref{sec:08intro} Introducción al caso práctico, \ref{sec:08huvr} El estudio realizado por el Hospital Universitario Virgen del Rocio, \ref{sec:08atlas} El estudio realizado utilizando ATLAS, \ref{sec:08resultados} Discusión de resultados y \ref{sec:08conclusiones} Conclusiones.
 
 \section{Introducción} \label{sec:08intro}
 
 Este capítulo pretende demostrar la relevancia de OHDSI (Observational Health Data Science and Informatics) y la utilidad de sus herramientas, concretamente el uso de ATLAS para la estandarización y reproducibilidad de los análisis clínicos observacionales sobre bases de datos estandarizadas al Modelo de Datos Común de OMOP. 
 
-Para ello, bajo la tutela de D. Carlos Parra y Da. Silvia Rodríguez (tutores de las prácticas en empresa, véase \ref{sec:03Participantes}), se ha seguido la reproducción de un estudio realizado por investigadores del hospital sobre predicción mediante modelos de ML de efectos adversos en el tratamiento radioterápico de pacientes con cáncer de pulmón. 
+Para ello, bajo la tutela de D. Carlos Parra y Da. Silvia Rodríguez (tutores de las prácticas en empresa, véase \ref{sec:03Participantes} ''Participantes del proyecto''), se ha seguido la reproducción de un estudio realizado por investigadores del hospital sobre predicción mediante modelos de ML de efectos adversos en el tratamiento radioterápico de pacientes con cáncer de pulmón. 
 
 Este estudio, se encuentra públicamente accesible en Pubmed en dos artículos, el primero publicado en el año 2019 titulado \textit{''Comparison of Feature Selection Methods for Predicting RT-Induced Toxicity'' }\cite{nunez2019comparison} y el segundo, en 2023 titulado \textit{''Benchmarking machine learning approaches to predict radiation-induced toxicities in lung cancer patients''} \cite{nunez2023benchmarking}. Ambos estudios están también publicados en la ruta \code{Thesis-ATLAS-OHDSI/documentation/pdf/baselineHUVRstudy} del repositorio de github del TFG \cite{vallealonsodc}.
 
 El objetivo es promover el uso de ATLAS para la investigación observacional, reproduciendo mediante ATLAS un estudio que fue realizado sin hacer uso de la herramienta, para demostrar con un caso práctico los beneficios de utilizar la herramienta en términos de reproducibilidad y estandarización.
 
-\section{Estudio del HUVR} \label{sec:08huvr}
+\section{Estudio realizado por el HUVR} \label{sec:08huvr}
 
 El estudio consiste en la comparación de 300 modelos de ML sobre un dataset de 875 pacientes de cancer de pulmón con el objetivo de predecir los efectos adversos a corto (esofagitis, tos, disnea y neumonitis) y a largo plazo (disnea y neumonitis) que producirá el tratamiento radioterápico sobre estos pacientes. 
 
@@ -19,7 +19,7 @@ El estudio consiste en la comparación de 300 modelos de ML sobre un dataset de 
 
 %La base teórica del estudio \cite{nunez2019comparison, nunez2023benchmarking} es que la radioterapia aunque es beneficiosa para el tratamiento oncológico, también causa efectos perjudiciales a corto y/o  largo plazo de forma personalizada según las condiciones de cada paciente. El auge de la medicina personalizada y centrada en el paciente (véase \ref{sec:01Contexto}) ha ensalzado la importancia de realizar una planificación individual para cada paciente, pues cada persona responde de forma distinta a los tratamientos. Por tanto, la gestión individualizada de los posibles efectos adversos es muy importante en la planificación del tratamiento radioterápico, con el fin de facilitar la toma de decisiones entre médico y paciente en términos de calidad de vida y posibilidades de supervivencia.
 
-La radioterapia, aunque beneficia el tratamiento oncológico, puede ocasionar efectos perjudiciales a corto y largo plazo, de forma personalizada según cada paciente \cite{nunez2019comparison, nunez2023benchmarking}. La medicina centrada en el paciente (véase \ref{sec:01Contexto}) destaca la importancia de planificar individualmente cada tratamiento, dado que las respuestas varían entre individuos. Por tanto, la gestión personalizada de los efectos adversos es crucial en la planificación radioterápica para facilitar la toma de decisiones médico-paciente en términos de calidad de vida y supervivencia.
+La radioterapia, aunque beneficia el tratamiento oncológico, puede ocasionar efectos perjudiciales a corto y largo plazo, de forma personalizada según cada paciente \cite{nunez2019comparison, nunez2023benchmarking}. La medicina centrada en el paciente (véase \ref{sec:01Contexto} ''Marco contextual'') destaca la importancia de planificar individualmente cada tratamiento, dado que las respuestas varían entre individuos. Por tanto, la gestión personalizada de los efectos adversos es crucial en la planificación radioterápica para facilitar la toma de decisiones médico-paciente en términos de calidad de vida y supervivencia.
 
 \subsubsection{Objetivo}
 
@@ -82,12 +82,12 @@ Por último, el rendimiento de los modelos se ha medido en términos del AUC log
 
 \subsubsection{Resultados}
 
-Los resultados del estudio resaltan para cada outcome el mejor modelo de ML y selección de atributos, con la valoración de AUC en validación interna y externa. Los resultados se muestran de forma muy intuitiva en la siguiente tabla, extraída literalmente del artículo del artículo del HUVR \cite{nunez2023benchmarking}.
+   Los resultados del estudio resaltan para cada outcome el mejor modelo de ML y selección de atributos, con la valoración de AUC en validación interna y externa. Los resultados se muestran de forma muy intuitiva en la siguiente tabla, extraída del artículo del HUVR \cite{nunez2023benchmarking}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{tables/nune2023table2.png}
-    \captionof{table}{Tabla de resultados. Extraída de \cite{nunez2023benchmarking}}
+    \captionof{table}{Recopilación de resultados. Extraída de \cite{nunez2023benchmarking}}
     \label{table:nune2023table2}
 \end{figure}
 
@@ -113,15 +113,18 @@ Se han obtenido el dataset que se utilizó en ese estudio.
 
 \subsection{Metodología}
 
+
 \subsubsection{Reporte del dataset}
 
-\subsubsection{Definición de la cohorte}
+\subsubsection{Definición de grupos de conceptos}
+
+\subsubsection{Definición de cohortes}
 
 Necesario para utilzar ATLAS
 
 Cohorte = Personas con cancer de pulmon
 
-\subsubsection{Caracterización de la cohorte}
+\subsubsection{Caracterización}
 
 Para conocer los pacientes que tenemos en el cohorte
 
@@ -136,9 +139,9 @@ Para un paci
 \subsection{Resultados}
 
 
-\section{Comparación de resultados} \label{sec:08resultados}
+\section{Discusión de resultados} \label{sec:08resultados}
 
-%Sí porque aqui son resultados concretos del estudio. En la sección de resultados serán resultados compeltos del TFG
+%Aqui son resultados concretos del estudio. En la sección de resultados serán resultados compeltos del TFG
 
 Comparación de los resultados obtenidos en el estudio del HUVR y el estudio realizado con ATLAS
 

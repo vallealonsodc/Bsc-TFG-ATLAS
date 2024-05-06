@@ -1,21 +1,20 @@
 \chapter{Descripción del Proyecto}\label{cap:01introduccion}
 
-Este primer capítulo del Trabajo Fin de Grado (TFG) se divide en cinco secciones: \ref{sec:01intro} Introducción, \ref{sec:01Contexto} Marco contextual, \ref{sec:01EstadoArte} Estado del Arte, \ref{sec:01Motivacion} Motivación y \ref{sec:01estructura} Estructura de la memoria.
+Este primer capítulo del Trabajo Fin de Grado (TFG) se divide en cinco secciones: \ref{sec:01intro} Introducción, \ref{sec:01Contexto} Marco contextual, \ref{sec:01EstadoArte} Estado del arte, \ref{sec:01Motivacion} Motivación y \ref{sec:01estructura} Estructura de la memoria.
 
 \section{Introducción} \label{sec:01intro}
 
-Este proyecto se desarrolla en el marco contextual del auge de la Sanidad 4.0, consecuencia de la aplicación de las nuevas tecnologías de la Industria 4.0 en el sector sanitario. Es importantísimo conocer las características de este marco contextual porque son las que definen las nuevas necesidades en el tratamiento de la información sanitaria y dan sentido a la propuesta que ofrece el TFG.
+Este proyecto se desarrolla en el marco contextual del auge de la Sanidad 4.0, consecuencia de la aplicación de las nuevas tecnologías de la Industria 4.0 en el sector sanitario. Es especialmente relevante conocer las características de este marco contextual debido a que definen las necesidades emergentes en el tratamiento de la información sanitaria, que dan sentido a la propuesta que ofrece el TFG.
 
-En las siguientes secciones se presenta el contexto téorico del problema y la solución que aporta la organización Observational Health Data Science and Informatics (OHDSI), que es la que se emplea en este trabajo para satisfacer las necesidades descritas. Además, en el estado del arte se presentan soluciones alternativas que se están llevando a cabo de forma global y europea.
+En las siguientes secciones se presenta el contexto téorico del problema así como la solución que aporta la organización Observational Health Data Science and Informatics (OHDSI), empleada en este trabajo para satisfacer las necesidades descritas. Adicionalmente, en el estado del arte se presentan soluciones alternativas que se están llevando a cabo de forma global y europea.
 
-Posteriormente, se presenta la motivación personal de la alumna para realizar el trabajo y la colaboración con el Hospital Universitario Virgen del Rocío en esta labor. Para acabar se expone brevemente la estructura y los contenidos que se tratan en esta memoria del proyecto y anexos.
+Posteriormente, se presenta la motivación personal de la alumna para realizar el trabajo y la colaboración con el Hospital Universitario Virgen del Rocío en esta labor. Para acabar se expone brevemente la estructura seguida a lo largo de la memoria y los contenidos que se tratan en la misma, incluyendo los anexos.
 
 
 \section{Marco contextual} \label{sec:01Contexto} 
 %Intención: dar a conocer al lector los aspectos y características fundamentales del panorama sanitario y tecnológico actual, necesario para comprender en profundidad el trabajo.
 
-El marco contextual de la problemática actual se encuentra influenciada por el surgimiento de la Industria 4.0 y las nuevas tecnologías que la acompañan, así como por su impacto significativo y transformador en el sector sanitario que ha generado nuevas necesidades a nivel mundial y europeo, más concretamente en el tratamiento de la información sanitaria. En este ámbito, la organización OHDSI se levanta como una solución innovadora y potente para paliar las necesidades de la industria.
-%Estos desafíos han desembocado en Sevilla para formar parte del tópico trascendental de este trabajo.
+La problemática expuesta anteriormente se encuentra influenciada por el surgimiento de la Industria 4.0 y las nuevas tecnologías que la acompañan. Su elevado impacto transformador en el sector sanitario ha generado nuevas necesidades a nivel mundial y europeo, más concretamente en el tratamiento de la información sanitaria. En este ámbito, la organización OHDSI se levanta como una solución innovadora y potente para paliar las necesidades de la industria.
 
 \begin{figure}[H]
     \centering
@@ -25,32 +24,22 @@ El marco contextual de la problemática actual se encuentra influenciada por el 
 \end{figure}
 
 
-\subsubsection{Industria 4.0 y nuevas tecnologías}
+\subsubsection{1.2.1 La Industria 4.0 y las tecnologías emergentes}
 
-La Industria 4.0, o cuarta revolución industrial, fue un concepto concebido por el gobierno alemán en noviembre de 2011 como una estrategia tecnológica para abordar el crecimiento industrial proyectado para 2020.
-%Su uso internacional se popularizó en abril de 2013 durante la feria industrial de Hannover \textit{Hannover Messe}).
-Este concepto representa la cuarta fase de la industrialización, sucediendo a la mecanización, electrificación e informatización, y destaca la integración digital de tecnologías avanzadas \cite{lasi2014industry}.
+La Industria 4.0, o cuarta revolución industrial, fue un concepto concebido por el gobierno alemán en noviembre de 2011. Nace como una estrategia tecnológica para abordar el crecimiento industrial proyectado para 2020 y representa la cuarta fase de la industrialización, sucediendo a la mecanización, electrificación e informatización, y destaca la integración digital de tecnologías avanzadas \cite{lasi2014industry}.
 
-Se centra principalmente en la digitalización y la necesaria convergencia entre los sistemas físicos y cibernéticos (\textit{Cyber-Physical Systems, CPS}). Esta integración se busca a través de nuevas tecnologías de la información y telecomunicación (TICs), como el internet de las cosas (\textit{Internet of Things, IoT}), la generación y análisis de datos masivos (\textit{Big Data \& Big Data Analytics}), la computación en la nube (\textit{Cloud Computing}) y el auge de la Inteligencia Artificial (IA) \cite{lasi2014industry, chen2020times, tortorella2020healthcare}
+Dicho concepto se centra principalmente en la digitalización y la necesaria convergencia entre los sistemas físicos y cibernéticos (\textit{Cyber-Physical Systems, CPS}). Esta integración se busca mediante el despliegue  de nuevas tecnologías de la información y telecomunicación (TICs), como el tan sonado internet de las cosas (\textit{Internet of Things, IoT}), la generación y análisis de datos masivos (\textit{Big Data \& Big Data Analytics}), la computación en la nube (\textit{Cloud Computing}) y el tremendo auge de la Inteligencia Artificial (IA) \cite{lasi2014industry, chen2020times, tortorella2020healthcare}
 
-\subsubsection{Características de la Sanidad 4.0}
+\subsubsection{1.2.2 Características de la Sanidad 4.0}
 
-La integración de los principios y tecnologías de la Industria 4.0 en el sector sanitario originó el concepto de Salud o Sanidad 4.0 (\textit{Healthcare 4.0}) \cite{tortorella2020healthcare, tortorella2021impacts}.  %
-%En este contexto, este nuevo término se presenta como un complejo desafío  destinado a abordar los nuevos escenarios generados por la creciente demanda de dispositivos y sistemas médicos más eficaces y alineados con las nuevas TICs y los avances ininterrumpidos en ciencias como la biotecnología y la ingeniería genética. \cite{martin2021ehealth}. 
-Esto origina un nuevo paradigma del que se destacan tres  características principales: la provisión continua de cuidado sanitario, la orientación de la medicina hacia el paciente y la prevención y predicción de enfermedades.
-
-
-%Provisión continua de cuidado sanitario - Telemedicina, salud digital
+La integración de los principios y tecnologías de la Industria 4.0 en el sector sanitario originó el concepto de Salud o Sanidad 4.0 (\textit{Healthcare 4.0}) \cite{tortorella2020healthcare, tortorella2021impacts}. 
+Esto origina un nuevo paradigma del que se destacan tres  características principales: (i) la provisión continua de cuidado sanitario, (ii) la orientación de la medicina hacia el paciente y (iii) la prevención y predicción de enfermedades. A continuación se describe cada una esta de estas características:
 
 \begin{itemize}
 
-\item \textbf{Cuidado sanitario continuo (\textit{continuum of care})}. Gracias a tecnologías TIC y el IoT, la sociedad está altamente conectada, lo que ha impulsado el desarrollo de la telemedicina y la e-Salud, especialmente a raíz de la pandemia del COVID-19 \cite{martin2021ehealth}. Se han desarrollado numerosos dispositivos portátiles (\textit{wearable devices}), como pulseras y relojes inteligentes, para monitorear a los pacientes tanto dentro como fuera del hospital. Además estos dispositivos generan grandes cantidades de datos médicos que se combinan con registros clínicos para formar los llamados 'Datos del mundo real' \textit{(Real World Data, RWD)} \cite{kouroubali2019new}. 
+\item \textbf{Cuidado sanitario continuo (\textit{continuum of care})}. Las tecnologías TIC y el IoT, han permitido a la sociedad estar altamente conectada, esto ha impulsado el desarrollo de la telemedicina y la e-Salud, especialmente tras la pandemia del COVID-19 \cite{martin2021ehealth}. Se han desarrollado numerosos dispositivos portátiles (\textit{wearable devices}), como pulseras y relojes inteligentes, para monitorear a los pacientes tanto dentro como fuera del entorno hospitalario. Además, estos dispositivos generan grandes cantidades de datos médicos que se combinan con registros clínicos para formar los llamados 'Datos del mundo real' \textit{(Real World Data, RWD)} \cite{kouroubali2019new}. 
 
-La gran variedad en cuanto a la estructura y finalidad con la que se recopilan estos datos representan un desafío significativo en el tratamiento de la información clínica. La organización OHDSI pondrá fin a este desafío mediante la estandarización de las bases de datos RWD con un mismo fin: la invesigación observacional.
-
-%\item \textbf{Provisión continua de cuidado sanitario}. La provisión continua del cuidado sanitario se basa en el cuidado continuo (\textit{continuum of care}) \cite{kouroubali2019new}. Gracias a las nuevas tecnologías de la Industria 4.0, mayoritariamente a las TICs y al IoT, la sociedad se encuentra estrechamente comunicada de forma prácticamente ininterrumpida. En el ámbito sanitario, a raíz de la pandemia del COVID-19 ha habido un creciente auge en el desarrollo de la telemedicina y la salud digital (\textit{e-Health}) \cite{martin2021ehealth} con el fin de monitorear al paciente dentro y fuera del complejo hospitalario. Para ello se ha potenciado el desarrollo de programas informáticos y dispositivos portátiles o \textit{wearables} de monitoreo de actividad como pulseras, relojes, sensores corporales, implantes inteligentes... Estos dispositivos generan enormes cantidades de datos médicos que junto a los registros clínicos de los hospitales generan una amplísima variedad de datos de pacientes reales. A estos conjuntos de datos se les denomina 'Datos del mundo real' (\textit{Real World Data}) y presentan un gran desafío actual en el tratamiento de los datos clínicos debido a su naturaleza de distintas índoles y que, además, cada organización recoge con distintos propósitos y estructura, lo que conlleva que frecuentemente se presenten grandísimas cantidades de datos inconsistentes, incoherentes o inaccesibles entre sí, produciéndose registros electrónicos de salud muy extensos y dispares. \cite{kouroubali2019new}.
-
-%Patient-centred - Modelos de datos más amplios. Medicina de precisión.
+La gran variedad en cuanto a estructura y finalidad con la que se recopilan estos datos representan un desafío significativo en el tratamiento de la información clínica. La organización OHDSI tiene como objetivo poner fin a este desafío mediante la estandarización de las bases de datos RWD con un mismo fin: la invesigación observacional.
 
 
 \item \textbf{Centrada en el paciente}. Esta perspectiva enfatiza al paciente como el eje central de la atención sanitaria \cite{tortorella2020healthcare}. Con el avance de la medicina de precisión y el seguimiento remoto de la actividad diaria, la atención médica se vuelve cada vez más personalizada \cite{ruiz2023inteligencia}. La Unión Europea promueve esta orientación, exigiendo una reestructuración del sistema sanitario para que el paciente sea el principal beneficiario, evaluador y centro de los servicios de salud digital \cite{ntafi2022legal, katehakis2019framework}. Esto implica la implementación de sistemas informáticos que administren el historial clínico electrónico (HCE) completo de cada individuo, incluyendo observaciones de datos médicos, farmacéuticos y otros relevantes.
@@ -70,7 +59,7 @@ La organización OHDSI presenta técnicas de ML embebidas en su herramienta de a
 %\item \textbf{Preventiva y predictiva}. La última característica es que sea preventiva y predictiva en lugar de meramente reactiva. Esto quiere que decir, que a diferencia del enfoque tradicional en el que la medicina es curativa, se debe transicionar hacia la provisión de salud de manera previa a la aparición de una enfermedad, de modo que esta pueda ser (i) predecida a través del análisis del HCE del paciente y/o exhaustivos análisis de precisión, y (ii) prevenida a través de monitorearización y provisión de tratamientos preventivos en el cuidado continuo de la salud \cite{ruiz2023inteligencia}. En esta línea el análisis del historial clínico de un paciente genera un desafío muy complejo y la prevención y la predicción se alcanza gracias al constante desarrollo de técnicas y algoritmos cada vez más sofisticados de inteligencia artificial y aprendizaje automático y herramientas cada vez más poderosas de ciencia y análisis de datos.
 \end{itemize}
 
-\subsubsection{Necesidad de interoperabilidad}
+\subsubsection{1.2.3 Necesidad de interoperabilidad}
 
 %Por último, la interoperabilidad entre sistemas y datos es el objetivo final de la revolución industrial, tecnológica y sanitaria actual. La necesidad de interoperabilidad es una realidad a la que se enfrentan todos los sectores y sistemas de información de las organizaciones públicas y privadas. La Comisión Europe identificó esta necesidad ya a principios de siglo \cite{CEU1999ida} y durante los años ha ido adquiriendo cada vez mayor relevancia. 
 
@@ -101,7 +90,7 @@ Actualmente, el nuevo Marco de Interoperabilidad Europea (\textit{new EIF}, 2017
 
 \end{itemize}
 
-\subsubsection{Desafíos en el tratamiento de los datos}
+\subsubsection{1.2.4 Desafíos en el tratamiento de los datos}
 
 
 A pesar de las numerosas iniciativas a nivel global y europeo, la transición hacia la interoperabilidad y estandarización sigue siendo muy desafiante debido a la complejidad y sensibilidad de los sistemas de información en salud. El manejo de datos sanitarios requiere gestiones precisas con protocolos de ciberseguridad estrictos y leyes de privacidad y confidencialidad bien definidas, lo que dificulta su implementación coordinada en diferentes regiones.
@@ -116,7 +105,7 @@ Se presentan a continuación algunos de los desafíos en el tratamiento de los d
     
 \end{enumerate}
 
-\subsubsection{Propuesta de solución}
+\subsubsection{1.2.5 Propuesta de solución}
 
 Por tanto, ante las necesidades y desafíos del complejo panorama sanitario actual, este Trabajo de Fin de Grado propone a la organización \textbf{Observational Health Data Science \& Informatics (OHDSI)} como la solución óptima a la interoperabilidad en estudios observacionales con datos de salud, a través del Modelo de Datos Común de OMOP y la herramienta de análisis de datos \textbf{ATLAS}. 
 
@@ -129,20 +118,22 @@ Además a nivel estatal, España conforma uno de los nodos de colaboración con 
 y en Sevilla, especialmente, la colaboración con OHDSI la llevan a cabo el IBIS (Instituto de Biomedicina de Sevilla), la fundación FISEVI (Fundación para la Gestión de la Investigación en Salud en Sevilla) y los hospitales universitarios Virgen Macarena y Virgen del Rocío. Este último además es la sede del convenio de prácticas en empresa realizadas junto al TFG . %El pasado octubre de 2023 el hospital Macarena celebró el 'Innodata 2023' \cite{HUVM2023INNODATA}, un congreso nacional sobre investigación de datos en salud, en la que se presentó una ponencia que trató las herramientas y experiencias de OHDSI. 
 
 
-\section{Estado del Arte} \label{sec:01EstadoArte} 
+\section{Estado del arte} \label{sec:01EstadoArte} 
 %Intención: cuáles son las inicitivas que hay actualmente en el sector y cuál es la presencia real de OHDSI en el mismo.
 
-\textcolor{red}{Boceto de contenidos básicos. Más ideas???? Más temáticas?? Mayor extensión???}
+%\textcolor{red}{Boceto de contenidos básicos. Más ideas???? Más temáticas?? Mayor extensión???}
 
 %En Europa, en noviembre de 2018 se lanzó la Red Europea de Datos y Evidencia en Salud (\textit{European Health Data \& Evidence Network, EHDEN}) con el objetivo de ''abordar los desafíos actuales en la generación de conocimientos y evidencia a partir de datos clínicos del mundo real a escala, para ayudar a los pacientes, médicos, pagadores, reguladores, gobiernos y la industria'' \cite{ehden}.
 
 Frente a todo lo expuesto, aún no existe un consenso entre las grandes potencias que establezca verdaderamente una solución única. En el ámbito del tratamiento de la información sanitaria, existen numerosas alternativas a OHDSI y organizaciones proveedoras de estándares y herramientas para paliar las necesidades y dificultades del sector. Aunque irónicamente la presencia de tantísimas alternativas diferentes es la principal dificultad para la interoperabilidad.
 
-En el ámbito de la interoperabilidad semántica, algunos de los estándares más reconocidos y usados mundialmente son HL7 FHIR \textit{(Health Level Seven - Fast Health Interoperability Resources)}, HL7 CDA \textit{(Health Level Seven Clinical Document Architecture)}, DICOM \textit{(Digital Imaging and Communications in Medicine)}, SNOMED CT \textit{(Systematized Nomenclature of Medicine - Clinical Terms)}, IHE (Integrating the Healthcare Enterprise), openEHR (Open Electronic Health Record), LOINC (Logical Observation Identifiers Names and Codes), RxNorm (Prescription Norm) entre otros.
+En el ámbito de la \textbf{interoperabilidad semántica}, algunos de los estándares más reconocidos y usados mundialmente son HL7 FHIR \textit{(Health Level Seven - Fast Health Interoperability Resources)}, HL7 CDA \textit{(Health Level Seven Clinical Document Architecture)}, DICOM \textit{(Digital Imaging and Communications in Medicine)}, SNOMED CT \textit{(Systematized Nomenclature of Medicine - Clinical Terms)}, IHE (Integrating the Healthcare Enterprise), openEHR (Open Electronic Health Record), LOINC (Logical Observation Identifiers Names and Codes), RxNorm (Prescription Norm) entre otros.
 
-Además, solo en España, cada comunidad autónoma utiliza un sistema informático sanitario distinto, cuyos datos están estructurados de formas distintas. En Andalucía el sistema de información es DIRAYA. Otros ejemplos son: en Madrid, Historia Clínica Digital de Atención Primaria (HCDSAP); en Cataluña, Sistema de Información de Atención Primaria (SIAP); en la Comunidad Valenciana, Sistema de Información Poblacional de Atención Primaria (SIPAP), en Pais Vasco, Osabide; en Galicia, SERGAS; entre otros.
+Por otra parte, solo en España cada comunidad autónoma utiliza un sistema informático sanitario distinto, cuyos datos están estructurados de formas distintas. En Andalucía el sistema de información es DIRAYA. Otros ejemplos son: en Madrid, Historia Clínica Digital de Atención Primaria (HCDSAP); en Cataluña, Sistema de Información de Atención Primaria (SIAP); en la Comunidad Valenciana, Sistema de Información Poblacional de Atención Primaria (SIPAP), en Pais Vasco, Osabide; en Galicia, SERGAS; entre otros.
 
 Por otro lado, en el ámbito de la interoperabilidad técnica las alternativas son muy dispares, desde aquellos que realizan análisis totalmente personalizados mediante scripts de código o el gran catálogo de software de procesamiento de datos actualmente disponible en el mercado. Los lenguages de programación que más usan los analistas de datos son Python, R y SQL, implementados en diferentes IDEs como JupyterLab o Jupyter Notebook para Pyhton, Rstudio para R o multitud de plataformas de bases de datos (Oracle, Postgre, BigQuery...). Por otra parte, los software de análisis más extendidos son son Tableau, Microsoft PowerBI, SAS, MatLab, Apache Spark, entre otras. 
+
+%- Estudios realizados con ATLAS
 
 La falta de un estandar común es objeto de investigación en todo el mundo, lo que da lugar a alianzas entre organizaciones y competiciones en proyectos que pretenden dar solución a este aspecto, como por ejemplo la Infraestructura de Servicios Digitales de eSalud (eHDSI) \cite{DHE2023eHDSI} %representa un hito crucial en el impulso de la interoperabilidad y la integración de los sistemas de información sanitaria en Europa. Este marco establece estándares y protocolos para facilitar el intercambio seguro y eficiente de datos de salud entre los Estados miembros de la Unión Europea, con el objetivo de mejorar la calidad de la atención médica y promover la movilidad de los pacientes en el espacio europeo de salud digital \cite{EU2023Servicios}. 
 o el proyecto European Genomic Data Infrastructure (GDI) \cite{GDI2022GDI} que busca establecer una infraestructura unificada para gestionar y compartir datos genómicos en Europa.
@@ -156,7 +147,7 @@ o el proyecto European Genomic Data Infrastructure (GDI) \cite{GDI2022GDI} que b
 
 %Mi motivación personal de entrar en el mundo del %análisis de datos clínicos utilizando  esta %herramienta prometedora..
 
-La principal motivación para realizar este proyecto ha sido mi curiosidad e interés por el mundo de la ciencia de datos a lo largo de mis años de formación universitaria. El origen se sitúa en el primer año de carrera, allá por el 2020, cuando por primera vez oí hablar del análisis de datos clínicos como una disciplina emergente de gran interés a nivel laboral. A partir de este momento, continué investigando sobre todo lo relacionado a esta disciplicina y cuando en tercero de carrera tuve la oportunidad de realizar el programa de movilidad ERASMUS al Politecnico di Milano, no dudé en seleccionar el mayor número de asignaturas de Data Science que mi convenio de estudios me permitió. 
+La principal motivación para realizar este proyecto ha sido mi curiosidad e interés por el mundo de la ciencia de datos a lo largo de mis años de formación universitaria. El origen se sitúa en el primer año de carrera, allá por el 2020, cuando por primera vez oí hablar del análisis de datos clínicos como una disciplina emergente de gran interés a nivel laboral. A partir de este momento, continué investigando sobre todo lo relacionado a esta disciplina y cuando en tercero de carrera tuve la oportunidad de realizar el programa de movilidad ERASMUS al Politecnico di Milano, no dudé en seleccionar el mayor número de asignaturas de Data Science que mi convenio de estudios me permitió. 
 
 Este año de estudio en Milán confirmó que, lo que había nacido como una mera curiosidad, se había convertido en una pasión, por lo que a mi regreso del Erasmus me decidí a orientar mi carrera profesional y mi TFG hacia el mundo del análisis de datos clínicos, hasta el día de hoy en que este Trabajo Fin de Grado es escrito.
 
@@ -170,14 +161,14 @@ De esta forma, también ha sido de gran importancia la motivación de mis profes
 
 La memoria se estructura en diez capítulos y dos anexos que contienen toda la información relevante.
 
-La información propiamente sobre el proyecto se encuentra en los capítulos: \ref{cap:01introduccion} Descripción del Proyecto \ref{cap:02objetivos} Objetivos del Proyecto, \ref{cap:03gestión} Gestión del Proyecto y \ref{cap:04metodologia} Metodología.
+La información propiamente sobre el proyecto se encuentra en los capítulos: \ref{cap:01introduccion} ''Descripción del Proyecto'' \ref{cap:02objetivos} ''Objetivos del Proyecto'', \ref{cap:03gestión} ''Gestión del Proyecto'' y \ref{cap:04metodologia} ''Metodología''.
 
-A continuación, en \ref{cap:05EstudioPrevio} Marco Teórico, se recopila información relevante sobre la organización Observational Health Data Science and Informatics (OHDSI) y sus herramientas, prestando especial atención a ATLAS. Este capítulo en conjunto con \ref{cap:06requisitos} Documento de Requisitos y \ref{cap:07diseño} Entorno de Trabajo proveen un conocimiento teórico completo de las herramientas y análisis a tratar durante el proyecto. 
+A continuación, en \ref{cap:05EstudioPrevio} ''Marco Teórico'', se recopila información relevante sobre la organización Observational Health Data Science and Informatics (OHDSI) y sus herramientas, prestando especial atención a ATLAS. Este capítulo en conjunto con \ref{cap:06requisitos}'' Documento de Requisitos'' y \ref{cap:07diseño} ''Entorno de Trabajo'' proveen un conocimiento teórico completo de las herramientas a tratar durante el proyecto. 
 
-Por otra parte, en \ref{cap:08pruebas} Caso práctico se presenta un capítulo dedicado a la reproducción de un caso práctico de estudio utilizando ATLAS. 
+Por otra parte, en \ref{cap:08pruebas} ''Caso práctico'' se presenta un capítulo dedicado a la reproducción de un caso práctico de estudio utilizando ATLAS. 
 
-Por último, los siguientes dos capítulos \ref{cap:09resultados} Resultados y \ref{cap:10conclusiones} Conclusiones, presentan una recopilación de resultados y conclusiones, respectivamente obtenidos al término del desarrollo del TFG. 
+Por último, los siguientes dos capítulos \ref{cap:09resultados} ''Resultados'' y \ref{cap:10conclusiones} ''Conclusiones'', presentan una recopilación de resultados y conclusiones, respectivamente obtenidos al término del desarrollo del TFG. 
 
-Adicionalmente, se adjuntan dos anexos. El anexo \ref{anexo:manual} consiste en una guía completa de Instalación, despliegue y configuración de Broadsea y el Anexo \ref{anexo:glosario}, se trata Glosario de Términos técnicos relevantes para la comprensión del trabajo. 
+Adicionalmente, se adjuntan dos anexos. El anexo \ref{anexo:manual} ''Manual de instalación, despligue y configuración de ATLAS Broadsea'' consiste en una guía de usuario completa sobre la herramienta ATLAS Broadsea y el Anexo \ref{anexo:glosario} ''Glosario de Términos'', recopila los conceptos técnicos relevantes para la comprensión del trabajo. 
 
 Por su naturaleza informática, este TFG se ha desarrollado paralelamente a un repositorio de github del proyecto \cite{vallealonsodc}, que ha servido como controlador de versiones y como administrador de archivos en la nube, permitiendo almacenar y compartir con el lector archivos relevantes del TFG, ya sean archivos necesarios para el despliegue de la herramienta, archivos producidos durante el análisis o los propios documentos en sí mismos.
