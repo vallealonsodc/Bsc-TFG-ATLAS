@@ -6,6 +6,8 @@
 
 En términos de estandarización, OHDSI realiza una labor muy importante para paliar las dificultades de la investigación con datos de salud a causa de la heterogeneidad de los datos y estudios. Debido a la amplia colaboración internacional de la organización se recocone la necesidad de estándares que permitan el intercambio de información sin pérdida entre los distintos sistemas de información de los miembros de la comunidad.
 
+\textbf{No se puede entender la herramienta de ATLAS sin entender el ecosistema de herramientas OHDSI que la acompañan}.
+
 La estandarización de la investigación en OHDSI se realiza en dos planos: a nivel de datos y a nivel de investigación. La estandarización a nivel de datos se realiza a través del uso del Modelo de Datos Común y el Vocabulario y la estandarización a nivel de investigación mediante la ''investigación metodológica''. A continuación se describe en una subsección cada uno de estos estándares.
 
 \subsection{Modelo de Datos Común} \label{subsec:07cdm}
@@ -80,62 +82,7 @@ Actualmente hay más de nueve millones de términos registrados en el Vocabulari
 
 %\textcolor{red}{- lA RELACIÓN QUE GUARDAN LOS CONCEPTOS ENTRE SÍ ES JERARQUICA}
 
-\section{Casos de uso para la investigación} \label{subsec:07investMetodolog}
 
-Con el fin de estandarizar y proveer un marco metodológico en el camino hacia la generación de evidencia, OHDSI define tres casos de usos que establecen los diferentes tipos de estudio que se pueden realizar: (i) la caracterización, (ii) la estimación a nivel de población (iii) la predicción a nivel de paciente.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.80\textwidth]{figures/useCases.png}
-     \caption{Esquema simplificado de los casos de uso para la investigación en OHDSI. Extraído del Symposium 2023, publicado en la web oficial \cite{OHDSIwebsite}}
-    \label{fig:useCases}
-\end{figure}
-
-Estos tres casos de uso se presentan generalmente en los \textit{Symposium} y \textit{Workshops}, para dar a conocer a la comunidad el esquema propio de investigación de OHDSI. Además el Libro de OHDSI \cite{OHDSIbook} los presenta de forma general en el capítulo 7 y de forma específica para cada caso de uso en los capítulos 11, 12 y 13, respectivamente. 
-
-En la siguiente figura se muestra otro esquema más complejo, presentado en el Symposium 2023 en el que se encuadra cada caso de uso en la ventana temporal que encuadra un estudio observacional.
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.80\textwidth]{figures/useCasesJourney.png}
-     \caption{Esquema de los casos de uso encuadrado en la historia del paciente. Extraído del Symposium 2023 publicado en la web oficial \cite{OHDSIwebsite}}
-    \label{fig:useCasesJourney}
-\end{figure}
-
-El conjunto de estos tres casos de uso y la definición de cohortes conforma la metodología OHDSI para la generación de evidencia (véase sección \ref{sec:07Evidencia} ''¿Cómo generar evidencia?''). A continuación se describe brevemente cada uno de estos componentes. 
-
-\subsubsection{Cohortes}
-
-En OHDSI una cohorte es un ''conjunto de personas que satisface uno o más criterios de inclusión durante un periodo de tiempo concreto'' \cite{OHDSIbook}. La definición de cohortes es el paso fundamental a la hora de realizar cualquier estudio de OHDSI, pues la cohorte recolecta los fenotipos que participan en la investigación, su correcta definición es crucial para realizar un buen análisis \cite{hripcsak2018high}. A continuación se presenta esquemáticamente la estructura fundamental de una cohorte, denominada en OHDSI ''anatomía de una cohorte''.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.80\textwidth]{figures/cohortAnatomy.png}
-     \caption{''Anatomía de una cohorte''. Extraída del Tutorial 2022 publicado en la web oficial \cite{OHDSIwebsite}}
-    \label{fig:cohortAnatomy}
-\end{figure}
-
-
-\subsubsection{Caracterización}
-
-\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
-
-La caracterización busca la caracterización a nivel estadístico de un cohorte o una base de datos. Es una mera descripción estadística de los datos, sin realizar inferencias, predicciones o análisis más complejos, simplemente observando la base de datos.
-
-La caracterización consiste en caracterizar una población a través de métricas estadísticas descriptivas con el objetivo de formular hipótesis sobre los determinantes de la salud y la enfermedad.
-
-\subsubsection{Estimación a nivel de población}
-
-\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
-
-La estimación a nivel de población busca realizar inferencias causales sobre los efectos de las intervenciones sanitarias en la población. Se pretende entender los efectos causales para comprender las consecuencias de las acciones
-
-\subsubsection{Predicción a nivel de paciente}
-
-\textcolor{red}{Añadir explicación más detallada con conceptos relevantes cuando empiece a manejar ATLAS}
-
-La predicción a nivel de paciente busca, en base a los datos obtenidos de los conjuntos de pacientes en la base de datos, realizar predicciones concretas para un individuo concreto.
 
 \section{Herramientas de OHDSI} \label{sec:07herramientas}
 
