@@ -1,0 +1,23 @@
+-----------------------------------------
+-- OBTENER REPORTE DE LA BASE DE DATOS --
+-----------------------------------------
+
+-- Visualiza todas las entradas de personas registradas en la BD
+SELECT * FROM omop.person
+
+-- Cuenta el número de personas registardas en la BD
+SELECT COUNT(*) FROM omop.person
+
+---------------------------------------
+-- DEFINICIÓN DE GRUPOS DE CONCEPTOS --
+---------------------------------------
+
+-- Obtiene las distintas enfermedades registradas en la BD
+SELECT DISTINCT condition_concept_id FROM omop.condition_occurrence
+
+-- Obtiene las distintas observaciones registradas en la BD
+SELECT DISTINCT observation_concept_id FROM omop.observation
+
+-- Obtiene los distintos procedimientos registrados en la BD
+SELECT DISTINCT procedure_concept_id FROM omop.procedure_occurrence
+

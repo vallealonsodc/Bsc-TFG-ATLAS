@@ -1,0 +1,431 @@
+2024-05-10 12:46:21 2024-05-10 10:46:21.712 ERROR http-nio-8080-exec-5 org.ohdsi.webapi.util.GenericExceptionMapper - [] - org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select VOCABULARY_VERSION 
+2024-05-10 12:46:21 from omop_vocab.vocabulary
+2024-05-10 12:46:21 where VOCABULARY_ID = 'None']; nested exception is org.postgresql.util.PSQLException: ERROR: relation "omop_vocab.vocabulary" does not exist
+2024-05-10 12:46:21   Position: 33
+2024-05-10 12:46:21     at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:230)
+2024-05-10 12:46:21     at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:654)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:688)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:720)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:730)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:798)
+2024-05-10 12:46:21     at org.ohdsi.webapi.service.VocabularyService.getInfo(VocabularyService.java:1202)
+2024-05-10 12:46:21     at sun.reflect.GeneratedMethodAccessor234.invoke(Unknown Source)
+2024-05-10 12:46:21     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2024-05-10 12:46:21     at java.lang.reflect.Method.invoke(Method.java:498)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+2024-05-10 12:46:21     at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:458)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:373)
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:370)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.ohdsi.webapi.shiro.filters.CacheFilter.doFilter(CacheFilter.java:35)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.ohdsi.webapi.shiro.filters.ExceptionHandlerFilter.doFilter(ExceptionHandlerFilter.java:28)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+2024-05-10 12:46:21     at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+2024-05-10 12:46:21     at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+2024-05-10 12:46:21     at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+2024-05-10 12:46:21     at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+2024-05-10 12:46:21     at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+2024-05-10 12:46:21     at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+2024-05-10 12:46:21     at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+2024-05-10 12:46:21     at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+2024-05-10 12:46:21     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+2024-05-10 12:46:21     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+2024-05-10 12:46:21     at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+2024-05-10 12:46:21     at java.lang.Thread.run(Thread.java:750)
+2024-05-10 12:46:21 Caused by: org.postgresql.util.PSQLException: ERROR: relation "omop_vocab.vocabulary" does not exist
+2024-05-10 12:46:21   Position: 33
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:167)
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:119)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:696)
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:638)
+2024-05-10 12:46:21     ... 96 more
+2024-05-10 12:46:21 
+2024-05-10 12:46:21 2024-05-10 10:46:21.976 ERROR http-nio-8080-exec-9 org.ohdsi.webapi.achilles.aspect.AchillesCacheAspect - [] - exception during getting cache treemap_observation for source S31HUVR
+2024-05-10 12:46:21 org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT
+2024-05-10 12:46:21   concept_hierarchy.concept_id                          AS concept_id,
+2024-05-10 12:46:21   CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(
+2024-05-10 12:46:21     COALESCE(concept_hierarchy.level3_concept_name,'NA'), '||'),
+2024-05-10 12:46:21     COALESCE(concept_hierarchy.level2_concept_name,'NA')), '||'),
+2024-05-10 12:46:21     COALESCE(concept_hierarchy.level1_concept_name,'NA')), '||'),
+2024-05-10 12:46:21     COALESCE(concept_hierarchy.concept_name,'NA'))       AS concept_path,
+2024-05-10 12:46:21   ar1.count_value                                       AS num_persons,
+2024-05-10 12:46:21   1.0 * ar1.count_value / denom.count_value             AS percent_persons,
+2024-05-10 12:46:21   1.0 * ar2.count_value / ar1.count_value               AS records_per_person
+2024-05-10 12:46:21 FROM (SELECT *
+2024-05-10 12:46:21       FROM result.achilles_results WHERE analysis_id = 800) ar1
+2024-05-10 12:46:21   INNER JOIN
+2024-05-10 12:46:21   (SELECT *
+2024-05-10 12:46:21    FROM result.achilles_results WHERE analysis_id = 801) ar2
+2024-05-10 12:46:21     ON ar1.stratum_1 = ar2.stratum_1
+2024-05-10 12:46:21   INNER JOIN
+2024-05-10 12:46:21   result.concept_hierarchy concept_hierarchy
+2024-05-10 12:46:21   ON CAST(CASE WHEN ar1.analysis_id = 800 THEN ar1.stratum_1 ELSE null END AS INT) = concept_hierarchy.concept_id
+2024-05-10 12:46:21   AND concept_hierarchy.treemap='Observation'
+2024-05-10 12:46:21   ,
+2024-05-10 12:46:21   (SELECT count_value
+2024-05-10 12:46:21    FROM result.achilles_results WHERE analysis_id = 1) denom
+2024-05-10 12:46:21 ORDER BY ar1.count_value DESC]; nested exception is org.postgresql.util.PSQLException: ERROR: relation "result.concept_hierarchy" does not exist
+2024-05-10 12:46:21   Position: 838
+2024-05-10 12:46:21     at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:230) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:654) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:688) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:720) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:770) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.ohdsi.webapi.report.CDMResultsAnalysisRunner.getTreemap(CDMResultsAnalysisRunner.java:257) ~[classes/:?]
+2024-05-10 12:46:21     at org.ohdsi.webapi.service.CDMResultsService.getRawTreeMap(CDMResultsService.java:363) ~[classes/:?]
+2024-05-10 12:46:21     at org.ohdsi.webapi.service.CDMResultsService.getTreemap(CDMResultsService.java:357) ~[classes/:?]
+2024-05-10 12:46:21     at org.ohdsi.webapi.service.CDMResultsService$$FastClassBySpringCGLIB$$f65c71c1.invoke(<generated>) ~[classes/:?]
+2024-05-10 12:46:21     at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736) ~[spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:84) ~[spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.ohdsi.webapi.achilles.aspect.AchillesCacheAspect.cache(AchillesCacheAspect.java:56) [classes/:?]
+2024-05-10 12:46:21     at sun.reflect.GeneratedMethodAccessor226.invoke(Unknown Source) ~[?:?]
+2024-05-10 12:46:21     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:627) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:616) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671) [spring-aop-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.ohdsi.webapi.service.CDMResultsService$$EnhancerBySpringCGLIB$$fc3d940a.getTreemap(<generated>) [classes/:?]
+2024-05-10 12:46:21     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_342]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:315) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:297) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.internal.Errors.process(Errors.java:267) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317) [jersey-common-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154) [jersey-server-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473) [jersey-container-servlet-core-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427) [jersey-container-servlet-core-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388) [jersey-container-servlet-core-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341) [jersey-container-servlet-core-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228) [jersey-container-servlet-core-2.25.1.jar!/:?]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:458) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:373) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:370) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154) [shiro-web-1.12.0.jar!/:1.12.0]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.ohdsi.webapi.shiro.filters.CacheFilter.doFilter(CacheFilter.java:35) [classes/:?]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.ohdsi.webapi.shiro.filters.ExceptionHandlerFilter.doFilter(ExceptionHandlerFilter.java:28) [classes/:?]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_342]
+2024-05-10 12:46:21     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_342]
+2024-05-10 12:46:21     at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+2024-05-10 12:46:21     at java.lang.Thread.run(Thread.java:750) [?:1.8.0_342]
+2024-05-10 12:46:21 Caused by: org.postgresql.util.PSQLException: ERROR: relation "result.concept_hierarchy" does not exist
+2024-05-10 12:46:21   Position: 838
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:167) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:119) ~[postgresql-42.3.7.jar!/:42.3.7]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:696) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:638) ~[spring-jdbc-4.3.25.RELEASE.jar!/:4.3.25.RELEASE]
+2024-05-10 12:46:21     ... 115 more
+2024-05-10 12:46:22 2024-05-10 10:46:22.150 ERROR http-nio-8080-exec-9 org.ohdsi.webapi.util.GenericExceptionMapper - [] - org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT
+2024-05-10 12:46:22   concept_hierarchy.concept_id                          AS concept_id,
+2024-05-10 12:46:22   CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(
+2024-05-10 12:46:22     COALESCE(concept_hierarchy.level3_concept_name,'NA'), '||'),
+2024-05-10 12:46:22     COALESCE(concept_hierarchy.level2_concept_name,'NA')), '||'),
+2024-05-10 12:46:22     COALESCE(concept_hierarchy.level1_concept_name,'NA')), '||'),
+2024-05-10 12:46:22     COALESCE(concept_hierarchy.concept_name,'NA'))       AS concept_path,
+2024-05-10 12:46:22   ar1.count_value                                       AS num_persons,
+2024-05-10 12:46:22   1.0 * ar1.count_value / denom.count_value             AS percent_persons,
+2024-05-10 12:46:22   1.0 * ar2.count_value / ar1.count_value               AS records_per_person
+2024-05-10 12:46:22 FROM (SELECT *
+2024-05-10 12:46:22       FROM result.achilles_results WHERE analysis_id = 800) ar1
+2024-05-10 12:46:22   INNER JOIN
+2024-05-10 12:46:22   (SELECT *
+2024-05-10 12:46:22    FROM result.achilles_results WHERE analysis_id = 801) ar2
+2024-05-10 12:46:22     ON ar1.stratum_1 = ar2.stratum_1
+2024-05-10 12:46:22   INNER JOIN
+2024-05-10 12:46:22   result.concept_hierarchy concept_hierarchy
+2024-05-10 12:46:22   ON CAST(CASE WHEN ar1.analysis_id = 800 THEN ar1.stratum_1 ELSE null END AS INT) = concept_hierarchy.concept_id
+2024-05-10 12:46:22   AND concept_hierarchy.treemap='Observation'
+2024-05-10 12:46:22   ,
+2024-05-10 12:46:22   (SELECT count_value
+2024-05-10 12:46:22    FROM result.achilles_results WHERE analysis_id = 1) denom
+2024-05-10 12:46:22 ORDER BY ar1.count_value DESC]; nested exception is org.postgresql.util.PSQLException: ERROR: relation "result.concept_hierarchy" does not exist
+2024-05-10 12:46:22   Position: 838
+2024-05-10 12:46:22     at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:230)
+2024-05-10 12:46:22     at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:654)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:688)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:720)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:770)
+2024-05-10 12:46:22     at org.ohdsi.webapi.report.CDMResultsAnalysisRunner.getTreemap(CDMResultsAnalysisRunner.java:257)
+2024-05-10 12:46:22     at org.ohdsi.webapi.service.CDMResultsService.getRawTreeMap(CDMResultsService.java:363)
+2024-05-10 12:46:22     at org.ohdsi.webapi.service.CDMResultsService.getTreemap(CDMResultsService.java:357)
+2024-05-10 12:46:22     at org.ohdsi.webapi.service.CDMResultsService$$FastClassBySpringCGLIB$$f65c71c1.invoke(<generated>)
+2024-05-10 12:46:22     at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+2024-05-10 12:46:22     at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)
+2024-05-10 12:46:22     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+2024-05-10 12:46:22     at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:84)
+2024-05-10 12:46:22     at org.ohdsi.webapi.achilles.aspect.AchillesCacheAspect.cache(AchillesCacheAspect.java:69)
+2024-05-10 12:46:22     at sun.reflect.GeneratedMethodAccessor226.invoke(Unknown Source)
+2024-05-10 12:46:22     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2024-05-10 12:46:22     at java.lang.reflect.Method.invoke(Method.java:498)
+2024-05-10 12:46:22     at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:627)
+2024-05-10 12:46:22     at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:616)
+2024-05-10 12:46:22     at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+2024-05-10 12:46:22     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+2024-05-10 12:46:22     at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+2024-05-10 12:46:22     at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+2024-05-10 12:46:22     at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)
+2024-05-10 12:46:22     at org.ohdsi.webapi.service.CDMResultsService$$EnhancerBySpringCGLIB$$fc3d940a.getTreemap(<generated>)
+2024-05-10 12:46:22     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2024-05-10 12:46:22     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2024-05-10 12:46:22     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2024-05-10 12:46:22     at java.lang.reflect.Method.invoke(Method.java:498)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+2024-05-10 12:46:22     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+2024-05-10 12:46:22     at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+2024-05-10 12:46:22     at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+2024-05-10 12:46:22     at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+2024-05-10 12:46:22     at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+2024-05-10 12:46:22     at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+2024-05-10 12:46:22     at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+2024-05-10 12:46:22     at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+2024-05-10 12:46:22     at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+2024-05-10 12:46:22     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+2024-05-10 12:46:22     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+2024-05-10 12:46:22     at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:458)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:373)
+2024-05-10 12:46:22     at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+2024-05-10 12:46:22     at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+2024-05-10 12:46:22     at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:370)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+2024-05-10 12:46:22     at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:154)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.ohdsi.webapi.shiro.filters.CacheFilter.doFilter(CacheFilter.java:35)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.ohdsi.webapi.shiro.filters.ExceptionHandlerFilter.doFilter(ExceptionHandlerFilter.java:28)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+2024-05-10 12:46:22     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+2024-05-10 12:46:22     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+2024-05-10 12:46:22     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+2024-05-10 12:46:22     at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+2024-05-10 12:46:22     at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+2024-05-10 12:46:22     at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+2024-05-10 12:46:22     at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+2024-05-10 12:46:22     at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+2024-05-10 12:46:22     at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+2024-05-10 12:46:22     at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+2024-05-10 12:46:22     at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+2024-05-10 12:46:22     at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+2024-05-10 12:46:22     at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+2024-05-10 12:46:22     at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+2024-05-10 12:46:22     at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+2024-05-10 12:46:22     at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+2024-05-10 12:46:22     at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+2024-05-10 12:46:22     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+2024-05-10 12:46:22     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+2024-05-10 12:46:22     at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+2024-05-10 12:46:22     at java.lang.Thread.run(Thread.java:750)
+2024-05-10 12:46:22 Caused by: org.postgresql.util.PSQLException: ERROR: relation "result.concept_hierarchy" does not exist
+2024-05-10 12:46:22   Position: 838
+2024-05-10 12:46:22     at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+2024-05-10 12:46:22     at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+2024-05-10 12:46:22     at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+2024-05-10 12:46:22     at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+2024-05-10 12:46:22     at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+2024-05-10 12:46:22     at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:167)
+2024-05-10 12:46:22     at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:119)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:696)
+2024-05-10 12:46:22     at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:638)
+2024-05-10 12:46:22     ... 115 more
+2024-05-10 12:46:22 
+2024-05-10 12:46:33 2024-05-10 10:46:33.884 INFO taskScheduler-18 org.ohdsi.webapi.executionengine.service.ScriptExecutionServiceImpl - [] - Invalidating execution engine based analyses
+2024-05-10 12:46:34 2024-05-10 10:46:34.648 INFO taskScheduler-19 org.ohdsi.webapi.tag.TagService - [] - Starting tags statistics refreshing
+2024-05-10 12:46:34 2024-05-10 10:46:34.985 INFO taskScheduler-19 org.ohdsi.webapi.tag.TagService - [] - Finishing tags statistics refreshing
