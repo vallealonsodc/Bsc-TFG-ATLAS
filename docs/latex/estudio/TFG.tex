@@ -11,43 +11,23 @@
 % Paquetes LaTeX y estilos globales
 \input{etc/pkgs}
 \input{etc/style}
-%Para quitar la sangría al principio de cada párrafo
-\setlength{\parindent}{0pt}
-%Para dar formato al indice de los enumerados
 \usepackage{enumitem}
-%Establece el formato ''code'' para código
+\setlength{\parindent}{0pt}
 \newcommand{\code}[1]{\texttt{\textsc{#1}}}
-%Para mostrar un encabezado con el capítulo al que pertenece la página
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\slshape \leftmark} %rigthmark muestra la subsec
-\fancyfoot[C]{\thepage}
-%
-\usepackage[nottoc]{tocbibind}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Variables para la portada
-\setTitle{Estudio y aplicación de la herramienta ATLAS de OHDSI para la estandarización de la investigación clínica}
-%Extrayendo conocimiento a partir de análisis clínico de datos CDM usando la herramienta Atlas
+\setTitle{Protocolo detallado del Caso Práctico con ATLAS Broadsea}
 
-%Estandarización y análisis de estudio clínico oncológico mediante OMOP CDM y ATLAS Broadsea
-
-%Estudio y aplicación de la herramienta ATLAS de OHDSI para la investigación clínica
-
-%%%%%%%% {
-
-
-
+%%%%%%%% Extrayendo evidencia utilizando la herramienta ATLAS a partir de datos estandarizados según OMOP CDM
 
 
 \setAuthor{Da. María del Valle Alonso de Caso Ortiz} % Si hay más de un autor, separarlos con \\
 \setDegree{Grado en Ingeniería de la Salud} % Cambiar si es necesario
-\setSupervisor{Dr. Julián Alberto García García \\ Dra. María José Escalona Cuaresma} % Si hay más de un tutor, separarlos con \\
-\setDepartment{Lenguajes y Sistemas Informáticos}
+\setSupervisor{Da. Silvia Rodríguez Mejías \\ Dr. Carlos Luis Parra Calderón} % Si hay más de un tutor, separarlos con \\
+\setDepartment{Innovación Tecnológica \\ Hospital Universitario Virgen del Rocío}
 \setMonth{junio} % Dejar sólo el mes de la convocatoria en que se presenta el trabajo
 \setYear{2023/24} % Por ejemplo, 2022/23
 
@@ -55,7 +35,7 @@
 
 % Dedicatoria del trabajo
 % Si no se desea incluir, comentar o borrar la línea siguiente para eliminar la página de dedicatoria
-\setDedication{A mi padre y a mi madre, por inculcarme la pasión por el estudio y acompañarme incondicionalmente en cada etapa del camino.}
+%\setDedication{A mi padre y a mi madre, por inculcarme la pasión por el estudio y acompañarme incondicionalmente en cada etapa del camino.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -64,46 +44,35 @@
 
     % Portada y secciones no numeradas
     \input{sections/00_portada}
-    \input{sections/00_agradecimientos}
-    \input{sections/00_resumen}
-    \input{sections/00_abstract}
-    
+   
     % Índice del documento y de figuras
     \begingroup
         % Los enlaces son normalmente azules, pero en los índices se configuran a negro para que no aparezca todo azul
         \hypersetup{linkcolor=black}
         \tableofcontents
-        \listoffigures
-        \listoftables
-        \lstlistoflistings
+        %\listoffigures
+        %\listoftables
+        %\lstlistoflistings
     \endgroup
     
     % Cambia el estilo de números de página de romanos a normal
     \clearpage\pagenumbering{arabic}
     
     % Capítulos del trabajo
-    %\input{sections/ejemplos_borrame}
     \input{sections/01_Introduccion}
-    \input{sections/02_Objetivos}
-    \input{sections/03_Gestion}
-    \input{sections/04_Metodologia}
-    \input{sections/05_OHDSI}
-    \input{sections/06_Requisitos}
-    \input{sections/07_Entorno}
-    \input{sections/08_Arquitectura}
-    \input{sections/09_Caso}
-    \input{sections/10_Resultados}
-    \input{sections/11_Conclusiones}
+    \input{sections/02_Datos}
+    \input{sections/03_Reporte}
+    \input{sections/04_Conceptos}
+    \input{sections/05_Cohortes}
+    \input{sections/06_Caracterizacion}
+    \input{sections/07_PLE}
+    \input{sections/08_PLP}
+
 
     \bibliographystyle{unsrtnat}
-    %\bibliographystyle{unsrt}
     \bibliography{bibliografia.bib}
 
-    \appendix
-    \input{manual}
-    \input{estudio}
-    \input{glosario}
-
+        
 
 % Fin del documento
 \end{document}

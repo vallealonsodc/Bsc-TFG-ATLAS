@@ -151,7 +151,9 @@ La Figura \ref{fig:journeyDataToEvidence} ''The Journey from Data to Evidence'' 
 Con ello la organización define un marco para llevar a cabo \textbf{estudios observacionales o fenotípicos} sobre datos. Un estudio observacional es una investigación que observa y recopila información sobre individuos o fenómenos sin intervenir en ellos.
 En el caso del estudio sobre datos, en vez de realizar seguimientos de estudios clínicos en vivo, se simulan estos estudios sobre una base de datos. Cuando la evidencia se extrae sobre datos del mundo real (\textit{RWD}), se denomina evidencia del mundo real (\textit{Real World Evidence, RWE}). 
 
-En OHDSI la conducción de estos estudios observacionales se realiza mediante el estudio de cohortes en la base de datos. A continuación en \ref{subsec:05cohortes} ''Cohortes'' se presenta este concepto en profundidad.
+En OHDSI la conducción de estos estudios observacionales se realiza mediante el diseño y estudio de cohortes en la base de datos. Concretamente, se trata de \textbf{estudios de cohortes retrospectivos} porque los sujetos se estudian después de haberse producido la enfermedad, utilizando para ello bases de datos que tengan registrada información histórica de la enfermedad y de los factores de riesgo que hayan podido provocar dicha enfermedad.
+
+A continuación en \ref{subsec:05cohortes} ''Cohortes'' se presenta este concepto en profundidad.
 
 %Frente a la disparidad de los datos y la finalidad con la que son recogidos, OHDSI presenta el Modelo de Datos Común (véase la subsección \ref{subsec:05cdm} ''Modelo de Datos Común'') y para la extracción de evidencia, la investigación metodológica mediante tres casos de uso fundamentales: la caracterización clínica de una cohorte, la estimación a nivel de población y la predicción a nivel de paciente (véase subsección \ref{subsec:05investMetodolog} ''Investigación metodológica'').
 
@@ -173,7 +175,7 @@ La historia del paciente,  como se muestra en la Figura \ref{fig:patientJourney}
     \label{fig:patientJourney}
 \end{figure}
 
-Los pacientes se pueden agrupar en \textbf{cohortes} cuando comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). \textbf{Por tanto, el componente central para generar evidencia en OHDSI es la cohorte.}
+Los pacientes se pueden agrupar en \textbf{cohortes} cuando comparten historias y características similares, al igual que a la hora de realizar un estudio clínico en vivo. Las diferentes  prácticas para los análisis de cohortes darán lugar a los diferentes tipos de evidencia deseada (caracterización, estimación a nivel de población, predicción a nivel de paciente). \textbf{Por tanto, el componente central para generar evidencia en OHDSI es el diseño de cohortes.}
 
 %\begin{figure}[H]
 %\centering
@@ -204,8 +206,6 @@ Dentro del periodo de observación, la cohorte se define con un  evento de entra
 \end{itemize}
 
 Adicionalmente, la cohorte puede definirse más específicamente mediante una serie de \textbf{criterios de inclusión}. La cohorte que satisface todos los criterios de inclusión se denomina cohorte cualificada.
-
-
 
 \subsection{Casos de uso para la investigación} \label{subsec:05casosUso}
 
@@ -242,7 +242,7 @@ Obtiene como resultados: recuentos y porcentajes, medias, estadísticas descript
 
 \subsubsection{Estimación a nivel de población}
 
-La estimación a nivel de población busca realizar inferencias causales sobre los efectos de las intervenciones sanitarias en la población. Se pretende entender los efectos causales para comprender las consecuencias de las acciones
+La estimación a nivel de población busca realizar inferencias causales sobre los efectos de las intervenciones sanitarias en la población. Se pretende entender los efectos causales para comprender las consecuencias de las acciones.
 
 Responde a la pregunta de investigación: \textbf{¿Cuáles son los efectos causales?}
 

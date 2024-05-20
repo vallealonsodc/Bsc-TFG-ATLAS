@@ -1,0 +1,147 @@
+{
+    "ConceptSets": [
+      {
+        "id": 0,
+        "name": "tos",
+        "expression": {
+          "items": [
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Observable Entity",
+                "CONCEPT_CODE": "248592006",
+                "CONCEPT_ID": 4087179,
+                "CONCEPT_NAME": "Character of cough",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Observable Entity",
+                "CONCEPT_CODE": "364054002",
+                "CONCEPT_ID": 4239599,
+                "CONCEPT_NAME": "Characteristic of cough",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Observable Entity",
+                "CONCEPT_CODE": "34606001",
+                "CONCEPT_ID": 4146379,
+                "CONCEPT_NAME": "Cough reflex",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Observable Entity",
+                "CONCEPT_CODE": "263731006",
+                "CONCEPT_ID": 4137801,
+                "CONCEPT_NAME": "Coughing",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "371605008",
+                "CONCEPT_ID": 4160368,
+                "CONCEPT_NAME": "Deep breathing and coughing exercises",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "161927003",
+                "CONCEPT_ID": 4059018,
+                "CONCEPT_NAME": "Night cough present",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "170526005",
+                "CONCEPT_ID": 4015926,
+                "CONCEPT_NAME": "Notification of whooping cough",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            }
+          ]
+        }
+      }
+    ],
+    "PrimaryCriteria": {
+      "CriteriaList": [
+        {
+          "Observation": {
+            "CodesetId": 0
+          }
+        }
+      ],
+      "ObservationWindow": {
+        "PriorDays": 0,
+        "PostDays": 0
+      },
+      "PrimaryCriteriaLimit": {
+        "Type": "First"
+      }
+    },
+    "QualifiedLimit": {
+      "Type": "First"
+    },
+    "ExpressionLimit": {
+      "Type": "First"
+    },
+    "InclusionRules": [],
+    "CensoringCriteria": [],
+    "CollapseSettings": {
+      "CollapseType": "ERA",
+      "EraPad": 0
+    },
+    "CensorWindow": {},
+    "cdmVersionRange": ">=5.0.0"
+  }

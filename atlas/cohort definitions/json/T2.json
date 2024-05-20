@@ -1,0 +1,678 @@
+{
+    "ConceptSets": [
+      {
+        "id": 1,
+        "name": "radioterapia",
+        "expression": {
+          "items": [
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "441799006",
+                "CONCEPT_ID": 40480519,
+                "CONCEPT_NAME": "Intensity modulated radiation therapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "1156530009",
+                "CONCEPT_ID": 603135,
+                "CONCEPT_NAME": "Volumetric modulated arc therapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "231711000000108",
+                "CONCEPT_ID": 44790293,
+                "CONCEPT_NAME": "Radiotherapy delivery",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "11331000224100",
+                "CONCEPT_ID": 3662120,
+                "CONCEPT_NAME": "Tomotherapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "1156526006",
+                "CONCEPT_ID": 603132,
+                "CONCEPT_NAME": "Two dimensional external beam radiation therapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Observable Entity",
+                "CONCEPT_CODE": "228793007",
+                "CONCEPT_ID": 4036402,
+                "CONCEPT_NAME": "Planning target volume",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "379581000000102",
+                "CONCEPT_ID": 44793207,
+                "CONCEPT_NAME": "Preparation for simple radiotherapy with imaging and dosimetry",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "168515004",
+                "CONCEPT_ID": 4056418,
+                "CONCEPT_NAME": "Radiological tumor control",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "168532000",
+                "CONCEPT_ID": 4056679,
+                "CONCEPT_NAME": "Radiotherapy changed",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "168534004",
+                "CONCEPT_ID": 4058777,
+                "CONCEPT_NAME": "Radiotherapy completed",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "168531007",
+                "CONCEPT_ID": 4056678,
+                "CONCEPT_NAME": "Radiotherapy started",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Context-dependent",
+                "CONCEPT_CODE": "168533005",
+                "CONCEPT_ID": 4058776,
+                "CONCEPT_NAME": "Radiotherapy stopped",
+                "DOMAIN_ID": "Observation",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "name": "quimioterapia",
+        "expression": {
+          "items": [
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "703423002",
+                "CONCEPT_ID": 45766298,
+                "CONCEPT_NAME": "Combined chemotherapy and radiation therapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "450827009",
+                "CONCEPT_ID": 42872834,
+                "CONCEPT_NAME": "Induction chemotherapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Procedure",
+                "CONCEPT_CODE": "394895009",
+                "CONCEPT_ID": 4216177,
+                "CONCEPT_NAME": "Postoperative chemotherapy",
+                "DOMAIN_ID": "Procedure",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              },
+              "includeDescendants": true
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "name": "cáncer de pulmón",
+        "expression": {
+          "items": [
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "254626006",
+                "CONCEPT_ID": 4112738,
+                "CONCEPT_NAME": "Adenocarcinoma of lung",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "403902008",
+                "CONCEPT_ID": 4298029,
+                "CONCEPT_NAME": "Adenosquamous cell carcinoma",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "830055006",
+                "CONCEPT_ID": 3654297,
+                "CONCEPT_NAME": "Anaplastic lymphoma kinase fusion oncogene negative non-small cell lung cancer",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "830151004",
+                "CONCEPT_ID": 3654352,
+                "CONCEPT_NAME": "Anaplastic lymphoma kinase fusion oncogene positive non-small cell lung cancer",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "399409002",
+                "CONCEPT_ID": 4163446,
+                "CONCEPT_NAME": "Distant metastasis present",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "427038005",
+                "CONCEPT_ID": 4140471,
+                "CONCEPT_NAME": "Epidermal growth factor receptor negative non-small cell lung cancer",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "426964009",
+                "CONCEPT_ID": 4143825,
+                "CONCEPT_NAME": "Epidermal growth factor receptor positive non-small cell lung cancer",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "60815008",
+                "CONCEPT_ID": 4264626,
+                "CONCEPT_NAME": "Grade not determined",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "314954002",
+                "CONCEPT_ID": 4198434,
+                "CONCEPT_NAME": "Local recurrence of malignant tumor of lung",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956331000000107",
+                "CONCEPT_ID": 46284858,
+                "CONCEPT_NAME": "Malignant melanoma stage IA",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956351000000100",
+                "CONCEPT_ID": 46284859,
+                "CONCEPT_NAME": "Malignant melanoma stage IB",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956371000000109",
+                "CONCEPT_ID": 46284860,
+                "CONCEPT_NAME": "Malignant melanoma stage IIA",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956391000000108",
+                "CONCEPT_ID": 46284861,
+                "CONCEPT_NAME": "Malignant melanoma stage IIB",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956431000000100",
+                "CONCEPT_ID": 46287026,
+                "CONCEPT_NAME": "Malignant melanoma stage IIIA",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956451000000107",
+                "CONCEPT_ID": 46284863,
+                "CONCEPT_NAME": "Malignant melanoma stage IIIB",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956471000000103",
+                "CONCEPT_ID": 46284864,
+                "CONCEPT_NAME": "Malignant melanoma stage IIIC",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "956511000000107",
+                "CONCEPT_ID": 46284865,
+                "CONCEPT_NAME": "Malignant melanoma stage IV M1a",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "363358000",
+                "CONCEPT_ID": 443388,
+                "CONCEPT_NAME": "Malignant tumor of lung",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "254637007",
+                "CONCEPT_ID": 4115276,
+                "CONCEPT_NAME": "Non-small cell lung cancer",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "424413001",
+                "CONCEPT_ID": 4311439,
+                "CONCEPT_NAME": "Sarcoma",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "254632001",
+                "CONCEPT_ID": 4110591,
+                "CONCEPT_NAME": "Small cell carcinoma of lung",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            },
+            {
+              "concept": {
+                "CONCEPT_CLASS_ID": "Clinical Finding",
+                "CONCEPT_CODE": "254634000",
+                "CONCEPT_ID": 4110705,
+                "CONCEPT_NAME": "Squamous cell carcinoma of lung",
+                "DOMAIN_ID": "Condition",
+                "INVALID_REASON": "V",
+                "INVALID_REASON_CAPTION": "Valid",
+                "STANDARD_CONCEPT": "S",
+                "STANDARD_CONCEPT_CAPTION": "Standard",
+                "VOCABULARY_ID": "SNOMED"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PrimaryCriteria": {
+      "CriteriaList": [
+        {
+          "ProcedureOccurrence": {
+            "CodesetId": 1,
+            "First": true
+          }
+        }
+      ],
+      "ObservationWindow": {
+        "PriorDays": 0,
+        "PostDays": 0
+      },
+      "PrimaryCriteriaLimit": {
+        "Type": "First"
+      }
+    },
+    "QualifiedLimit": {
+      "Type": "First"
+    },
+    "ExpressionLimit": {
+      "Type": "First"
+    },
+    "InclusionRules": [
+      {
+        "name": "diagnóstico de cáncer de pulmón",
+        "expression": {
+          "Type": "AT_LEAST",
+          "Count": 1,
+          "CriteriaList": [
+            {
+              "Criteria": {
+                "Observation": {
+                  "CodesetId": 3
+                }
+              },
+              "StartWindow": {
+                "Start": {
+                  "Coeff": -1
+                },
+                "End": {
+                  "Days": 0,
+                  "Coeff": 1
+                },
+                "UseEventEnd": false
+              },
+              "Occurrence": {
+                "Type": 2,
+                "Count": 1
+              }
+            },
+            {
+              "Criteria": {
+                "ConditionOccurrence": {}
+              },
+              "StartWindow": {
+                "Start": {
+                  "Coeff": -1
+                },
+                "End": {
+                  "Days": 0,
+                  "Coeff": 1
+                },
+                "UseEventEnd": false
+              },
+              "Occurrence": {
+                "Type": 2,
+                "Count": 1
+              }
+            }
+          ],
+          "DemographicCriteriaList": [],
+          "Groups": []
+        }
+      },
+      {
+        "name": "no haya recibido radioterapia",
+        "expression": {
+          "Type": "ALL",
+          "CriteriaList": [
+            {
+              "Criteria": {
+                "ConditionOccurrence": {
+                  "CodesetId": 1
+                }
+              },
+              "StartWindow": {
+                "Start": {
+                  "Coeff": -1
+                },
+                "End": {
+                  "Coeff": 1
+                },
+                "UseEventEnd": false
+              },
+              "Occurrence": {
+                "Type": 0,
+                "Count": 0
+              }
+            }
+          ],
+          "DemographicCriteriaList": [],
+          "Groups": []
+        }
+      }
+    ],
+    "CensoringCriteria": [
+      {
+        "Death": {}
+      }
+    ],
+    "CollapseSettings": {
+      "CollapseType": "ERA",
+      "EraPad": 0
+    },
+    "CensorWindow": {},
+    "cdmVersionRange": ">=5.0.0"
+  }
