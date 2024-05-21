@@ -4,11 +4,7 @@ Este repositorio contiene toda la información generada y utilizada para la inve
 
 **Trabajo Fin de Grado**: Estudio de datos clínicos utilizando la herramienta ATLAS Broadsea a partir de datos estandarizados según el Modelo Común de Datos (CDM) de OMOP.
 
- - ver doc online: https://es.overleaf.com/read/bnkzgjxjqmqz#ea49d0
-
 **Anexo A**: Manual de instalación, despliegue y configuración de ATLAS Broadsea. 
-
-  - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
 
 ## Estructura de carpetas del repositorio
 
