@@ -1,0 +1,166 @@
+{
+  "ExpressionLimit": {"Type": "First"},
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {
+    "StartDate": null,
+    "EndDate": null
+  },
+  "ConceptSets": [{
+    "expression": {"items": [
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4087179,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "248592006",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Character of cough",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Observable Entity",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4239599,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "364054002",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Characteristic of cough",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Observable Entity",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4146379,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "34606001",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Cough reflex",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Observable Entity",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4137801,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "263731006",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Coughing",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Observable Entity",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4160368,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "371605008",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Deep breathing and coughing exercises",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Procedure",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4059018,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "161927003",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Night cough present",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Context-dependent",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4015926,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "170526005",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Notification of whooping cough",
+          "DOMAIN_ID": "Observation",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Procedure",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": true
+      }
+    ]},
+    "name": "tos",
+    "id": 0
+  }],
+  "cdmVersionRange": ">=5.0.0",
+  "CensoringCriteria": [],
+  "QualifiedLimit": {"Type": "First"},
+  "InclusionRules": [],
+  "PrimaryCriteria": {
+    "CriteriaList": [{"Observation": {
+      "ValueAsConcept": null,
+      "ObservationType": null,
+      "CorrelatedCriteria": null,
+      "ObservationTypeExclude": false,
+      "ValueAsString": null,
+      "CodesetId": 0,
+      "DateAdjustment": null,
+      "ProviderSpecialty": null,
+      "Gender": null,
+      "Unit": null,
+      "ObservationSourceConcept": null,
+      "VisitType": null,
+      "ValueAsNumber": null,
+      "Qualifier": null,
+      "First": null,
+      "OccurrenceStartDate": null,
+      "Age": null
+    }}],
+    "PrimaryCriteriaLimit": {"Type": "First"},
+    "ObservationWindow": {
+      "PostDays": 0,
+      "PriorDays": 0
+    }
+  }
+}
