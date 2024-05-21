@@ -11,7 +11,11 @@ Este repositorio contiene toda la información generada y utilizada para la inve
 El repositorio se divide en tres carpetas:
 
 - **/atlas**:
-  Contiene todos los archivos generados durante el análisis de los datos utilizando ATLAS (mayoritariamente imágenes de gráficas y archivos csv).
+  Contiene todos los archivos generados durante el análisis de los datos utilizando ATLAS (mayoritariamente imágenes de gráficas y archivos csv y json). Se destaca los dos siguientes directorios:
+
+  - /atlas/estimation/estimation_study_1_export: Carpeta extraía del archivo .zip generado por ATLAS con los archivos R para ejecutar el estudio de Estimación a Nivel de Población.
+
+   - /atlas/prediction/prediction_study_1_export: Carpeta extraía del archivo .zip generado por ATLAS con los archivos R para ejecutar el estudio de Predicción a Nivel de Paciente.
 
 - **/docs**:
   Contiene todos los documentos que forman parte del TFG, tanto el propio documento de la memoria como anexos y estudios.
