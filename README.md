@@ -4,29 +4,32 @@ Este repositorio contiene toda la información generada y utilizada para la inve
 
 **Trabajo Fin de Grado**: Estudio de datos clínicos utilizando la herramienta ATLAS Broadsea a partir de datos estandarizados según el Modelo Común de Datos (CDM) de OMOP.
 
- - ver doc online: https://es.overleaf.com/read/bnkzgjxjqmqz#ea49d0
-
 **Anexo A**: Manual de instalación, despliegue y configuración de ATLAS Broadsea. 
-
-  - ver doc online: https://es.overleaf.com/read/wvccscscmrgr#445d48
 
 ## Estructura de carpetas del repositorio
 
-El repositorio se divide en dos carpetas:
+El repositorio se divide en tres carpetas:
 
-- **/documentation**:
-  Contiene toda la documentación escrita relevante en el desarrollo del TFG (el propio documento de TFG, los anexos...).
+- **/atlas**:
+  Contiene todos los archivos generados durante el análisis de los datos utilizando ATLAS (mayoritariamente imágenes de gráficas y archivos csv y json). Se destaca los dos siguientes directorios:
+
+  - /atlas/estimation/estimation_study_1_export: Carpeta extraía del archivo .zip generado por ATLAS con los archivos R para ejecutar el estudio de Estimación a Nivel de Población.
+
+   - /atlas/prediction/prediction_study_1_export: Carpeta extraía del archivo .zip generado por ATLAS con los archivos R para ejecutar el estudio de Predicción a Nivel de Paciente.
+
+- **/docs**:
+  Contiene todos los documentos que forman parte del TFG, tanto el propio documento de la memoria como anexos y estudios.
   
-    - /documentation/latex:  Repositorio de carpetas latex relativos a la documentación del TFG y Anexos. 
+    - /docs/latex:  Contiene los proyectos latex que han generado la documentación de la memoria y anexo A.
  
-    - /documentation/pdf: Archivos en .pdf relativos a la documentación del TFG y Anexos
+    - /docs/pdf: Contiene los archivos generados en .pdf de la memoria, Anexo A y los artículos del HUVR.
   
-- **/environment**:
-  Contiene todos los archivos relevantes generados y utilizados durante el desarrollo del TFG (archivos csv, rscrips, sql...).
+- **/files**:
+  Contiene todos los archivos relevantes generados y utilizados durante la configuración del entorno de trabajo, principalmente la configuración de ATLAS (archivos csv, rscrips, sql...).
 
-    - /environment/anexes: Archivos relativos al anexo - instalación, despliegue y configuración de ATLAS.
+    - /files/anexes: Archivos empleados durante la configuración de ATLAS del anexo A - instalación, despliegue y configuración de ATLAS.
   
-    - /environment/thesis: Archivos relativos a la realización del estudio práctico del TFG.
+    - /files/thesis: Archivos empleados durante la configuración de ATLAS en la memoria.
  
 
 ## Proyectos github asociados al repositorio
