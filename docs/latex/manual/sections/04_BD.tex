@@ -9,7 +9,7 @@ Esta conexión se realiza a través de la WebAPI de Broadsea (véase \ref{sec:01
     \item \ref{sec:04ConfigAvanzada} \textbf{Configuración avanzada}. Utiliza los protocolos de seguridad de ATLAS y la webAPI .
 \end{itemize}
 
-El manual presenta ambas opciones aunque solo se seguirá en profundidad la configuración manual, ya que es la opción más sencilla y que los propios desarrolladores recomiendan para una implementación rápida \cite{forumAddMSDB}. Por otra parte, por la naturaleza del entorno de instalación al que se enfoca este manual (véase \ref{sec:01IntroManual} ''Introducción al manual''), no es de interés activar el protocolo de seguridad de ATLAS , que debería ser la opción preferente para el despligue de la herramienta en organizaciones donde haya una necesaria diferenciación entre usuarios administradores con privilegios y usuarios sin privilegios. 
+El manual presenta ambas opciones aunque solo se seguirá en profundidad la configuración manual, ya que es la opción más sencilla y que los propios desarrolladores recomiendan para una implementación rápida \parencite{forumAddMSDB}. Por otra parte, por la naturaleza del entorno de instalación al que se enfoca este manual (véase \ref{sec:01IntroManual} ''Introducción al manual''), no es de interés activar el protocolo de seguridad de ATLAS , que debería ser la opción preferente para el despligue de la herramienta en organizaciones donde haya una necesaria diferenciación entre usuarios administradores con privilegios y usuarios sin privilegios. 
 
 %Sin embargo, este caso no aplica puesto que la implementación se realiza para un grupo de investigadores en la que todos tienen los mismos privilegios de acceso.
 
@@ -17,7 +17,7 @@ El manual presenta ambas opciones aunque solo se seguirá en profundidad la conf
 
 La configuración manual consiste en interactuar con la WebAPI directamente a través de pgAdmin para establecer la conexión con la base de datos externa. 
 
-Esta implementación se describe de forma muy completa en la documentación correspondiente al repositorio de github de CDM Configuration \cite{githubCDMConfig} y en los foros \cite{forumAddMSDB}\cite{forumBroadQuickStart}.
+Esta implementación se describe de forma muy completa en la documentación correspondiente al repositorio de github de CDM Configuration \parencite{githubCDMConfig} y en los foros \parencite{forumAddMSDB}\parencite{forumBroadQuickStart}.
 
 \subsection{Requisitos previos} \label{subsec:04RequisitosPrevios}
 
@@ -26,7 +26,7 @@ El único requisito que se necesita para poder integrar la base de datos externa
 Esto implica una serie de características que se detallan en mayor profundidad en \ref{sec:01Postgre} ''Entorno PostgreSQL de Broadsea'', aunque se presentan otra vez a modo de resumen en este apartado:
 
 \begin{enumerate}
-    \item La base de datos debe estar conformada por los esquemas requeridos por el CDM \cite{githubCDMConfig}, al menos: \code{cdm} y \code{results}
+    \item La base de datos debe estar conformada por los esquemas requeridos por el CDM \parencite{githubCDMConfig}, al menos: \code{cdm} y \code{results}
     \item Los datos y tablas de \code{cdm} deben estar normalizados a OMOP.
     \item No se requiere que haya un vocabulario explícitamente configurado para la base de datos externa pero debe haber un vocabulario configurado en Broadsea.
     \item Por último, no se requiere un estilo de base de datos concreto para la base de datos externa, puede ser Postgre o cualquier otro. 
@@ -37,7 +37,7 @@ Para realizar esta implementación, según el fin educacional del manual, se uti
 
 \subsection{Deployment} \label{subsec:04deployment}
 
-La integración de la base de datos con la WebAPI es bastante sencilla, basta con configurar los parámetros correspondientes en el esquema \code{webapi} de la base de datos de Broadsea. Para ello se utiliza un listado de queries sql extraído de \cite{githubCDMConfig}. También se puede descargar el archivo sql completo del repositorio del TFG \cite{vallealonsodc}.
+La integración de la base de datos con la WebAPI es bastante sencilla, basta con configurar los parámetros correspondientes en el esquema \code{webapi} de la base de datos de Broadsea. Para ello se utiliza un listado de queries sql extraído de \parencite{githubCDMConfig}. También se puede descargar el archivo sql completo del repositorio del TFG \parencite{vallealonsodc}.
 
 \begin{enumerate}
     \item En primer lugar, se debe añadir la nueva fuente en la tabla \code{sources} del esquema \code{webapi}. De este modo se registra la nueva fuente y el string jdbc que apunta hacia ella permitiendo la conexión. Para ello se puede utilizar la siguiente query:
@@ -207,13 +207,13 @@ Otra forma de establecer conexiones con bases de datos externas es activando el 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{figures/capNewSource.png}
-    \caption{Imagen extraída de \cite{forumAddMSDB} donde aparece el botón para añadir fuentes desde la interfaz gráfica de ATLAS}
+    \caption{Imagen extraída de \parencite{forumAddMSDB} donde aparece el botón para añadir fuentes desde la interfaz gráfica de ATLAS}
     \label{fig:capNewSource}
 \end{figure}
 
-No obstante, esta forma tan aparentemente sencilla de conexión, verdaderamente se establece a través de protocolos complejos y configuraciones avanzadas de ATLAS y la WebAPI que resultan en grandes cantidades de problemas y errores. De hecho, en varias ocasiones los propios desarrolladores a través de los foros recomiendan su uso solo cuando sea extrictamente necesario \cite{forumAddMSDB}\cite{forumAddSecurityAtlas}.
+No obstante, esta forma tan aparentemente sencilla de conexión, verdaderamente se establece a través de protocolos complejos y configuraciones avanzadas de ATLAS y la WebAPI que resultan en grandes cantidades de problemas y errores. De hecho, en varias ocasiones los propios desarrolladores a través de los foros recomiendan su uso solo cuando sea extrictamente necesario \parencite{forumAddMSDB}\parencite{forumAddSecurityAtlas}.
 
-Si bien la configuración es compleja, aporta, además de la facilidad de adición de fuentes mediante el botón en ATLAS, la posibilidad de distinguir entre distintos usuarios y roles con distintos permisos y privilegios, lo cual puede ser de gran interés en ciertos entornos u organizaciones.  La configuración de la seguridad de ATLAS empieza por la configuración de la seguridad de la WebAPI y ambas están descritas detalladamente en los correspondientes repositorios de Github \cite{githubWASecurity}\cite{githubATSecurity}. También hay un foro de gran interés en el que se describen aspectos de utilidad sobre la configuración de la seguridad en una organización \cite{forumAddSecurityAtlas}.
+Si bien la configuración es compleja, aporta, además de la facilidad de adición de fuentes mediante el botón en ATLAS, la posibilidad de distinguir entre distintos usuarios y roles con distintos permisos y privilegios, lo cual puede ser de gran interés en ciertos entornos u organizaciones.  La configuración de la seguridad de ATLAS empieza por la configuración de la seguridad de la WebAPI y ambas están descritas detalladamente en los correspondientes repositorios de Github \parencite{githubWASecurity}\parencite{githubATSecurity}. También hay un foro de gran interés en el que se describen aspectos de utilidad sobre la configuración de la seguridad en una organización \parencite{forumAddSecurityAtlas}.
 
 \subsection{Descargar otras BD} \label{subsec:04OtrasBD}
 
@@ -225,6 +225,6 @@ En este caso, precisamente para satisfacer esa necesidad, se ha descargado la ba
 
 \subsubsection{Synthea}
 
-Realmente, synthea es un generador de datos sintéticos, no una base de datos por sí misma. Synthea permite construir una base de datos con parámetros configurables con información que no es real, pero podría serlo. La documentación de synthea se encuentra en su repositorio de github \cite{githubSynthea} y en github pages \cite{githubPagesSynthea}. Los datos de synthea no se crean por defecto estandarizados a OMOP pero OHDSI recoge también en un repositorio de github el rscript necesario para realizar el mapeo \cite{githubETLSynthea}.
+Realmente, synthea es un generador de datos sintéticos, no una base de datos por sí misma. Synthea permite construir una base de datos con parámetros configurables con información que no es real, pero podría serlo. La documentación de synthea se encuentra en su repositorio de github \parencite{githubSynthea} y en github pages \parencite{githubPagesSynthea}. Los datos de synthea no se crean por defecto estandarizados a OMOP pero OHDSI recoge también en un repositorio de github el rscript necesario para realizar el mapeo \parencite{githubETLSynthea}.
 
 Para la realización de la configuración de la base de datos externa se ha creado manualmente una base de datos en Postgre, dentro del mismo servidor de Broadsea, con los esquemas \code{public}, \code{cdm} y \code{results}. 

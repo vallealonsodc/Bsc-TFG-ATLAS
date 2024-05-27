@@ -11,7 +11,7 @@ Broadsea es un proyecto basado en Docker que permite desplegar todo el entorno d
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.70\textwidth]{figures/broadseaEq.png}
-    \caption{Esquema sencillo de Broadsea. Extraída de \cite{Broadsea3PPTX}.}
+    \caption{Esquema sencillo de Broadsea. Extraída de \parencite{Broadsea3PPTX}.}
     \label{fig:broadseaEq}
 \end{figure}
 
@@ -25,7 +25,7 @@ El sistema se implementa mediante virtualización en Docker y una arquitectura e
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.80\textwidth]{figures/threeTierValle.png}
+    \includegraphics[width=0.90\textwidth]{figures/threeTierValle.png}
     \caption{Esquema de arquitectura \textit{three-tier} en Docker.}
     \label{fig:threeTierValle}
 \end{figure}
@@ -68,11 +68,11 @@ Broadsea es el \textit{docker server} al que se refiere la anterior Figura \ref{
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.90\textwidth]{figures/OHDSIBroadsea3.0.png}
-    \caption{Vista general de todos los componentes de Broadsea. Extraída de \cite{Broadsea3PPTX}.}
+    \caption{Vista general de todos los componentes de Broadsea. Extraída de \parencite{Broadsea3PPTX}.}
     \label{fig:OHDSIBroadsea3.0}
 \end{figure}
 
-El despliegue por defecto de Broadsea genera una interfaz de usuario con acceso a tres aplicaciones: ATLAS, HADES y ARES. Para acceder a esta interfaz de usuario basta con buscar en el navegador el servidor y puerto donde se aloja broadsea. Tipicamente el servidor corresponde al \textit{localhost} y el puerto 5354, correspondiente a Postgre. La figura a continuación muestra la interfaz principal de herramientas disponibles al acceder a Broadsea desde Chrome.
+El despliegue por defecto de Broadsea genera una interfaz de usuario con acceso a tres aplicaciones: ATLAS, HADES y ARES. Para acceder a esta interfaz de usuario basta con buscar en el navegador el servidor y puerto donde se aloja broadsea. Tipicamente el servidor corresponde al \code{localhost} y el puerto \code{5354}, correspondiente a Postgre. La figura a continuación muestra la interfaz principal de herramientas disponibles al acceder a Broadsea desde Chrome.
 
 \begin{figure}[H]
     \centering
@@ -126,12 +126,12 @@ ATLAS Broadsea despliega por defecto la base de datos de Eunomia, que es una peq
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.60\textwidth]{figures/serverBroadsea.png}
-     \caption{Captura de pantalla de pgAdmin de la estructura postgre del servidor de Broadsea}
+\includegraphics[width=0.50\textwidth]{figures/serverBroadsea.png}
+     \caption{Captura de pantalla de pgAdmin de la estructura del servidor de Broadsea}
     \label{fig:serverBroadsea}
 \end{figure}
 
-La base de datos presenta seis esquemas, siguiendo la configuración del Modelo de Datos Común de OMOP \cite{githubCDMConfig}. Para mayor información sobre la estructura postgre de Broadsea se recomienda consultar el anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''. No obstante, a continuación se describe brevemente la función de cada uno de estos esquemas:
+La base de datos presenta seis esquemas, siguiendo la configuración del Modelo de Datos Común de OMOP \parencite{githubCDMConfig}. Para mayor información sobre la estructura postgre de Broadsea se recomienda consultar el anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''. No obstante, a continuación se describe brevemente la función de cada uno de estos esquemas:
 
 \begin{itemize}
     \item \textbf{demo\_cdm:} Contiene toda la información de eventos clínicos y pacientes registrados en la base de datos. Es el grueso del contenido de la base de datos.

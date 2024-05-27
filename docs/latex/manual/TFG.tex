@@ -14,6 +14,8 @@
 \usepackage{enumitem}
 \setlength{\parindent}{0pt}
 \newcommand{\code}[1]{\texttt{\textsc{#1}}}
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,9 +67,12 @@
     \input{sections/04_BD}
     \input{sections/05_Vocabulario}
 
-    \bibliographystyle{unsrtnat}
-    \bibliography{bibliografia.bib}
-
+    %\bibliographystyle{unsrtnat}
+    %\bibliography{bibliografia.bib}
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\bibname}
+    \printbibliography
         
 
 % Fin del documento

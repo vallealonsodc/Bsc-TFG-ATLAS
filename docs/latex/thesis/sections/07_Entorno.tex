@@ -26,17 +26,17 @@ OHDSI ofrece dos estándares: el Modelo de Datos Común de OMOP y el Vocabulario
 
 \subsection{Modelo de Datos Común de OMOP} \label{subsec:07cdm}
 
-El Modelo de Datos Común o \textit{Common Data Model (CDM)} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \cite{gitPagesCMD}, en definitiva, es un modelo semántico estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \cite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \cite{OHDSIbook}.
+El Modelo de Datos Común o \textit{Common Data Model (CDM)} de OMOP es ''un estándar de datos comunitario abierto, diseñado para estandarizar la estructura y el contenido de los datos de observación y permitir análisis eficientes que puedan producir evidencia confiable'' \parencite{gitPagesCMD}, en definitiva, es un modelo semántico estándar para estructurar los datos de salud. La información más relevante y actualizada sobre el CDM se encuentra en su página de github \parencite{gitPagesCMD} y en el capitulo 4 del Libro de OHDSI \parencite{OHDSIbook}.
 
 \subsubsection{Características}
 
-El modelo de datos de OMOP presenta características importantísimas para hacer frente a las necesidades del panorama socio-sanitario actual presentado en la sección \ref{sec:01Contexto} ''Marco Contextual''. A continuación se presentan las características más relevantes del modelo (extraídas de la sección  4.1 del Libro de OHDSI \cite{OHDSIbook}), según las necesidades identificadas previamente.
+El modelo de datos de OMOP presenta características importantísimas para hacer frente a las necesidades del panorama socio-sanitario actual presentado en la sección \ref{sec:01Contexto} ''Marco Contextual''. A continuación se presentan las características más relevantes del modelo (extraídas de la sección  4.1 del Libro de OHDSI \parencite{OHDSIbook}), según las necesidades identificadas previamente.
 
 \begin{itemize}
     \item \textbf{Estructura diseñada para la investigación}. 
     El modelo presenta una estructura única y óptima para un propósito concreto: el de facilitar la realización de estudios observacionales. Por tanto reduce notoriamente los desafíos relativos a las diferentes estructuras y propósitos con los que se recogen los datos clínicos.
     \item \textbf{Modelo centrado en el paciente}. Es un modelo centrado en el paciente (alineado con la misma característica de la Sanidad 4.0). Estructuralmente esto significa que todos los eventos y tablas están relacionados con la tabla central del paciente, denominada \textit{Person}. 
-    \item \textbf{Protección y privacidad}. El modelo limita el acceso a la información personal de los pacientes, evitando en la medida de lo posible el acceso a información personal sensible como nombres o apellidos, para fomentar la protección y privacidad de los datos. Mayor información sobre las técnicas empleadas para ello se encuentran en el apartado \textit{Privacidad del paciente y OMOP} de la página de github \cite{gitPagesCMD}.
+    \item \textbf{Protección y privacidad}. El modelo limita el acceso a la información personal de los pacientes, evitando en la medida de lo posible el acceso a información personal sensible como nombres o apellidos, para fomentar la protección y privacidad de los datos. Mayor información sobre las técnicas empleadas para ello se encuentran en el apartado \textit{Privacidad del paciente y OMOP} de la página de github \parencite{gitPagesCMD}.
     \item \textbf{Reutilización de estándares}. Un aspecto importantísimo es que el modelo propone su propio estándar pero sin olvidar los estándares globalmente utilizados, de manera que integra y reutiliza los conceptos provenientes de estándares ya existentes (ej. SNOMED, LOINC...) referenciándolos en su propio Modelo de Datos Común. El conjunto de todos los estándares conforma el Vocabulario.
     \item \textbf{Neutralidad tecnológica}. El modelo no requiere una tecnología específica sino que puede estructurarse en cualquier base de datos relacional (ej. Oracle, SQL Server...), ajustándose a los requisitos tecnológicos necesarios de cada organización.
     
@@ -46,21 +46,21 @@ El modelo de datos de OMOP presenta características importantísimas para hacer
 
 Actualmente el CDM ha lanzado ya su sexta versión, sin embargo, esta aún no está soportada por todas las herramientas de la comunidad, por lo que se sigue sugiriendo el uso del CDM v5.4 o 5.3 indistintivamente, que son las últimas versiones completamente funcionales. 
 
-A la hora de realizar un estudio en ATLAS o cualquier otra herramienta del ecosistema OHDSI la base de datos estará necesariamente estandarizada a este modelo por lo que es importante conocer su estructura fundamental. A continuación, en la Figura \ref{fig:cdm54} ''Estructura del CDM v5.4'' se presenta la estructura lógica de este modelo y en la Figura \ref{fig:cdm_ER} ''Modelo Entidad-Relación del CDM v5.4'', la estructura del modelo Entidad-Relación. Adicionalmente existe una página web que proporciona un modelo interactivo para facilitar su estudio \cite{CDMinteractive}.
+A la hora de realizar un estudio en ATLAS o cualquier otra herramienta del ecosistema OHDSI la base de datos estará necesariamente estandarizada a este modelo por lo que es importante conocer su estructura fundamental. A continuación, en la Figura \ref{fig:cdm54} ''Estructura del CDM v5.4'' se presenta la estructura lógica de este modelo y en la Figura \ref{fig:cdm_ER} ''Modelo Entidad-Relación del CDM v5.4'', la estructura del modelo Entidad-Relación. Adicionalmente existe una página web que proporciona un modelo interactivo para facilitar su estudio \parencite{CDMinteractive}.
 
 Aunque el modelo de datos común de OMOP es muy complejo, incluso existen grupos de trabajo de la comunidad (\textit{workshops}) especializados sólo en este ámbito, en esta subsección del trabajo tan solo se van a presentar los conceptos considerados estrictamente necesarios para la comprensión del contenido del mismo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.90\textwidth]{figures/cdm54.png}
-     \caption{Estructura del CDM v5.4. Extraída de la página de github del CDM \cite{gitPagesCMD}}
+    \includegraphics[width=1\textwidth]{figures/cdm54.png}
+     \caption{Estructura del CDM v5.4. Extraída de la página de github del CDM \parencite{gitPagesCMD}}
     \label{fig:cdm54}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/cdm_ER.jpg}
-     \caption{Modelo Entidad-Relación del CDM v5.4. Extraída de la página de github del CDM \cite{gitPagesCMD}}
+     \caption{Modelo Entidad-Relación del CDM v5.4. Extraída de la página de github del CDM \parencite{gitPagesCMD}}
     \label{fig:cdm_ER}
 \end{figure}
 
@@ -71,11 +71,11 @@ Cada evento clínico se registra en el modelo como un \textbf{Concepto} (\textit
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth]{figures/cdm_domains.png}
-     \captionof{table}{Dominios del CDM v5.4. Extraída del Libro de OHDSI \cite{OHDSIbook}}
+     \captionof{table}{Dominios del CDM v5.4. Extraída del Libro de OHDSI \parencite{OHDSIbook}}
     \label{fig:cdm_domains}
 \end{figure}
 
-La información que contiene cada dominio se puede inferir fácilmente de la traducción al español del nombre por lo que no se va a hacer hincapié en ello. No obstante, se puede encontrar más información en \cite{OHDSIbook}, \cite{gitPagesCMD} o \cite{CDMinteractive}.
+La información que contiene cada dominio se puede inferir fácilmente de la traducción al español del nombre por lo que no se va a hacer hincapié en ello. No obstante, se puede encontrar más información en \parencite{OHDSIbook}, \parencite{gitPagesCMD} o \parencite{CDMinteractive}.
 
 \subsection{Vocabulario}\label{subsec:07vocab}
 
@@ -83,11 +83,11 @@ El Vocabulario es otro de los elementos centrales del Modelo de Datos Común de 
 
 El Vocabulario de OHDSI, por tanto, impera sobre un conjunto de vocabularios, respetando las diversas procedencias de cada término pero mapeándolos a un único vocabulario estándar. \textbf{Cada concepto no estándar está asociado a un concepto estándar} y esta es la clave del Vocabulario. 
 
-Como todas las herramientas de la comunidad, la información acerca de este está disponible online de forma pública en el capítulo 5 del Libro de OHDSI \cite{OHDSIbook} y en la página de github del CDM \cite{gitPagesCMD}. Por otra parte, existe un buscador online de términos en el Vocabulario de OMOP denominado ATHENA \cite{ATHENAweb}. 
+Como todas las herramientas de la comunidad, la información acerca de este está disponible online de forma pública en el capítulo 5 del Libro de OHDSI \parencite{OHDSIbook} y en la página de github del CDM \parencite{gitPagesCMD}. Por otra parte, existe un buscador online de términos en el Vocabulario de OMOP denominado ATHENA \parencite{ATHENAweb}. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.90\textwidth]{figures/ATHENAcap.png}
+\includegraphics[width=1\textwidth]{figures/ATHENAcap.png}
      \caption{Captura de pantalla del menú principal de ATHENA}
     \label{fig:ATHENAcap}
 \end{figure}
@@ -104,16 +104,16 @@ Las herramientas que proporciona la organización están disponibles públicamen
 
 \subsection{ATLAS} \label{subsec:07ATLAS}
 
-ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza el análisis observacional una vez que la base de datos está convertida al modelo OMOP. La documentación oficial sobre ATLAS se encuentra en el capítulo 8 del Libro de OHDSI y en su repositorio de github \cite{githubATLAS}. Además, aparte de la documentación oficial, hay montones de información esparcidas por la red sobre ATLAS, en publicaciones científicas, foros de OHDSI, videotutoriales en youtube y un largo etcétera.
+ATLAS es la herramienta de OHDSI por excelencia porque es la que estandariza el análisis observacional una vez que la base de datos está convertida al modelo OMOP. La documentación oficial sobre ATLAS se encuentra en el capítulo 8 del Libro de OHDSI y en su repositorio de github \parencite{githubATLAS}. Además, aparte de la documentación oficial, hay montones de información esparcidas por la red sobre ATLAS, en publicaciones científicas, foros de OHDSI, videotutoriales en youtube y un largo etcétera.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.25\textwidth]{figures/ATLASlogo.png}
-     \caption{Logo de ATLAS. Extraída del repositorio de github \cite{githubATLAS}}
+     \caption{Logo de ATLAS. Extraída del repositorio de github \parencite{githubATLAS}}
     \label{fig:ATLASlogo}
 \end{figure}
 
-Un importante promotor del uso de ATLAS es la red europea de datos EHDEN \cite{ehden} (véase \ref{sec:01EstadoArte} ''Estado del arte''). En esta línea, también la plataforma EHDEN Academy también ofrece cursos gratuitos sobre el uso de ATLAS y otras herramientas OHDSI.
+Un importante promotor del uso de ATLAS es la red europea de datos EHDEN (véase \ref{sec:01EstadoArte} ''Estado del arte''). En esta línea, también la plataforma EHDEN Academy también ofrece cursos gratuitos sobre el uso de ATLAS y otras herramientas OHDSI.
 
 \subsubsection{Características y beneficios de su uso}
 
@@ -127,8 +127,8 @@ El uso de ATLAS es beneficioso para la comunidad científica debido principalmen
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.50\textwidth]{figures/methodsLibrary.png}
-\caption{Biblioteca de Métodos OHDSI. Extraída del Libro de OHDSI \cite{OHDSIbook}}
+\includegraphics[width=0.70\textwidth]{figures/methodsLibrary.png}
+\caption{Biblioteca de Métodos OHDSI. Extraída del Libro de OHDSI \parencite{OHDSIbook}}
 \label{fig:methodsLibrary}
 \end{figure}
     
@@ -147,11 +147,11 @@ Sin embargo, es importante recalcar que tanto ATLAS como la mayoría de las herr
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.700\textwidth]{figures/webAPIwiki.png}
-     \caption{Estructura de la WebAPI. Extraída de la wiki de github \cite{githubWebAPIwiki}}.
+     \caption{Estructura de la WebAPI. Extraída de la wiki de github \parencite{githubWebAPIwiki}}.
     \label{fig:webAPIwiki}
 \end{figure}
 
-Tal y como se muestra en la Figura \ref{fig:webAPIwiki} ''Estructura de la WebAPI'', la WebAPI es la aplicación que proporciona los servicios RESTful para que la herramienta pueda interactuar con las bases de datos \cite{githubWebAPIwiki}. Por tanto su relación con ATLAS es estrictamente necesaria. ATLAS no es una herramienta aislada sino un eslabón del ecosistema OHDSI.
+Tal y como se muestra en la Figura \ref{fig:webAPIwiki} ''Estructura de la WebAPI'', la WebAPI es la aplicación que proporciona los servicios RESTful para que la herramienta pueda interactuar con las bases de datos \parencite{githubWebAPIwiki}. Por tanto su relación con ATLAS es estrictamente necesaria. ATLAS no es una herramienta aislada sino un eslabón del ecosistema OHDSI.
 
 Por otra parte, la herramienta en sí se muestra a través de una interfaz gráfica, que proporciona un estrecho menú lateral con 15 herramientas para el análisis de datos. La interfaz de la herramienta seleccionada se muestra en el lado derecho, como se muestra en la Figura \ref{fig:ATLASdemoHome} ''Captura de pantalla del menú principal de ATLAS demo''.
 
@@ -162,7 +162,7 @@ Por otra parte, la herramienta en sí se muestra a través de una interfaz gráf
     \label{fig:ATLASdemoHome}
 \end{figure}
 
-Recientemente, en diciembre de 2023, ATLAS lanzó su versión 2.14.1 que está en correcto funcionamiento y es la que se utiliza en el desarrollo del Trabajo Fin de Grado. Más información sobre los aspectos técnicos de la herramienta se encuentran en el repositorio de github \cite{githubATLAS}.
+Recientemente, en diciembre de 2023, ATLAS lanzó su versión 2.14.1 que está en correcto funcionamiento y es la que se utiliza en el desarrollo del Trabajo Fin de Grado. Más información sobre los aspectos técnicos de la herramienta se encuentran en el repositorio de github \parencite{githubATLAS}.
 
 \subsubsection{Estrategias de Implementación}
 
@@ -172,13 +172,13 @@ No obstante, la organización ha desarrollado varias iniciativas que facilitan s
 
 \begin{enumerate}[label=\alph*.]
 
-    \item \textbf{ATLAS demo} \cite{ATLASdemo}. En primer lugar, esta es una herramienta muy fácilmente accesible que proporciona la comunidad científica para tomar un primer contacto con la herramienta. En este caso, la herramienta es accesible a través del navegador web, publicamente a través de Internet. Cualquier usuario de internet tiene acceso a la herramienta demo. Se le denomina demo porque se sobreentiende que su uso es principalmente educativo o formativo, aunque verdaderamente ofrece todas las capacidades de la herramienta y los análisis que con ella se realizan, podrían reutilizarse en estudios más complejos o de organizaciones privadas.
+    \item \textbf{ATLAS demo} \parencite{ATLASdemo}. En primer lugar, esta es una herramienta muy fácilmente accesible que proporciona la comunidad científica para tomar un primer contacto con la herramienta. En este caso, la herramienta es accesible a través del navegador web, publicamente a través de Internet. Cualquier usuario de internet tiene acceso a la herramienta demo. Se le denomina demo porque se sobreentiende que su uso es principalmente educativo o formativo, aunque verdaderamente ofrece todas las capacidades de la herramienta y los análisis que con ella se realizan, podrían reutilizarse en estudios más complejos o de organizaciones privadas.
 
-    \item \textbf{ATLAS Docker}. Por otro lado, también muy fácilmente implementable se presenta \textbf{Broadsea} \cite{githubBroadsea}, que consiste en la virtualización del ecosistema OHDSI en un multicontenedor Docker. Gracias a la facilidad del uso de las tecnologías Docker, esta forma de implementar el ecosistema es bastante sencilla, permitiendo además añadir nuevas configuraciones más complejas (si fuese necesario) añadiendo o eliminando contenedores. Para realizar la parte práctica de este trabajo se emplea la tecnología Docker de Broadsea para implementar ATLAS. A la herramienta ATLAS desplegada con Broadsea, frecuentemente se le denominará a lo largo del documento \textit{ATLAS Broadsea}. El TFG presenta un documento anexo bastante complejo enteramente dedicado a la instalación, despliegue y configuración del entorno Broadsea (véase anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''). Adicionalmente, la arquitectura de Broadsea también se presenta en \ref{subsec:07Broadsea} ''Arquitectura de Broadsea''.
+    \item \textbf{ATLAS Docker}. Por otro lado, también muy fácilmente implementable se presenta \textbf{Broadsea} \parencite{githubBroadsea}, que consiste en la virtualización del ecosistema OHDSI en un multicontenedor Docker. Gracias a la facilidad del uso de las tecnologías Docker, esta forma de implementar el ecosistema es bastante sencilla, permitiendo además añadir nuevas configuraciones más complejas (si fuese necesario) añadiendo o eliminando contenedores. Para realizar la parte práctica de este trabajo se emplea la tecnología Docker de Broadsea para implementar ATLAS. A la herramienta ATLAS desplegada con Broadsea, frecuentemente se le denominará a lo largo del documento \textit{ATLAS Broadsea}. El TFG presenta un documento anexo bastante complejo enteramente dedicado a la instalación, despliegue y configuración del entorno Broadsea (véase anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''). Adicionalmente, la arquitectura de Broadsea también se presenta en \ref{sec:08Broadsea} ''Arquitectura de Broadsea''.
 
-    \item \textbf{ATLAS Amazon Web Services}. Otra alternativa que propone la organziación, en colaboración con Amazon, es la virtualización del ecosistema en el entorno de computación en la nube de Amazon Web Services (AWS). Para ello se ofrecen los entornos \textit{OHDSI-in-a-Box} \cite{githubOHDSIBox} y \textit{OHDSIonAWS} \cite{githubOHDSIAWS}. OHDSI-in-a-Box se crea específicamente como un entorno de aprendizaje y se utiliza en la mayoría de los tutoriales proporcionados por la comunidad OHDSI mientras que OHDSIonAWS es una arquitectura de referencia para entornos OHDSI de clase empresarial, multiusuario, escalables. Por las restricciones intrínsecas al uso de AWS, estas alternativas han sido rechazadas para ser empleadas en el TFG.
+    \item \textbf{ATLAS Amazon Web Services}. Otra alternativa que propone la organziación, en colaboración con Amazon, es la virtualización del ecosistema en el entorno de computación en la nube de Amazon Web Services (AWS). Para ello se ofrecen los entornos \textit{OHDSI-in-a-Box} \parencite{githubOHDSIBox} y \textit{OHDSIonAWS} \parencite{githubOHDSIAWS}. OHDSI-in-a-Box se crea específicamente como un entorno de aprendizaje y se utiliza en la mayoría de los tutoriales proporcionados por la comunidad OHDSI mientras que OHDSIonAWS es una arquitectura de referencia para entornos OHDSI de clase empresarial, multiusuario, escalables. Por las restricciones intrínsecas al uso de AWS, estas alternativas han sido rechazadas para ser empleadas en el TFG.
     
-    \item \textbf{ATLAS Azure}. Por último, \textit{OHDSI on AZURE} \cite{OHDSIonAzure} es otra alternativa de virtualización pero a través de la plataforma Microsoft de Azure. No obstante, esta alternativa es la menos común.
+    \item \textbf{ATLAS Azure}. Por último, \textit{OHDSI on AZURE} \parencite{OHDSIonAzure} es otra alternativa de virtualización pero a través de la plataforma Microsoft de Azure. No obstante, esta alternativa es la menos común.
     
 \end{enumerate}
 
@@ -188,8 +188,8 @@ Si bien las herramientas del ecosistema de OHDSI no son totalmente aisladas, ATL
 
 \begin{itemize}
 
-    \item \textbf{ACHILLES} \cite{githubACHILLES}. Esta herramienta, de las siglas \textit{Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems}, en español Caracterización automatizada de la información sanitaria en sistemas de evidencia longitudinal a gran escala, sirve para caracterizar y/o obtener un reporte estadístico de la base de datos estandarizada que se va a utilizar para el estudio. Intrínsicamente es una librería de R que se implementa como una opción del menú lateral \textit{Data Sources} de ATLAS.
-    \item \textbf{ATHENA} \cite{githubATHENA}. Esta herramienta sirve para realizar búsquedas dinámicas en el Vocabulario de OMOP (véase \ref{subsec:07vocab} ''El Vocabulario''). Está implementada en ATLAS en la opción \textit{Search} del menú lateral. Además, se puede acceder a ella online de forma externa a través de su propia página web \cite{ATHENAweb}.
+    \item \textbf{ACHILLES} \parencite{githubACHILLES}. Esta herramienta, de las siglas \textit{Automated Characterization of Health Information at Large-Scale Longitudinal Evidence Systems}, en español Caracterización automatizada de la información sanitaria en sistemas de evidencia longitudinal a gran escala, sirve para caracterizar y/o obtener un reporte estadístico de la base de datos estandarizada que se va a utilizar para el estudio. Intrínsicamente es una librería de R que se implementa como una opción del menú lateral \textit{Data Sources} de ATLAS.
+    \item \textbf{ATHENA} \parencite{githubATHENA}. Esta herramienta sirve para realizar búsquedas dinámicas en el Vocabulario de OMOP (véase \ref{subsec:07vocab} ''El Vocabulario''). Está implementada en ATLAS en la opción \textit{Search} del menú lateral. Además, se puede acceder a ella online de forma externa a través de su propia página web \parencite{ATHENAweb}.
     
 \end{itemize}
 
@@ -200,9 +200,9 @@ El ecosistema de OHDSI presenta gran cantidad de herramientas adicionales. A con
 
 \begin{itemize}
     
-    \item \textbf{HADES} \cite{githubHADES}. HADES, del inglés\textit{ Health Analytics Data-To-Evidence Suite} y en español Suite de análisis sanitario de datos a evidencia, es el nombre con el que se denomina a la herramienta que implementa el paquete R con la Biblioteca de Métodos de OHDSI (ver Figura \ref{fig:methodsLibrary} ''Biblioteca de Métodos OHDSI''). Se puede instalar como un entorno independiente mediante Java y Rtools para implementar análisis mediante código estandarizado (véase Figura \ref{fig:analysisImplementations} ''Tres vías para la implementación de un análisis observacional''). No se utiliza en el TFG más alla de la implementación subyacente de las bibliotecas en ATLAS.
-    \item \textbf{Rabbit tools y Usagi} \cite{OHDSIsoftTools}. Estas herramientas en conjunto llevan a cabo el proceso de ETL, para omopizar las bases de datos al Modelo de Datos Común de OMOP. Las herramientas son tres: White-Rabbit, Rabbit-In-Hat y Usagi. No se utiliza directamente en el TFG porque el dataset utilizado para el análisis ya estaba previamente omopizado.
-    \item \textbf{Data Quality Dashboard} \cite{githubDQD}. Esta herramienta, en español Panel de control de calidad de los datos, pertenece a un paquete de HADES aunque implementado como una interfaz gráfica aparte para facilitar su acceso online. Tal y como su nombre indica sirve para automatizar la tarea de comprobación de la calidad de los datos, un paso previo fundamental antes de realizar un análisis de datos. Tampoco se utiliza directamente para el TFG porque este estudio se llevó a cabo durante la omopización del dataset.
+    \item \textbf{HADES} \parencite{githubHADES}. HADES, del inglés\textit{ Health Analytics Data-To-Evidence Suite} y en español Suite de análisis sanitario de datos a evidencia, es el nombre con el que se denomina a la herramienta que implementa el paquete R con la Biblioteca de Métodos de OHDSI (ver Figura \ref{fig:methodsLibrary} ''Biblioteca de Métodos OHDSI''). Se puede instalar como un entorno independiente mediante Java y Rtools para implementar análisis mediante código estandarizado (véase Figura \ref{fig:analysisImplementations} ''Tres vías para la implementación de un análisis observacional''). No se utiliza en el TFG más alla de la implementación subyacente de las bibliotecas en ATLAS.
+    \item \textbf{Rabbit tools y Usagi} \parencite{OHDSIsoftTools}. Estas herramientas en conjunto llevan a cabo el proceso de ETL, para omopizar las bases de datos al Modelo de Datos Común de OMOP. Las herramientas son tres: White-Rabbit, Rabbit-In-Hat y Usagi. No se utiliza directamente en el TFG porque el dataset utilizado para el análisis ya estaba previamente omopizado.
+    \item \textbf{Data Quality Dashboard} \parencite{githubDQD}. Esta herramienta, en español Panel de control de calidad de los datos, pertenece a un paquete de HADES aunque implementado como una interfaz gráfica aparte para facilitar su acceso online. Tal y como su nombre indica sirve para automatizar la tarea de comprobación de la calidad de los datos, un paso previo fundamental antes de realizar un análisis de datos. Tampoco se utiliza directamente para el TFG porque este estudio se llevó a cabo durante la omopización del dataset.
         
 \end{itemize}
 
@@ -213,14 +213,14 @@ Los programas informáticos que han permitido el despliegue de este entorno tecn
 
 \subsubsection{Google Chrome}
 
-Google Chrome es el navegador web de Google que permite el acceso a internet y la búsqueda en la web a través de una interfaz amigable e intuitiva \cite{GoogleChrome}. 
+Google Chrome es el navegador web de Google que permite el acceso a internet y la búsqueda en la web a través de una interfaz amigable e intuitiva \parencite{GoogleChrome}. 
 
 Chrome es el navegador recomendado por OHDSI para desplegar las herramientas de su ecosistema y más especialmente en el despliegue de Broadsea, permitiendo el acceso al servidor donde se aloja el sistema. Por tanto su uso ha sido muy relevante como portal de acceso a las herramientas OHDSI.
 
 
 \subsubsection{Docker}
 
-Docker es una plataforma abierta para desarrollar, enviar y ejecutar aplicaciones. Docker le permite separar sus aplicaciones de su infraestructura para que pueda entregar software rápidamente. Con Docker, puede administrar su infraestructura de la misma manera que administra sus aplicaciones \cite{DockerWebsite}.
+Docker es una plataforma abierta para desarrollar, enviar y ejecutar aplicaciones. Docker le permite separar sus aplicaciones de su infraestructura para que pueda entregar software rápidamente. Con Docker, puede administrar su infraestructura de la misma manera que administra sus aplicaciones \parencite{DockerWebsite}.
 
 De esta forma, Docker permite empaquetar y ejecutar aplicaciones en contenedores, entornos poco aislados pero seguros. Esto posibilita la ejecución de múltiples contenedores simultáneamente en un mismo host, sin depender de lo instalado en él. Los contenedores son ligeros y contienen todo lo necesario para la aplicación, facilitando su compartición y asegurando consistencia entre usuarios. 
 
@@ -228,19 +228,19 @@ El uso de Docker en el desarrollo del proyecto es evidente, es la herramienta qu
 
 \subsubsection{PostgreSQL}
 
-PostgreSQL es un potente sistema de base de datos relacional de objetos de código abierto que utiliza y amplía el lenguaje SQL combinado con muchas funciones que almacenan y escalan de forma segura las cargas de trabajo de datos más complicadas \cite{PostgreWebsite}.
+PostgreSQL es un potente sistema de base de datos relacional de objetos de código abierto que utiliza y amplía el lenguaje SQL combinado con muchas funciones que almacenan y escalan de forma segura las cargas de trabajo de datos más complicadas \parencite{PostgreWebsite}.
 
 El uso de postgre es fundamental para la implementación correcta de Broadsea, puesto que su base de datos se implementa según PostgreSQL. Las bases de datos externas que se interactúan con la WebAPI pueden estar en otros lenguajes relacionales, pero el sistema de Broadsea intrínsicamente solo se sostiene sobre Postgre.
 
-El proceso concreto de instalación, despliegue y configuración de la base de datos Postgre se realiza a través de la interfaz visual de pgAdmin 4.0 \cite{pgAdminWebsite} y la explicación detallada de su estructura y archivos más importantes se presenta en el anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''.
+El proceso concreto de instalación, despliegue y configuración de la base de datos Postgre se realiza a través de la interfaz visual de pgAdmin 4.0 \parencite{pgAdminWebsite} y la explicación detallada de su estructura y archivos más importantes se presenta en el anexo \ref{anexo:manual} ''Manual de instalación, despliegue y configuración de ATLAS Broadsea''.
 
 \subsubsection{Github}
 
-GitHub es una plataforma para desarrolladores que les permite crear, almacenar, gestionar y compartir su código. Utiliza el software Git, proporcionando control de versiones distribuido, además de control de acceso, seguimiento de errores, solicitudes de funciones de software, gestión de tareas, integración continua y wikis para cada proyecto \cite{GithubWikipedia}.
+GitHub es una plataforma para desarrolladores que les permite crear, almacenar, gestionar y compartir su código. Utiliza el software Git, proporcionando control de versiones distribuido, además de control de acceso, seguimiento de errores, solicitudes de funciones de software, gestión de tareas, integración continua y wikis para cada proyecto \parencite{GithubWikipedia}.
 
 El uso de Github es muy recomendado debido a que la mayor parte de la información sobre OHDSI y sus herramientas se encuentran en internet disponibles en repositorios de Github (véase \ref{sec:05OHDSI} ''¿Qué es OHDSI?''). 
 
-Además, siguiendo esta iniciativa de OHSI, para desarrollar este Trabajo Fin de Grado se ha creado un repositorio de Github específico \cite{vallealonsodc} que contiene toda la documentación relevante a su desarrollo (archivos latex, pdf...) y archivos de variables de entorno o scripts utilizados durante la configuración del entorno del sistema o la realización del análisis de datos.   
+Además, siguiendo esta iniciativa de OHSI, para desarrollar este Trabajo Fin de Grado se ha creado un repositorio de Github específico \parencite{vallealonsodc} que contiene toda la documentación relevante a su desarrollo (archivos latex, pdf...) y archivos de variables de entorno o scripts utilizados durante la configuración del entorno del sistema o la realización del análisis de datos.   
 
 
 \section{Conclusiones} \label{sec:07conclusiones}

@@ -2,7 +2,7 @@
 
 \section{Introducción al Manual} \label{sec:01IntroManual}
 
-Este manual ha sido redactado con motivo de complementar como anexo al Trabajo de Fin de Grado \textbf{Extrayendo conocimiento a partir de análisis clínico de datos CDM usando la herramienta Atlas}
+Este manual ha sido redactado con motivo de complementar como anexo al Trabajo de Fin de Grado \textbf{Estudio y aplicación de la herramienta ATLAS de OHDSI para la estandarización de la investigación clínica}
 de la misma autora, María del Valle Alonso de Caso Ortiz, y sobre la misma herramienta, ATLAS.
 
 %\subsubsection{Necesidad que satisface este anexo.}
@@ -21,7 +21,7 @@ Es decir, el manual se desarrolla en un contexto de implementación de ATLAS Bro
 
 %\subsubsection{Información adicional.}
 
-Toda la información que se ha generado durante y tras la redacción de este documento, y del TFG, se encuentra en un repositorio de github público, para permitir el acceso de cualquier usuario a comprobar archivos generados de variables, logs, scripts de código, etcétera. Para mayor información consultar el link del repositorio \cite{vallealonsodc}.
+Toda la información que se ha generado durante y tras la redacción de este documento, y del TFG, se encuentra en un repositorio de github público, para permitir el acceso de cualquier usuario a comprobar archivos generados de variables, logs, scripts de código, etcétera. Para mayor información consultar el link del repositorio \parencite{vallealonsodc}.
 
 \section{Descripción de Broadsea} \label{sec:01descripBroadsea}
 
@@ -31,14 +31,14 @@ Toda la información que se ha generado durante y tras la redacción de este doc
 
 Con objeto de la implementación de ATLAS satisfaciendo el marco del desarrollo del Trabajo Fin de Grado y el entorno de investigación del hospital (véase \ref{sec:01IntroManual} ''Introducción al manual''), se decide adoptar Broadsea como la alternativa más sencilla para implementar, desplegar y configurar la herramienta.
 
-Broadsea es un proyecto basado en Docker que permite desplegar un entorno de herramientas, configuraciones y dependencias OHDSI de la manera más sencilla hasta el momento. De hecho, la misma organización la presenta, textualmente, como \textit{''la forma más sencilla de instalar (y actualizar) las herramientas OHDSI"} \cite{Broadsea3PDF}. 
+Broadsea es un proyecto basado en Docker que permite desplegar un entorno de herramientas, configuraciones y dependencias OHDSI de la manera más sencilla hasta el momento. De hecho, la misma organización la presenta, textualmente, como \textit{''la forma más sencilla de instalar (y actualizar) las herramientas OHDSI"} \parencite{Broadsea3PDF}. 
 
-Lo que comenzó, en su primera versión, como un simple contenedor que albergase imágenes de la WebAPI de ATLAS y RStudio \cite{Broadsea3PPTX} ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo.
+Lo que comenzó, en su primera versión, como un simple contenedor que albergase imágenes de la WebAPI de ATLAS y RStudio \parencite{Broadsea3PPTX} ha evolucionado hasta la tercera versión en la que Broadsea alberga la mayoría de herramientas OHDSI, creando un entorno virtual de desarrollo muy completo.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.90\textwidth]{figures/OHDSIBroadsea3.0.png}
-    \caption{Vista general de todos los componentes de Broadsea. Extraída de \cite{Broadsea3PPTX}.}
+    \includegraphics[width=1\textwidth]{figures/OHDSIBroadsea3.0.png}
+    \caption{Vista general de todos los componentes de Broadsea. Extraída de \parencite{Broadsea3PPTX}.}
     \label{fig:OHDSIBroadsea3.0}
 \end{figure}
 
@@ -47,7 +47,7 @@ Este manual tan solo se centra en la instalación, despliegue y configuración d
 
 \section{Entorno Docker de Broadsea} \label{sec:01Docker}
 
-En la práctica, el entorno de Broadsea se despliega como un multicontenedor Docker con varios perfiles preconfigurados que permiten ir añadiendo o eliminando configuraciones avanzadas del entorno. La descripción general del multicontenedor y sus perfiles se encuentra online en el repositorio de github de Broadsea \cite{githubBroadsea}.  
+En la práctica, el entorno de Broadsea se despliega como un multicontenedor Docker con varios perfiles preconfigurados que permiten ir añadiendo o eliminando configuraciones avanzadas del entorno. La descripción general del multicontenedor y sus perfiles se encuentra online en el repositorio de github de Broadsea \parencite{githubBroadsea}.  
 
 \subsubsection{Archivos de orquestación de contenedores}
 
@@ -85,7 +85,7 @@ Existen dos archivos clave en el repositorio que orquestan y coordinan los pará
 
 \subsubsection{Perfiles de configuración} 
 
-En cuanto a los perfiles, a la hora de desplegar por primera vez el multicontenedor (véase \ref{cap:02Despliegue} ''Despliegue por defecto''), se ejecuta el perfil \code{default}, es decir, por defecto, que instala seis contenedores que proveen las herramientas básicas de Broadsea:  la WebAPI, el traefik, ATLAS y HADES y la base de datos de ATLAS (véase Figura \ref{fig:OHDSIBroadsea3.0} ''Vista general de todos los componentes de Broadsea''). A partir de este momento, el resto de configuraciones adicionales se realizan a través de los once perfiles restantes, descritos en el \code{docker-compose} y en el repositorio \cite{githubBroadsea}
+En cuanto a los perfiles, a la hora de desplegar por primera vez el multicontenedor (véase \ref{cap:02Despliegue} ''Despliegue por defecto''), se ejecuta el perfil \code{default}, es decir, por defecto, que instala seis contenedores que proveen las herramientas básicas de Broadsea:  la WebAPI, el traefik, ATLAS y HADES y la base de datos de ATLAS (véase Figura \ref{fig:OHDSIBroadsea3.0} ''Vista general de todos los componentes de Broadsea''). A partir de este momento, el resto de configuraciones adicionales se realizan a través de los once perfiles restantes, descritos en el \code{docker-compose} y en el repositorio \parencite{githubBroadsea}
 
 \subsubsection{Volúmenes de almacenamiento de datos}
 
@@ -111,18 +111,18 @@ El volumen  (\code{atlasdb-postgres-data}) será de especial interés durante la
 
 \section{Entorno PostgreSQL de Broadsea}\label{sec:01Postgre}
 
-La configuración y relación entre las diferentes bases de datos que interaccionen con Broadsea se realiza a través de la WebAPI de ATLAS, que se aloja en un servidor de base de datos PostgreSQL. La documentación sobre la WebAPI es muy extensa y se encuentra en un repositorio principal de github \cite{githubWebAPI} que se divide en diferentes secciones de interés.
+La configuración y relación entre las diferentes bases de datos que interaccionen con Broadsea se realiza a través de la WebAPI de ATLAS, que se aloja en un servidor de base de datos PostgreSQL. La documentación sobre la WebAPI es muy extensa y se encuentra en un repositorio principal de github \parencite{githubWebAPI} que se divide en diferentes secciones de interés.
 
 \subsection{La WebAPI} \label{subsec:01webapi}
 
 \subsubsection{Estructura teórica}
 
-En la wiki del repositorio \cite{githubWebAPIwiki} se da información más detallada sobre la webAPI y se define como ''una aplicación basada en Java diseñada para proporcionar un conjunto de servicios web RESTful para interactuar con una o más bases de datos'' y se caracteriza según la siguiente estructura:
+En la wiki del repositorio \parencite{githubWebAPIwiki} se da información más detallada sobre la webAPI y se define como ''una aplicación basada en Java diseñada para proporcionar un conjunto de servicios web RESTful para interactuar con una o más bases de datos'' y se caracteriza según la siguiente estructura:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.50\textwidth]{figures/webAPIwiki.png}
-     \caption{Estructura de la WebAPI. Extraída de \cite{githubWebAPIwiki}}.
+     \caption{Estructura de la WebAPI. Extraída de \parencite{githubWebAPIwiki}}.
     \label{fig:webAPIwiki}
 \end{figure}
 
@@ -136,7 +136,7 @@ En cuanto a esta estructura es importante anotar dos observaciones cruciales par
 
 \subsubsection{Estructura en Postgre}
 
-Es muy importante conocer el papel de la WebAPI y su funcionamiento en PostgreSQL para el despliegue de todo el entorno de Broadsea. La documentación sobre la configuración de los esquemas de la WebAPI y el CDM puede consultarse en su repositorio de github \cite{githubCDMConfig}.
+Es muy importante conocer el papel de la WebAPI y su funcionamiento en PostgreSQL para el despliegue de todo el entorno de Broadsea. La documentación sobre la configuración de los esquemas de la WebAPI y el CDM puede consultarse en su repositorio de github \parencite{githubCDMConfig}.
 
 La WebAPI se implementa en Postgre a través del esquema \code{webapi}, que contiene entre otras muchas, dos tablas de especial relevancia: 
 
@@ -151,22 +151,22 @@ Opcionalmente también puede añadirse el esquema \code{temp} para permitir a la
 
 \subsubsection{Estructura teórica}
 
-La explicación en profundidad del modelo común de datos de OMOP es muy extensa y no concierne directamente a los contenidos que desarrolla este manual aunque sí es importante conocer, al menos brevemente, su estructura teórica y su implementación en Postgre. La documentación e información extensa sobre el CDM se encuentra en su repositorio de github  \cite{githubCDM}, en github pages \cite{githubPagesCDM} y en el Libro de OHDSI \cite{TheBookOfOHDSI}.
+La explicación en profundidad del modelo común de datos de OMOP es muy extensa y no concierne directamente a los contenidos que desarrolla este manual aunque sí es importante conocer, al menos brevemente, su estructura teórica y su implementación en Postgre. La documentación e información extensa sobre el CDM se encuentra en su repositorio de github  \parencite{githubCDM}, en github pages \parencite{githubPagesCDM} y en el Libro de OHDSI \parencite{TheBookOfOHDSI}.
 
 Recientemente OHDSI lanzó la sexta versión del CDM aunque aún no está totalmente integrada con todas las herramientas, por lo que el manual utiliza en la implementación de Broadsea la quinta versión del CDM. Esta versión, a modo visual, presenta la siguiente estructura:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth]{figures/CDMEstructura.png}
-     \caption{Estructura del CDM v5.4. Extraída de \cite{githubPagesCDM}}.
+     \caption{Estructura del CDM v5.4. Extraída de \parencite{githubPagesCDM}}.
     \label{fig:CDMEstructura}
 \end{figure}
 
-Es importante, realizar una observación relevante sobre la estructura del CMD, que es la interacción entre el modelo de datos con el Vocabulario. El vocabulario se representa como una tabla más en la estructura pero es una entidad externa muy extensa y con configuración propia. La documentación sobre el Vocabulario se encuentra en la wiki de su repositorio de github \cite{githubVocabwiki} y en el Libro de OHDSI \cite{TheBookOfOHDSI}.
+Es importante, realizar una observación relevante sobre la estructura del CMD, que es la interacción entre el modelo de datos con el Vocabulario. El vocabulario se representa como una tabla más en la estructura pero es una entidad externa muy extensa y con configuración propia. La documentación sobre el Vocabulario se encuentra en la wiki de su repositorio de github \parencite{githubVocabwiki} y en el Libro de OHDSI \parencite{TheBookOfOHDSI}.
 
 \subsubsection{Estructura en Postgre}
 
-Para interactuar correctamente con Broadsea, las bases de datos externas que se integren con la WebAPI deben estar estructuradas según el CDM de OMOP. La configuración e implementación del modelo de datos se describe en su repositorio de github \cite{githubCDMConfig}. En resumen, una base de datos normalizada a OMOP debe contener al menos los siguientes esquemas:
+Para interactuar correctamente con Broadsea, las bases de datos externas que se integren con la WebAPI deben estar estructuradas según el CDM de OMOP. La configuración e implementación del modelo de datos se describe en su repositorio de github \parencite{githubCDMConfig}. En resumen, una base de datos normalizada a OMOP debe contener al menos los siguientes esquemas:
 
 \begin{itemize}
     \item \textbf{\code{cdm}}: Es el esquema que contiene todas las tablas con la información clínica de la base de datos estructurada según el CDM (véase Figura \ref{fig:CDMEstructura} ''Estructura del CDM v5.4''). Su presencia es obligatoria.
@@ -176,9 +176,9 @@ Para interactuar correctamente con Broadsea, las bases de datos externas que se 
 
 \subsection{Estructura de Broadsea} \label{subsec:01estructuraBroadsea}
 
-Por último, presentar concretamente la estructura que adopta Broadsea al desplegarse en Postgre. Pues si bien Broadsea se virtualiza gracias a Docker, se puede acceder a su base de datos de forma local gracias a la conexión con el servidor Postgre de Broadsea. La información relevante a la base de datos de Broadsea se puede consultar en su repositorio de github \cite{githubBroadseaDB}.
+Por último, presentar concretamente la estructura que adopta Broadsea al desplegarse en Postgre. Pues si bien Broadsea se virtualiza gracias a Docker, se puede acceder a su base de datos de forma local gracias a la conexión con el servidor Postgre de Broadsea. La información relevante a la base de datos de Broadsea se puede consultar en su repositorio de github \parencite{githubBroadseaDB}.
 
-En su configuración por defecto (véase \ref{cap:03ConexLocal} ''Conexión local con la BD por defecto)'', el servidor de Broadsea se configura en el localhost (bien en el 0.0.0.0  o en 127.0.0.1), en el puerto 5432 \cite{githubBroadseaDB} y alberga una única base de datos en la que combina la información de la WebAPI y una pequeña muestra de la base de datos de Eunomia. Para acceder a la documentación sobre Eunomia se consultar su repositorio de github \cite{githubEunomia} o github pages \cite{githubPagesEunomia}.
+En su configuración por defecto (véase \ref{cap:03ConexLocal} ''Conexión local con la BD por defecto)'', el servidor de Broadsea se configura en el localhost (bien en el 0.0.0.0  o en 127.0.0.1), en el puerto 5432 \parencite{githubBroadseaDB} y alberga una única base de datos en la que combina la información de la WebAPI y una pequeña muestra de la base de datos de Eunomia. Para acceder a la documentación sobre Eunomia se consultar su repositorio de github \parencite{githubEunomia} o github pages \parencite{githubPagesEunomia}.
 
 Es decir, la base de datos inicial de Broadsea presenta cinco esquemas:
 
@@ -197,8 +197,6 @@ Es importante anotar que la configuración por defecto de Broadsea trae una pequ
 A esta altura, queda recogida la introducción al manual, el motivo por el que se redacta, la necesidad que subyace al mismo y el contexto en el que se realiza la instalación y la descripción teórica de Broadsea y el desglose en las distintas herramientas que permiten su despliegue.
 
 Por tanto, a partir de este momento comienza en \ref{cap:02Despliegue}, \ref{cap:03ConexLocal}, \ref{cap:04BDEXt} y \ref{cap:05Vocab} la implementación práctica de todos los contenidos presentados, orientados específicamente a la instalación y configuración de la herramienta ATLAS. 
-
-En conclusión, si bien hasta ahora se presentaba Broadsea de forma general, el enfoque de los siguientes capítulos gira concretamente entorno a ATLAS Broadsea.
 
 
 

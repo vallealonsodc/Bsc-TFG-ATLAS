@@ -7,7 +7,7 @@ Este capítulo pretende demostrar la relevancia de OHDSI (Observational Health D
 
 Para ello, bajo la tutela de D. Carlos Parra y Da. Silvia Rodríguez (tutores de las prácticas en empresa, véase \ref{sec:03Participantes} ''Participantes del proyecto''), se ha seguido la reproducción de un estudio realizado por investigadores del hospital sobre predicción mediante modelos de ML de efectos adversos en el tratamiento radioterápico de pacientes con cáncer de pulmón. 
 
-Este estudio, se encuentra públicamente accesible en Pubmed en dos artículos, el primero publicado en el año 2019 titulado \textit{''Comparison of Feature Selection Methods for Predicting RT-Induced Toxicity'' }\cite{nunez2019comparison} y el segundo, en 2023 titulado \textbf{\textit{''Benchmarking machine learning approaches to predict radiation-induced toxicities in lung cancer patients''}} \cite{nunez2023benchmarking}. Ambos estudios están también publicados en la ruta \code{Thesis-ATLAS-OHDSI/documentation/pdf/estudioHUVR} del repositorio de github del TFG \cite{vallealonsodc}.
+Este estudio, se encuentra públicamente accesible en Pubmed en dos artículos, el primero publicado en el año 2019 titulado \textit{''Comparison of Feature Selection Methods for Predicting RT-Induced Toxicity'' }\parencite{nunez2019comparison} y el segundo, en 2023 titulado \textbf{\textit{''Benchmarking machine learning approaches to predict radiation-induced toxicities in lung cancer patients''}} \parencite{nunez2023benchmarking}. Ambos estudios están también publicados en la ruta \code{Thesis-ATLAS-OHDSI/docs/pdf/estudioHUVR} del repositorio de github del TFG \parencite{vallealonsodc}.
 
 El objetivo es promover el uso de ATLAS para la investigación observacional, reproduciendo mediante ATLAS un estudio que fue realizado sin hacer uso de la herramienta, para demostrar con un caso práctico los beneficios de utilizar la herramienta en términos de reproducibilidad y estandarización.
 
@@ -17,9 +17,9 @@ El estudio consiste en la comparación de 300 modelos de ML sobre un dataset de 
 
 \subsubsection{Contexto}
 
-%La base teórica del estudio \cite{nunez2019comparison, nunez2023benchmarking} es que la radioterapia aunque es beneficiosa para el tratamiento oncológico, también causa efectos perjudiciales a corto y/o  largo plazo de forma personalizada según las condiciones de cada paciente. El auge de la medicina personalizada y centrada en el paciente (véase \ref{sec:01Contexto}) ha ensalzado la importancia de realizar una planificación individual para cada paciente, pues cada persona responde de forma distinta a los tratamientos. Por tanto, la gestión individualizada de los posibles efectos adversos es muy importante en la planificación del tratamiento radioterápico, con el fin de facilitar la toma de decisiones entre médico y paciente en términos de calidad de vida y posibilidades de supervivencia.
+%La base teórica del estudio \parencite{nunez2019comparison, nunez2023benchmarking} es que la radioterapia aunque es beneficiosa para el tratamiento oncológico, también causa efectos perjudiciales a corto y/o  largo plazo de forma personalizada según las condiciones de cada paciente. El auge de la medicina personalizada y centrada en el paciente (véase \ref{sec:01Contexto}) ha ensalzado la importancia de realizar una planificación individual para cada paciente, pues cada persona responde de forma distinta a los tratamientos. Por tanto, la gestión individualizada de los posibles efectos adversos es muy importante en la planificación del tratamiento radioterápico, con el fin de facilitar la toma de decisiones entre médico y paciente en términos de calidad de vida y posibilidades de supervivencia.
 
-La radioterapia, aunque beneficia el tratamiento oncológico, puede ocasionar efectos perjudiciales a corto y largo plazo, de forma personalizada según cada paciente \cite{nunez2019comparison, nunez2023benchmarking}. La medicina centrada en el paciente (véase \ref{sec:01Contexto} ''Marco contextual'') destaca la importancia de planificar individualmente cada tratamiento, dado que las respuestas varían entre individuos. Por tanto, la gestión personalizada de los efectos adversos es crucial en la planificación radioterápica para facilitar la toma de decisiones médico-paciente en términos de calidad de vida y supervivencia.
+La radioterapia, aunque beneficia el tratamiento oncológico, puede ocasionar efectos perjudiciales a corto y largo plazo, de forma personalizada según cada paciente \parencite{nunez2019comparison, nunez2023benchmarking}. La medicina centrada en el paciente (véase \ref{sec:01Contexto} ''Marco contextual'') destaca la importancia de planificar individualmente cada tratamiento, dado que las respuestas varían entre individuos. Por tanto, la gestión personalizada de los efectos adversos es crucial en la planificación radioterápica para facilitar la toma de decisiones médico-paciente en términos de calidad de vida y supervivencia.
 
 \subsubsection{Objetivo}
 
@@ -27,7 +27,7 @@ El objetivo del estudio es utilizar un conjunto de datos del mundo real (RWD) pa
 
 \subsubsection{Datos}
 
-El estudio utiliza datos del mundo real (RWHD) obtenidos de la combinación entre los datos almacenados en el registro S31 del HUVR y otros datos recogidos en consultas oncológicas rutinarias del hospital. La descripción de los datos del registro S31 se encuentra en el apéndice A del artículo ''Benchmarking machine learning approaches to predict radiation-induced toxicities in lung cancer patients'', también disponible en la ruta del repositorio de github \code{Thesis-ATLAS-OHDSI/documentation/pdf/estudioHUVR}.
+El estudio utiliza datos del mundo real (RWHD) obtenidos de la combinación entre los datos almacenados en el registro S31 del HUVR y otros datos recogidos en consultas oncológicas rutinarias del hospital. La descripción de los datos del registro S31 se encuentra en el apéndice A del artículo ''Benchmarking machine learning approaches to predict radiation-induced toxicities in lung cancer patients'', también disponible en la ruta del repositorio de github \code{Thesis-ATLAS-OHDSI/docs/pdf/estudioHUVR/appendixA.pdf}.
 
 En resumen los datos consisten en una recopilación de pacientes de cáncer de pulmón, con datos concológicos descriptivos, datos de los tratamientos recibidos por el paciente  y los efectos adversos sufridos.
 
@@ -82,12 +82,12 @@ Por último, el rendimiento de los modelos se ha medido en términos del AUC log
 
 \subsubsection{Resultados}
 
-   Los resultados del estudio resaltan para cada outcome el mejor modelo de ML y selección de atributos, con la valoración de AUC en validación interna y externa. Los resultados se muestran de forma muy intuitiva en la siguiente tabla, extraída del artículo del HUVR \cite{nunez2023benchmarking}.
+   Los resultados del estudio resaltan para cada outcome el mejor modelo de ML y selección de atributos, con la valoración de AUC en validación interna y externa. Los resultados se muestran de forma muy intuitiva en la siguiente tabla, extraída del artículo del HUVR \parencite{nunez2023benchmarking}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{tables/nune2023table2.png}
-    \captionof{table}{Recopilación de resultados del estudio del HUVR. Extraída de \cite{nunez2023benchmarking}}
+    \captionof{table}{Recopilación de resultados del estudio del HUVR. Extraída de \parencite{nunez2023benchmarking}}
     \label{table:nune2023table2}
 \end{figure}
 
@@ -267,7 +267,7 @@ Otra forma de caracterizar una cohorte es a través de la ruta de la cohorte. En
     \label{table:pathway}
 \end{figure}
 
-En este caso, el resultado se muestra en la Figura \ref{table:pathway} que se obtiene es una ''gráfica de explosión solar'' o \textit{surnbust} que muestra las diferentes rutas que experimenta la cohorte. No obstante, tanto la definición del estudio como los resultados también se encuentran accesibles a través de la ruta del repositorio de github \code{Thesis-ATLAS-OHDSI/atlas/characterizations/statistics} 
+En este caso, el resultado se muestra en la Figura \ref{table:pathway} que se obtiene es una ''gráfica de explosión solar'' o \textit{surnbust} que muestra las diferentes rutas que experimenta la cohorte. No obstante, tanto la definición del estudio como los resultados también se encuentran accesibles a través de la ruta del repositorio de github \code{Thesis-ATLAS-OHDSI/atlas/characterizations/cohort pathway} 
 
 
 \subsubsection{Estimación a Nivel Población}
@@ -285,7 +285,7 @@ A continuación se muestra la definición del problema de estimación mediante l
     \label{figure:comparisonPLE}
 \end{figure}
 
-Para configurar los ajustes del análisis se han seguido las recomendaciones del capítulo 12 ''Population-Level Estimation'' del Libro de OHDSI \cite{OHDSIbook}, correspondientes con los ajustes establecidos por defecto por la propia herramienta ATLAS. 
+Para configurar los ajustes del análisis se han seguido las recomendaciones del capítulo 12 ''Population-Level Estimation'' del Libro de OHDSI \parencite{OHDSIbook}, correspondientes con los ajustes establecidos por defecto por la propia herramienta ATLAS. 
 
 \begin{figure}[H]
     \centering

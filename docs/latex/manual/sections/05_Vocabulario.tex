@@ -2,15 +2,15 @@
 
 El vocabulario no viene enteramente configurado en ATLAS Broadsea sino tan solo una pequeña demo adjunta a la base de datos de Eunomia.
 
-Por tanto, para utilizar ATLAS se requiere la instalación y configuración del Vocabulario más extenso. OHDSI propone, en el repositorio de github de Broadsea \cite{githubBroadsea} dos formas de configurar el vocabulario de Broadsea: (1) de forma manual (2) a través de Apache Solr. 
+Por tanto, para utilizar ATLAS se requiere la instalación y configuración del Vocabulario más extenso. OHDSI propone, en el repositorio de github de Broadsea \parencite{githubBroadsea} dos formas de configurar el vocabulario de Broadsea: (1) de forma manual (2) a través de Apache Solr. 
 
 \section{Configuración manual} \label{sec:05ConfigManual}
 
-La configuración manual del vocabulario requiere descargar el vocabulario directamente desde ATHENA \cite{athena}, instalarlo manualmente en el directorio local de Broadsea y ejecutar el contenedor docker encargado de montar el vocabulario en Broadsea. 
+La configuración manual del vocabulario requiere descargar el vocabulario directamente desde ATHENA \parencite{athena}, instalarlo manualmente en el directorio local de Broadsea y ejecutar el contenedor docker encargado de montar el vocabulario en Broadsea. 
 
 \subsection{Requisitos previos} \label{subsec:05requisitos}
 
-Para configurar el vocabulario manualmente,  se debe haber descargado el vocabulario y configurado el directorio local de Broadsea. Este procedimiento se ha seguido gracias a los foros ''Downloading OMOP cdm version 5 vocabulary data'' \cite{forumCDMdownload} y ''March to the Broadsea'' \cite{forumMarchBroadsea} y el tutorial de yotutube ''Demo: Getting Vocabularies Into My OMOP CDM'' \cite{youtubeVocab}
+Para configurar el vocabulario manualmente,  se debe haber descargado el vocabulario y configurado el directorio local de Broadsea. Este procedimiento se ha seguido gracias a los foros ''Downloading OMOP cdm version 5 vocabulary data'' \parencite{forumCDMdownload} y ''March to the Broadsea'' \parencite{forumMarchBroadsea} y el tutorial de yotutube ''Demo: Getting Vocabularies Into My OMOP CDM'' \parencite{youtubeVocab}
 
 \begin{enumerate}
 
@@ -40,7 +40,7 @@ Para configurar el vocabulario manualmente,  se debe haber descargado el vocabul
 
 \subsection{Deployment} \label{subsec:05deployment}
 
-Configurar el vocabulario requiere establecer una configuración avanzada del contenedor Docker de Broadsea. Si bien, la primera vez que se inicializó el contenedor se ejecutó el perfil \code{default} ahora se va a ejecutar específicamente el perfil \code{omop-vocab-pg-load}. Esta opción se especifica en la sección \code{OMOP Vocab Loading} del repositorio de Broadsea. También ha sido de utilidad el repositorio \cite{githubCDMConfig} y el mismo foro \cite{forumMarchBroadsea}.
+Configurar el vocabulario requiere establecer una configuración avanzada del contenedor Docker de Broadsea. Si bien, la primera vez que se inicializó el contenedor se ejecutó el perfil \code{default} ahora se va a ejecutar específicamente el perfil \code{omop-vocab-pg-load}. Esta opción se especifica en la sección \code{OMOP Vocab Loading} del repositorio de Broadsea. También ha sido de utilidad el repositorio \parencite{githubCDMConfig} y el mismo foro \parencite{forumMarchBroadsea}.
 
 Para acceder a la información y configuración avanzada del perfil se puede acceder al \code{docker-compose.yml} y a la sección 9 del archivo \code{.env}, aunque este caso no será necesario realizar ninguna modificación sobre los mismos.
 
@@ -143,9 +143,9 @@ En este punto el vocabulario ya está perfectamente instalado y configurado, sin
 
 \subsection{Configuración de Apache Solr} \label{subsec:05apache}
 
-ATLAS Broadsea hace uso de Apache Solr a través de diferentes perfiles docker para facilitar la importación del vocabulario y la búsqueda en el mismo. Sin embargo, ambas características aún se encuentras en desarrollo, según la información facilitada en el repositorio de github de Broadsea Solr \cite{githubBroadseaSolr}.
+ATLAS Broadsea hace uso de Apache Solr a través de diferentes perfiles docker para facilitar la importación del vocabulario y la búsqueda en el mismo. Sin embargo, ambas características aún se encuentras en desarrollo, según la información facilitada en el repositorio de github de Broadsea Solr \parencite{githubBroadseaSolr}.
 
-El proceso de configuración de Broadsea Solr se encuentra en aquel mismo repositorio y la descripción de los perfiles que ejecutan los contenedores Solr se presentan en el de Broadsea \cite{githubBroadsea}. 
+El proceso de configuración de Broadsea Solr se encuentra en aquel mismo repositorio y la descripción de los perfiles que ejecutan los contenedores Solr se presentan en el de Broadsea \parencite{githubBroadsea}. 
 
 \begin{enumerate}
     \item Con el perfil \code{solr-vocab-with-import} se puede automatizar la importación del vocabulario desde el servidor de Apache en vez de tener que configurarlo manualmente. Sin embargo, esta opción que parece facilitar el trabajo al usuario en la práctica resulta engorrosa, por ello no ha sido cubierta en este manual.

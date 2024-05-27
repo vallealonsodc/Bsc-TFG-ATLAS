@@ -25,6 +25,10 @@
 \fancyfoot[C]{\thepage}
 %
 \usepackage[nottoc]{tocbibind}
+%\usepackage{apacite}
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+
 
 
 
@@ -95,9 +99,10 @@
     \input{sections/10_Resultados}
     \input{sections/11_Conclusiones}
 
-    \bibliographystyle{unsrtnat}
-    %\bibliographystyle{unsrt}
-    \bibliography{bibliografia.bib}
+    %\bibliographystyle{apacite}
+    %\bibliographystyle{unsrtnat}
+    %\bibliography{bibliografia.bib}
+    \printbibliography
 
     \appendix
     \input{manual}
